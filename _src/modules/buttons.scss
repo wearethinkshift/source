@@ -1,0 +1,25 @@
+// =============================================================================
+// Buttons.scss
+// ------------
+// =============================================================================
+$default-button-color: $gray;
+
+$button-border-width: 1px;
+$button-border-style: solid;
+
+// Depends on base/mixins
+@mixin button-color($color: $default-button-color, $gradient:true) {
+  
+  // set a base color
+  background: $color;
+  border: $button-border-width $button-border-style darken($color, 10%);
+  
+  // gradient
+  @if $gradient == true {
+    @include background-linear-gradient("top, lighten($color, 10%), $color");
+  }
+  
+}
+
+// button = 30px (height, padding, border, etc.)
+// small button = 12px (height, padding, border, etc.)
