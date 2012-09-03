@@ -1,0 +1,394 @@
+/* --------------------------------------------------------------------------
+   Browser Support
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Colors
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Fonts and Sizes
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Typography
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Vendor Prefix
+   -------------
+   Allows the creation of any vendor prefix property, as long as they're
+   all the same property for the different vendor prefixes.
+   for multiple properties, use a string:
+   @include -v(box-shadow, "0px 1px 0px black, inset 0px 1px 0px white");
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Worth Noting:
+   -------------
+   -ms and -o both implemented box-shadow, text-shadow and border-radius
+   without vendor prefixes. Old versions of Mozilla and Webkit used the
+   prefix, and their numbers are close to being 0, so to save some space
+   in the css, these mixins disable support for vendor prefixes by default.
+   This can be overridden in each mixin: @include box-shadow(..., true, true)
+   will enable vendor prefixes for box shadow for webkit and mozilla.
+   
+   The order of params will always be: webkit, moz, ms, o (longest to shortest)
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Box Shadow
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Text Shadow
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Border Radius
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Border Radius Utility
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Linear Gradient
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Opacity
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Inline Block (with IE7 compatability)
+   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, nav, section, summary {
+  display: block; }
+
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+audio:not([controls]) {
+  display: none; }
+
+[hidden] {
+  display: none; }
+
+/* ==========================================================================
+   Document
+   ========================================================================== */
+html {
+  font-size: 75%;
+  -webkit-text-size-adjust: 75%;
+  -ms-text-size-adjust: 75%; }
+
+html, button, input, select, textarea {
+  font-family: sans-serif;
+  color: #333333; }
+
+body {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.4em; }
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/* --------------------------------------------------------------------------
+   Text Block Elements
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+  margin: 0 0 1em; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; }
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    text-decoration: none; }
+    h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+      text-decoration: underline; }
+
+h1 {
+  font-size: 250%;
+  margin-bottom: 0.3em;
+  line-height: 1.2; }
+
+h2 {
+  font-size: 175%;
+  margin-bottom: 0;
+  line-height: 1.2;
+  font-style: italic; }
+
+h3 {
+  font-size: 150%;
+  font-weight: normal;
+  font-style: italic;
+  margin-bottom: 0; }
+
+h4 {
+  font-size: 125%;
+  margin-bottom: 0; }
+
+h5 {
+  font-size: 100%; }
+
+h6 {
+  font-size: 100%; }
+
+ul, ol {
+  padding-left: 2.15em; }
+
+dd {
+  margin-left: 40px; }
+
+/* Navigation lists will not have bullets. */
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0; }
+
+/* --------------------------------------------------------------------------
+   Links
+   -------------------------------------------------------------------------- */
+a {
+  color: #1133cc; }
+
+a:visited {
+  color: #220066; }
+
+a:hover {
+  color: #1133cc; }
+
+a:focus {
+  outline: thin dotted; }
+
+a:hover, a:active {
+  outline: 0;
+  text-decoration: none; }
+
+/* --------------------------------------------------------------------------
+   Semantic Tags
+   -------------------------------------------------------------------------- */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b, strong {
+  font-weight: bold; }
+
+blockquote {
+  margin: 1em 40px; }
+
+dfn {
+  font-style: italic; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+ins {
+  background: #ffe354;
+  color: black;
+  text-decoration: none; }
+
+mark {
+  background: #ffda21;
+  color: black;
+  font-style: italic;
+  font-weight: bold; }
+
+pre, code, kbd, samp {
+  font-family: monospace;
+  font-size: 1em; }
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: none; }
+
+q:before, q:after {
+  content: "";
+  content: none; }
+
+small {
+  font-size: 75%; }
+
+sub, sup {
+  font-size: 50%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* --------------------------------------------------------------------------
+   Embedded Content
+   -------------------------------------------------------------------------- */
+img {
+  border: 0;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+/* --------------------------------------------------------------------------
+   Figures
+   -------------------------------------------------------------------------- */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+form {
+  margin: 0; }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+label {
+  cursor: pointer; }
+
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+  *margin-left: -7px; }
+
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle; }
+
+button, input {
+  line-height: normal; }
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+  *overflow: visible; }
+
+button[disabled], input[disabled] {
+  cursor: default; }
+
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+  *width: 13px;
+  *height: 13px; }
+
+input[type="search"] {
+  -webkit-appearance: textfield; }
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none; }
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical; }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td {
+  vertical-align: top; }
+
+.btn {
+  font-weight: bold;
+  color: white;
+  border: 1px solid;
+  padding: 0.50em 1em;
+  text-decoration: none;
+  background-color: #b3b3b3;
+  border-color: #999999;
+  background: -webkit-linear-gradient(top, #cccccc, #b3b3b3);
+  background: -moz-linear-gradient(top, #cccccc, #b3b3b3);
+  background: -ms-linear-gradient(top, #cccccc, #b3b3b3);
+  background: -o-linear-gradient(top, #cccccc, #b3b3b3);
+  background: linear-gradient(top, #cccccc, #b3b3b3);
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.05), inset 0px 1px 0px rgba(255,255,255,0.8), 0px 1px 1px rgba(0,0,0,0.25);
+  border-radius: 2px;
+  display: inline-block; }
+  .btn:hover {
+    position: relative;
+    z-index: 1;
+    color: white;
+    background-color: #bfbfbf;
+    border-color: #a6a6a6;
+    background: -webkit-linear-gradient(top, #d9d9d9, #bfbfbf);
+    background: -moz-linear-gradient(top, #d9d9d9, #bfbfbf);
+    background: -ms-linear-gradient(top, #d9d9d9, #bfbfbf);
+    background: -o-linear-gradient(top, #d9d9d9, #bfbfbf);
+    background: linear-gradient(top, #d9d9d9, #bfbfbf); }
+  .btn:active, .btn:focus {
+    position: relative;
+    z-index: 1;
+    color: #e6e6e6;
+    background-color: #8c8c8c;
+    border-color: #737373;
+    background: -webkit-linear-gradient(top, #a6a6a6, #8c8c8c);
+    background: -moz-linear-gradient(top, #a6a6a6, #8c8c8c);
+    background: -ms-linear-gradient(top, #a6a6a6, #8c8c8c);
+    background: -o-linear-gradient(top, #a6a6a6, #8c8c8c);
+    background: linear-gradient(top, #a6a6a6, #8c8c8c);
+    box-shadow: inset 0px 1px 3px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.8); }
+  .btn:visited {
+    color: white; }
+  .btn.btn-large {
+    font-size: 125%;
+    padding: 0.75em 1.2em; }
+  .btn.btn-small {
+    font-size: 75%;
+    padding: 2px 5px;
+    line-height: 1.2; }
+
+.btn-group {
+  overflow: hidden; }
+  .btn-group .btn {
+    float: left;
+    border-radius: 0px;
+    margin-right: -1px; }
+    .btn-group .btn:first-child {
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px; }
+    .btn-group .btn:last-child {
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px; }
+
+.icon:before, [data-icon]:before {
+  outline: 1px dotted red;
+  display: inline-block;
+  margin-right: 5px;
+  width: 16px;
+  height: 16px;
+  content: ".";
+  overflow: hidden;
+  text-indent: -100%; }

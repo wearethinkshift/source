@@ -1,0 +1,22 @@
+// =============================================================================
+// Icons.scss
+// ----------
+// =============================================================================
+
+.icon, [data-icon] {
+  
+  &:before {
+    
+    // @extends .ir;
+    outline: 1px dotted red;
+    @include display-inline-block;
+    margin-right: 0.5em;
+    width: 16px;
+    height: 16px;
+    content: ".";
+    overflow: hidden;
+    text-indent: -100%;
+    
+  }
+  
+}

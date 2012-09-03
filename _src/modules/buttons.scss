@@ -2,41 +2,92 @@
 // Buttons.scss
 // ------------
 // =============================================================================
-$default-button-color: $gray;
-
-$button-border-width: 1px;
-$button-border-style: solid;
+$default-button-color: darken($silver, 10%);
+$default-button-border-radius: 2px;
+//$default-primary-button-color: ;
 
 // Depends on base/mixins
 @mixin button-color($color: $default-button-color, $gradient:true) {
-  
-  $button-border-color: darken($color, 10%);
-  
-  // set a base color
-  background: $color;
-  border: $button-border-width $button-border-style $button-border-color;
-  
-  // gradient
+
+  background-color: $color;
+  border-color: darken($color, 10%);
   @if $gradient == true {
-    @include background-linear-gradient("top, lighten($color, 10%), $color");
-  }
-  
-  // Hover
-  &:hover{
-    
-    // for the button group stuff
-    position:relative;
-    z-index:1;
-    
-    background-color: lighten($color, 10%);
-    @if $gradient == true {
-      @include background-linear-gradient("top, lighten($color, 20%), lighten($color, 10%)");
-    }
-    
-    
+    @include background-linear-gradient("top, #{lighten($color, 10%)}, #{$color}");
   }
   
 }
 
-// button = 30px (height, padding, border, etc.)
-// small button = 12px (height, padding, border, etc.)
+// Base Button
+.btn {
+    
+  font-weight: bold;
+  color: white;
+  border: 1px solid;
+  padding: 0.50em 1em;
+  text-decoration: none;
+  
+  @include button-color;
+  @include text-shadow(0px -1px 0px rgba(0,0,0,0.25));
+  @include box-shadow("0px 0px 3px rgba(0,0,0,0.05), inset 0px 1px 0px rgba(255,255,255,0.8), 0px 1px 1px rgba(0,0,0,0.25)");
+  @include border-radius($default-button-border-radius);
+  @include display-inline-block;
+  
+  &:hover {
+    
+    position: relative;
+    z-index: 1;
+    
+    color: white;
+    @include button-color(lighten($default-button-color, 5%));
+  
+  }
+  
+  &:active, &:focus {
+    
+    position: relative;
+    z-index: 1;
+    color: darken(white, 10%);
+    @include button-color(darken($default-button-color, 15%));
+    @include box-shadow("inset 0px 1px 3px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.8)")
+    
+  }
+  
+  &:visited {
+    color: white;
+  }
+  
+  // Modified Buttons
+  &.btn-large {
+    font-size: $font-size-medium;
+    padding: 0.75em 1.2em;
+  }
+  
+  &.btn-small {
+    font-size: $font-size-small;
+    padding: 2px 5px;
+    line-height: 1.2;
+  }
+  
+}
+
+.btn-group {
+  
+  overflow: hidden; // clearfix later.
+  
+  .btn {
+    
+    float: left;
+    @include border-radius(0px);
+    margin-right: -1px;
+    
+    &:first-child {
+      @include border-radius-utility($default-button-border-radius, false, false, $default-button-border-radius);
+    }
+    
+    &:last-child {
+      @include border-radius-utility(false, $default-button-border-radius, $default-button-border-radius, false);
+    }
+    
+  }
+
+}
