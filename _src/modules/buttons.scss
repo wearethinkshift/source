@@ -4,14 +4,25 @@
 // =============================================================================
 $default-button-color: lighten($silver, 10%);
 $default-button-border-radius: 2px;
-$default-button-text-color: darken($light-gray, 10%);
-//$default-primary-button-color: ;
+$default-button-text-color: darken($light-gray, 20%);
+
+// Status Buttons
+$default-primary-button-color: $primary;
+$default-info-button-color: $info;
+$default-alert-button-color: $alert;
+$default-warning-button-color: $warning;
+$default-confirm-button-color: $confirm;
+
+// Gradients on all buttons
+$default-buttons-have-gradient: true;
+
 
 // Depends on base/mixins
-@mixin button-color($color: $default-button-color, $gradient:true) {
+@mixin button-color($color: $default-button-color, $gradient:$default-buttons-have-gradient) {
 
   background-color: $color;
   border-color: darken($color, 5%);
+  border-bottom-color: darken($color, 20%);
   @if $gradient == true {
     @include background-linear-gradient("top, #{lighten($color, 10%)}, #{$color}");
   }
@@ -23,20 +34,22 @@ $default-button-text-color: darken($light-gray, 10%);
     
 //  font-weight: bold;
   color: $default-button-text-color;
-  font-size: ($font-size-medium);
+  font-size: $font-size-large;
   border: 1px solid;
-  padding: 0.35em 1em;
+  padding: 0.45em 1em;
   text-decoration: none;
+  text-align: center;
   
   @include button-color;
-  @include text-shadow(0px 1px 0px rgba(255,255,255,0.5));
-  @include box-shadow("0px 0px 3px rgba(0,0,0,0.05), inset 0px 1px 0px rgba(255,255,255,0.8), 0px 1px 1px rgba(0,0,0,0.25)");
+  @include text-shadow(0px 1px 0px rgba(255,255,255,0.35));
+  @include box-shadow("0px 0px 3px rgba(0,0,0,0.05), inset 0px 1px 0px rgba(255,255,255,0.5), 0px 1px 1px rgba(0,0,0,0.15)");
   @include border-radius($default-button-border-radius);
   @include display-inline-block;
   
   &:hover {
     
     position: relative;
+    text-decoration: none;
     z-index: 1;
     
     color: $default-button-text-color;
@@ -47,6 +60,7 @@ $default-button-text-color: darken($light-gray, 10%);
   &:active, &:focus {
     
     position: relative;
+    text-decoration: none;
     z-index: 1;
     color: darken($light-gray, 10%);
     @include button-color(darken($default-button-color, 15%));
@@ -54,29 +68,109 @@ $default-button-text-color: darken($light-gray, 10%);
     
   }
   
-  &:visited {
-    color: $default-button-text-color;
-  }
+//  &:visited {
+//    color: $default-button-text-color;
+//  }
   
   // Modified Buttons
   &.btn-large {
-    font-size: $font-size-medium;
-    padding: 0.75em 1.2em;
+    font-size: $font-size-xlarge;
+    padding: 0.5em 1em;
   }
   
   &.btn-small {
+//    font-size: $font-size-normal;
+    padding: 0.25em 0.75em;
+  }
+  
+  &.btn-mini {
     font-size: $font-size-fine;
     padding: 0.1em 0.5em;
   }
   
-  // Alternate Button Styles
+  &%btn-status {
+    @include text-shadow(0px -1px 0px rgba(0,0,0,0.25));
+    color: white;
+  }
   
+  &.btn-primary {
+    @extend %btn-status;
+    @include button-color($default-primary-button-color);
+    
+    &:hover {
+      @include button-color(lighten($default-primary-button-color, 5%));
+    }
+    &:active {
+      @include button-color(darken($default-primary-button-color, 5%));
+    }
+  }
+  
+  &.btn-info {
+    @extend %btn-status;
+    @include button-color($default-info-button-color);
+    
+    &:hover {
+      @include button-color(lighten($default-info-button-color, 5%));
+    }
+    &:active {
+      @include button-color(darken($default-info-button-color, 5%));
+    }
+  }
+  
+  &.btn-alert {
+    @extend %btn-status;
+    @include button-color($default-alert-button-color);
+    
+    &:hover {
+      @include button-color(lighten($default-alert-button-color, 5%));
+    }
+    &:active {
+      @include button-color(darken($default-alert-button-color, 5%));
+    }
+  }
+  
+  &.btn-warning {
+    @extend %btn-status;
+    @include button-color($default-warning-button-color);
+    
+    &:hover {
+      @include button-color(lighten($default-warning-button-color, 5%));
+    }
+    &:active {
+      @include button-color(darken($default-warning-button-color, 5%));
+    }
+  }
+  
+  &.btn-confirm {
+    @extend %btn-status;
+    @include button-color($default-confirm-button-color);
+    
+    &:hover {
+      @include button-color(lighten($default-confirm-button-color, 5%));
+    }
+    &:active {
+      @include button-color(darken($default-confirm-button-color, 5%));
+    }
+  }
+  
+  // removes gradient
+  &.btn-flat {
+    background-image: none;
+    @include box-shadow(none);
+    
+    &:hover {
+      background-image: none;
+    }
+    &:active {
+      background-image: none;
+    }
+  }
   
 }
 
 .btn-group {
   
-  overflow: hidden; // clearfix later.
+  // requires clearfix
   
   .btn {
     

@@ -66,7 +66,7 @@ body {
 /* --------------------------------------------------------------------------
    Text Block Elements
    -------------------------------------------------------------------------- */
-h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0 0 1em; }
+h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0 0 0.5em; line-height: 1.2; }
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
 	a {
@@ -77,11 +77,11 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-h1 { font-size: $font-size-huge; line-height: 1.2; }
-h2 { font-size: $font-size-xlarge; margin-bottom: 0; line-height: 1.2; }
-h3 { font-size: $font-size-large;  margin-bottom: 0; line-height: 1.2; font-weight: normal; }
-h4 { font-size: $font-size-medium; margin-bottom: 0; } // 100%
-h5 { font-size: $font-size-normal; }
+h1 { font-size: $font-size-enormous; letter-spacing: -1px; }
+h2 { font-size: $font-size-huge;     letter-spacing: -1px; }
+h3 { font-size: $font-size-xlarge; }
+h4 { font-size: $font-size-large; } 
+h5 { font-size: $font-size-medium; }
 h6 { font-size: $font-size-normal; }
 
 ul, ol { padding-left: 2.15em; }
@@ -101,24 +101,31 @@ nav ul, nav ol {
 
 a {
     color: $link-color;
-}
+    text-decoration: none;
+    
+    &:hover {
+        color: $link-hover-color;
+        text-decoration: underline;
+    }
 
-a:visited {
-    color: $link-visited-color;
-}
+    &:active, &:focus {
+      color: $link-active-color;
+      text-decoration: underline;
+    }
 
-a:hover {
-    color: $link-hover-color;
-}
-
-a:focus {
-    outline: thin dotted;
+//    &:visited {
+//        color: $link-visited-color;
+//    }
+//
+//    &:focus {
+//        outline: thin dotted;
+//    }
 }
 
 // Improve readability when focused and hovered in all browsers: h5bp.com/h
 a:hover, a:active {
     outline: 0;
-    text-decoration: none;
+//    text-decoration: none;
 }
 
 /* --------------------------------------------------------------------------

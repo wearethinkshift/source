@@ -100,11 +100,11 @@
 // doesn't include MS Support
 @mixin background-linear-gradient($values) {
 
-	background: -webkit-linear-gradient(#{$values});
-	background:    -moz-linear-gradient(#{$values});
-	background:     -ms-linear-gradient(#{$values});
-	background:      -o-linear-gradient(#{$values});
-	background:         linear-gradient(#{$values});
+	background-image: -webkit-linear-gradient(#{$values});
+	background-image:    -moz-linear-gradient(#{$values});
+	background-image:     -ms-linear-gradient(#{$values});
+	background-image:      -o-linear-gradient(#{$values});
+	background-image:         linear-gradient(#{$values});
 
 }
 

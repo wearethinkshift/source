@@ -1,22 +1,22 @@
-// =============================================================================
-// Config.scss
-// -----------
-// =============================================================================
+//  =============================================================================
+//  Config.scss
+//  -----------
+//  =============================================================================
 
 
 
-/* --------------------------------------------------------------------------
-   Browser Support
-   -------------------------------------------------------------------------- */
-   $supports-ie8: false;
-   $supports-ie7: false;
-   $supports-ie6: false;
-   
-
- /* --------------------------------------------------------------------------
-    Colors
-    -------------------------------------------------------------------------- */
+//  --------------------------------------------------------------------------
+//  Browser Support
+//  --------------------------------------------------------------------------
+    $supports-ie8: false;
+    $supports-ie7: false;
+    $supports-ie6: false;
     
+    
+//  --------------------------------------------------------------------------
+//  Colors
+//  --------------------------------------------------------------------------
+
     // Base Colors
     $red:    #d10000;
     $orange: #ff6622;
@@ -25,7 +25,7 @@
     $blue:   #1133cc;
     $indigo: #220066;
     $violet: #330044;
-    
+
     // Shades
     $white:      hsl(0,0,100%); // #fff
     $silver:     hsl(0,0, 80%); // #ccc
@@ -33,49 +33,51 @@
     $gray:       hsl(0,0, 40%); // #666
     $dark-gray:  hsl(0,0, 20%); // #333
     $black:      hsl(0,0,  0%); // #000
-    
+
     // Color Applications
     $selection-color: #b3d4fc;
-    $link-color: $blue;
-    $link-visited-color: $indigo;
-    $link-hover-color: $blue;
     
+    // Link Colors
+    $link-color: darken($selection-color, 35%);
+    $link-active-color: darken($selection-color, 50%);
+    $link-hover-color: darken($selection-color, 25%);
+
     $light-yellow: lighten($yellow, 10%);
-    
-    // Emotional
-//    $message:; // grey
-//    $alert:; // red
-//    $warning:; // amber
-//    $info:; // blue
-//    $success:; // green
+
+    // Status
+    $primary: #ef5223; // Think Shift Rorange
+    $info: darken($blue, 5%); // blue
+    $alert: darken($red, 5%); // red
+    $warning: darken($yellow, 20%); // amber
+    $confirm: darken($green, 15%); // green
    
- /* --------------------------------------------------------------------------
-    Fonts and Sizes
-    -------------------------------------------------------------------------- */
+//  --------------------------------------------------------------------------
+//  Fonts and Sizes
+//  --------------------------------------------------------------------------
     
     // Base Font Size is calculated based on the browser default: 16px.
     // 16 x 0.75 = 12px which becomes the new base font for the entire document.
     // Base font is set on the body element, so all percentages of font sizes
     // are relative to 12px. So: p { font-size: 75% } = 12 * 0.75 = 9px.
-    $font-size-base:      75%; // 12px
+    $font-size-base:      12px; // 12px
     
     // Relative to the base (defaults to 12px)
-    $font-size-xsmall:    50%; // 6px
-    $font-size-small:     75%; // 9px
-    $font-size-fine:      90%; // 11px (ish)
-    $font-size-normal:   100%; // 12px
-    $font-size-medium:   125%; // 15px
-    $font-size-large:    150%; // 18px
-    $font-size-xlarge:   175%; // 21px
-    $font-size-xxlarge:  200%; // 24px
-    $font-size-huge:     250%; // 30px
-    $font-size-enormous: 300%; // 36px
+    $font-size-xsmall:    9px;
+    $font-size-small:    10px;
+    $font-size-fine:     11px;
+    $font-size-normal:   12px;
+    $font-size-medium:   13px;
+    $font-size-large:    14px;
+    $font-size-xlarge:   18px;
+    $font-size-xxlarge:  24px;
+    $font-size-huge:     30px;
+    $font-size-enormous: 36px;
     
     // Core fonts
     $font-serif:      serif;
     $font-sans-serif: sans-serif;
     $font-monospace:  monospace;
-
+    
     // Base Font Style is "sans-serif" so the user agent chooses their default.
     // Macs = "Helvetica", Windows = "Arial". Everyone's happy. Plus it's short.    
     $font-family-base: $font-sans-serif;
@@ -88,7 +90,7 @@
     // Don't use black.
     $font-color-base: $dark-gray;
     
-/* --------------------------------------------------------------------------
-   Typography
-   -------------------------------------------------------------------------- */
-   $line-height-base: 1.4em;
+//  --------------------------------------------------------------------------
+//  Typography
+//  -------------------------------------------------------------------------- */
+    $line-height-base: 1.4em;
