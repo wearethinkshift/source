@@ -2,15 +2,16 @@
 // Buttons.scss
 // ------------
 // =============================================================================
-$default-button-color: darken($silver, 10%);
+$default-button-color: lighten($silver, 10%);
 $default-button-border-radius: 2px;
+$default-button-text-color: darken($light-gray, 10%);
 //$default-primary-button-color: ;
 
 // Depends on base/mixins
 @mixin button-color($color: $default-button-color, $gradient:true) {
 
   background-color: $color;
-  border-color: darken($color, 10%);
+  border-color: darken($color, 5%);
   @if $gradient == true {
     @include background-linear-gradient("top, #{lighten($color, 10%)}, #{$color}");
   }
@@ -20,14 +21,15 @@ $default-button-border-radius: 2px;
 // Base Button
 .btn {
     
-  font-weight: bold;
-  color: white;
+//  font-weight: bold;
+  color: $default-button-text-color;
+  font-size: ($font-size-medium);
   border: 1px solid;
-  padding: 0.50em 1em;
+  padding: 0.35em 1em;
   text-decoration: none;
   
   @include button-color;
-  @include text-shadow(0px -1px 0px rgba(0,0,0,0.25));
+  @include text-shadow(0px 1px 0px rgba(255,255,255,0.5));
   @include box-shadow("0px 0px 3px rgba(0,0,0,0.05), inset 0px 1px 0px rgba(255,255,255,0.8), 0px 1px 1px rgba(0,0,0,0.25)");
   @include border-radius($default-button-border-radius);
   @include display-inline-block;
@@ -37,7 +39,7 @@ $default-button-border-radius: 2px;
     position: relative;
     z-index: 1;
     
-    color: white;
+    color: $default-button-text-color;
     @include button-color(lighten($default-button-color, 5%));
   
   }
@@ -46,14 +48,14 @@ $default-button-border-radius: 2px;
     
     position: relative;
     z-index: 1;
-    color: darken(white, 10%);
+    color: darken($light-gray, 10%);
     @include button-color(darken($default-button-color, 15%));
     @include box-shadow("inset 0px 1px 3px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.8)")
     
   }
   
   &:visited {
-    color: white;
+    color: $default-button-text-color;
   }
   
   // Modified Buttons
@@ -63,10 +65,12 @@ $default-button-border-radius: 2px;
   }
   
   &.btn-small {
-    font-size: $font-size-small;
-    padding: 2px 5px;
-    line-height: 1.2;
+    font-size: $font-size-fine;
+    padding: 0.1em 0.5em;
   }
+  
+  // Alternate Button Styles
+  
   
 }
 

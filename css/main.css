@@ -112,20 +112,18 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 250%;
-  margin-bottom: 0.3em;
   line-height: 1.2; }
 
 h2 {
   font-size: 175%;
   margin-bottom: 0;
-  line-height: 1.2;
-  font-style: italic; }
+  line-height: 1.2; }
 
 h3 {
   font-size: 150%;
-  font-weight: normal;
-  font-style: italic;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  line-height: 1.2;
+  font-weight: normal; }
 
 h4 {
   font-size: 125%;
@@ -320,55 +318,130 @@ table {
 td {
   vertical-align: top; }
 
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Image replacement
+ */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden; }
+  .ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%; }
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+.hidden {
+  display: none !important;
+  visibility: hidden; }
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+  .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+    /*
+     * Extends the .visuallyhidden class to allow the element to be focusable
+     * when navigated to via the keyboard: h5bp.com/p
+     */
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto; }
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+.invisible {
+  visibility: hidden; }
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+.clearfix:after {
+  clear: both; }
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
 .btn {
-  font-weight: bold;
-  color: white;
+  color: gray;
+  font-size: 125%;
   border: 1px solid;
-  padding: 0.50em 1em;
+  padding: 0.35em 1em;
   text-decoration: none;
-  background-color: #b3b3b3;
-  border-color: #999999;
-  background: -webkit-linear-gradient(top, #cccccc, #b3b3b3);
-  background: -moz-linear-gradient(top, #cccccc, #b3b3b3);
-  background: -ms-linear-gradient(top, #cccccc, #b3b3b3);
-  background: -o-linear-gradient(top, #cccccc, #b3b3b3);
-  background: linear-gradient(top, #cccccc, #b3b3b3);
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+  background-color: #e6e6e6;
+  border-color: #d9d9d9;
+  background: -webkit-linear-gradient(top, white, #e6e6e6);
+  background: -moz-linear-gradient(top, white, #e6e6e6);
+  background: -ms-linear-gradient(top, white, #e6e6e6);
+  background: -o-linear-gradient(top, white, #e6e6e6);
+  background: linear-gradient(top, white, #e6e6e6);
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
   box-shadow: 0px 0px 3px rgba(0,0,0,0.05), inset 0px 1px 0px rgba(255,255,255,0.8), 0px 1px 1px rgba(0,0,0,0.25);
   border-radius: 2px;
   display: inline-block; }
   .btn:hover {
     position: relative;
     z-index: 1;
-    color: white;
+    color: gray;
+    background-color: #f2f2f2;
+    border-color: #e6e6e6;
+    background: -webkit-linear-gradient(top, white, #f2f2f2);
+    background: -moz-linear-gradient(top, white, #f2f2f2);
+    background: -ms-linear-gradient(top, white, #f2f2f2);
+    background: -o-linear-gradient(top, white, #f2f2f2);
+    background: linear-gradient(top, white, #f2f2f2); }
+  .btn:active, .btn:focus {
+    position: relative;
+    z-index: 1;
+    color: gray;
     background-color: #bfbfbf;
-    border-color: #a6a6a6;
+    border-color: #b3b3b3;
     background: -webkit-linear-gradient(top, #d9d9d9, #bfbfbf);
     background: -moz-linear-gradient(top, #d9d9d9, #bfbfbf);
     background: -ms-linear-gradient(top, #d9d9d9, #bfbfbf);
     background: -o-linear-gradient(top, #d9d9d9, #bfbfbf);
-    background: linear-gradient(top, #d9d9d9, #bfbfbf); }
-  .btn:active, .btn:focus {
-    position: relative;
-    z-index: 1;
-    color: #e6e6e6;
-    background-color: #8c8c8c;
-    border-color: #737373;
-    background: -webkit-linear-gradient(top, #a6a6a6, #8c8c8c);
-    background: -moz-linear-gradient(top, #a6a6a6, #8c8c8c);
-    background: -ms-linear-gradient(top, #a6a6a6, #8c8c8c);
-    background: -o-linear-gradient(top, #a6a6a6, #8c8c8c);
-    background: linear-gradient(top, #a6a6a6, #8c8c8c);
+    background: linear-gradient(top, #d9d9d9, #bfbfbf);
     box-shadow: inset 0px 1px 3px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.8); }
   .btn:visited {
-    color: white; }
+    color: gray; }
   .btn.btn-large {
     font-size: 125%;
     padding: 0.75em 1.2em; }
   .btn.btn-small {
-    font-size: 75%;
-    padding: 2px 5px;
-    line-height: 1.2; }
+    font-size: 90%;
+    padding: 0.1em 0.5em; }
 
 .btn-group {
   overflow: hidden; }
@@ -386,7 +459,7 @@ td {
 .icon:before, [data-icon]:before {
   outline: 1px dotted red;
   display: inline-block;
-  margin-right: 5px;
+  margin-right: 0.5em;
   width: 16px;
   height: 16px;
   content: ".";
