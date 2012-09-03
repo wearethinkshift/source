@@ -10,13 +10,30 @@ $button-border-style: solid;
 // Depends on base/mixins
 @mixin button-color($color: $default-button-color, $gradient:true) {
   
+  $button-border-color: darken($color, 10%);
+  
   // set a base color
   background: $color;
-  border: $button-border-width $button-border-style darken($color, 10%);
+  border: $button-border-width $button-border-style $button-border-color;
   
   // gradient
   @if $gradient == true {
     @include background-linear-gradient("top, lighten($color, 10%), $color");
+  }
+  
+  // Hover
+  &:hover{
+    
+    // for the button group stuff
+    position:relative;
+    z-index:1;
+    
+    background-color: lighten($color, 10%);
+    @if $gradient == true {
+      @include background-linear-gradient("top, lighten($color, 20%), lighten($color, 10%)");
+    }
+    
+    
   }
   
 }
