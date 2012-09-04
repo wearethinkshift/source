@@ -4,7 +4,6 @@
 // =============================================================================
 
 
-// Horizontal Navigation
 %nav {
   
   font-size: $font-size-large;
@@ -14,7 +13,7 @@
   }
   
   a {
-    padding: 5px 10px;
+    padding: 0.45em 1em;
     color: $gray;
     
     &:hover {
@@ -29,6 +28,7 @@
   
 }
 
+// horizontal navigation
 .nav-h {
   @extend %nav;
   @extend .clearfix;
@@ -46,6 +46,7 @@
   
 }
 
+// vertical navigation
 .nav-v {
   @extend %nav;
   
@@ -53,6 +54,33 @@
     border-top: 1px solid lighten($silver, 10%);
     &:first-child {
       border: none;
+    }
+  }
+  
+}
+
+.nav-bar {
+  @extend .nav-h;
+  
+  border: 1px solid lighten($silver, 10%);
+  border-bottom-color: $silver;
+  background: lighten($silver, 18%);
+  padding: 5px; 
+  
+  @include border-radius(5px); 
+  @include box-shadow("0px 1px 3px rgba(0,0,0,0.05), 0px 1px 1px rgba(0,0,0,0.1)");
+  
+  li {
+    border:none;
+  }
+  
+  a {
+    &:hover, &:active, &:focus {
+      @include box-shadow(inset 0px 0px 3px rgba(0,0,0,0.25));
+      @include border-radius(4px);
+    }
+    &:active, &:focus {
+      background: lighten($silver, 10%);
     }
   }
   

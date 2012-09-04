@@ -363,12 +363,12 @@ td {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.clearfix:before, .nav-h:before, .clearfix:after, .nav-h:after {
+.clearfix:before, .nav-h:before, .nav-bar:before, .clearfix:after, .nav-h:after, .nav-bar:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
-.clearfix:after, .nav-h:after {
+.clearfix:after, .nav-h:after, .nav-bar:after {
   clear: both; }
 
 /*
@@ -596,27 +596,42 @@ td {
   overflow: hidden;
   text-indent: -100%; }
 
-.nav-h, .nav-v {
+.nav-h, .nav-bar, .nav-v {
   font-size: 14px; }
-  .nav-h li, .nav-v li, .nav-h a, .nav-v a {
+  .nav-h li, .nav-bar li, .nav-v li, .nav-h a, .nav-bar a, .nav-v a {
     display: block; }
-  .nav-h a, .nav-v a {
-    padding: 5px 10px;
+  .nav-h a, .nav-bar a, .nav-v a {
+    padding: 0.45em 1em;
     color: #666666; }
-    .nav-h a:hover, .nav-v a:hover {
+    .nav-h a:hover, .nav-bar a:hover, .nav-v a:hover {
       text-decoration: none;
       color: #999999; }
-    .nav-h a:active, .nav-v a:active, .nav-h a:focus, .nav-v a:focus {
+    .nav-h a:active, .nav-bar a:active, .nav-v a:active, .nav-h a:focus, .nav-bar a:focus, .nav-v a:focus {
       color: #333333; }
 
-.nav-h li, .nav-h a {
+.nav-h li, .nav-bar li, .nav-h a, .nav-bar a {
   float: left; }
-.nav-h li {
+.nav-h li, .nav-bar li {
   border-left: 1px solid #e6e6e6; }
-  .nav-h li:first-child {
+  .nav-h li:first-child, .nav-bar li:first-child {
     border: none; }
 
 .nav-v li {
   border-top: 1px solid #e6e6e6; }
   .nav-v li:first-child {
     border: none; }
+
+.nav-bar {
+  border: 1px solid #e6e6e6;
+  border-bottom-color: #cccccc;
+  background: #fafafa;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.05), 0px 1px 1px rgba(0,0,0,0.1); }
+  .nav-bar li {
+    border: none; }
+  .nav-bar a:hover, .nav-bar a:active, .nav-bar a:focus {
+    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 4px; }
+  .nav-bar a:active, .nav-bar a:focus {
+    background: #e6e6e6; }
