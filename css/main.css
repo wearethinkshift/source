@@ -20,9 +20,9 @@ audio:not([controls]) {
    Document
    ========================================================================== */
 html {
-  font-size: 12px;
-  -webkit-text-size-adjust: 12px;
-  -ms-text-size-adjust: 12px; }
+  font-size: 13px;
+  -webkit-text-size-adjust: 13px;
+  -ms-text-size-adjust: 13px; }
 
 html, button, input, select, textarea {
   font-family: sans-serif;
@@ -334,6 +334,12 @@ td {
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
+.container {
+  width: 960px;
+  padding: 20px;
+  margin: 0 auto;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25); }
+
 .btn {
   color: #666666;
   font-size: 14px;
@@ -607,3 +613,18 @@ td {
 .nav-menu li:last-child a {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px; }
+
+.media {
+  overflow: hidden;
+  padding: 10px; }
+  .media img.media-head {
+    display: block; }
+  .media .media-head {
+    float: left;
+    margin-right: 10px; }
+  .media .media-head-alt {
+    float: right;
+    margin-left: 10px; }
+  .media .media-body {
+    overflow: hidden;
+    position: relative; }

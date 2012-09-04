@@ -1,3 +1,45 @@
 // =============================================================================
 // Media.scss
 // =============================================================================
+$default-media-spacing: 10px;
+
+@mixin media-flow-context {
+
+	// outline: 1px dotted red;
+	overflow: hidden;
+
+	@if $supports-ie7 == true {
+		// Hacks for < IE7
+		*overflow: visible;
+		*zoom: 1;
+	}
+
+}
+
+.media {
+
+	@include media-flow-context;
+	padding: $default-media-spacing;
+
+	img.media-head {
+		display: block;
+	}
+
+	.media-head {
+		float: left;
+		margin-right: $default-media-spacing;
+	}
+
+	.media-head-alt {
+		float: right;
+		margin-left: $default-media-spacing;
+	}
+
+	.media-body {
+
+		@include media-flow-context;
+		position: relative;
+
+	}
+
+}

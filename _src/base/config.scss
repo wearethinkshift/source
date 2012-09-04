@@ -59,7 +59,7 @@
     // 16 x 0.75 = 12px which becomes the new base font for the entire document.
     // Base font is set on the body element, so all percentages of font sizes
     // are relative to 12px. So: p { font-size: 75% } = 12 * 0.75 = 9px.
-    $font-size-base:      12px; // 12px
+    $font-size-base:      13px;
     
     // Relative to the base (defaults to 12px)
     $font-size-xsmall:    9px;
