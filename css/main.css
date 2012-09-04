@@ -596,17 +596,17 @@ td {
   overflow: hidden;
   text-indent: -100%; }
 
-.nav-h, .nav-bar, .nav-v {
+.nav-h, .nav-bar, .nav-v, .nav-menu {
   font-size: 14px; }
-  .nav-h li, .nav-bar li, .nav-v li, .nav-h a, .nav-bar a, .nav-v a {
+  .nav-h li, .nav-bar li, .nav-v li, .nav-menu li, .nav-h a, .nav-bar a, .nav-v a, .nav-menu a {
     display: block; }
-  .nav-h a, .nav-bar a, .nav-v a {
+  .nav-h a, .nav-bar a, .nav-v a, .nav-menu a {
     padding: 0.45em 1em;
     color: #666666; }
-    .nav-h a:hover, .nav-bar a:hover, .nav-v a:hover {
+    .nav-h a:hover, .nav-bar a:hover, .nav-v a:hover, .nav-menu a:hover {
       text-decoration: none;
       color: #999999; }
-    .nav-h a:active, .nav-bar a:active, .nav-v a:active, .nav-h a:focus, .nav-bar a:focus, .nav-v a:focus {
+    .nav-h a:active, .nav-bar a:active, .nav-v a:active, .nav-menu a:active, .nav-h a:focus, .nav-bar a:focus, .nav-v a:focus, .nav-menu a:focus {
       color: #333333; }
 
 .nav-h li, .nav-bar li, .nav-h a, .nav-bar a {
@@ -616,18 +616,20 @@ td {
   .nav-h li:first-child, .nav-bar li:first-child {
     border: none; }
 
-.nav-v li {
+.nav-v li, .nav-menu li {
   border-top: 1px solid #e6e6e6; }
-  .nav-v li:first-child {
+  .nav-v li:first-child, .nav-menu li:first-child {
     border: none; }
 
-.nav-bar {
+.nav-bar, .nav-menu {
   border: 1px solid #e6e6e6;
   border-bottom-color: #cccccc;
   background: #fafafa;
-  padding: 5px;
   border-radius: 5px;
   box-shadow: 0px 1px 3px rgba(0,0,0,0.05), 0px 1px 1px rgba(0,0,0,0.1); }
+
+.nav-bar {
+  padding: 5px; }
   .nav-bar li {
     border: none; }
   .nav-bar a:hover, .nav-bar a:active, .nav-bar a:focus {
@@ -635,3 +637,14 @@ td {
     border-radius: 4px; }
   .nav-bar a:active, .nav-bar a:focus {
     background: #e6e6e6; }
+
+.nav-menu a:hover {
+  background: #fcfcfc; }
+.nav-menu a:active, .nav-menu a:focus {
+  background: #f2f2f2; }
+.nav-menu li:first-child a {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px; }
+.nav-menu li:last-child a {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px; }
