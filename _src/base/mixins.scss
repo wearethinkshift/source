@@ -5,14 +5,14 @@
 // hacks and other gotchas.
 // =============================================================================
 
-/* --------------------------------------------------------------------------
-   Vendor Prefix
-   -------------
-   Allows the creation of any vendor prefix property, as long as they're
-   all the same property for the different vendor prefixes.
-   for multiple properties, use a string:
-   @include -v(box-shadow, "0px 1px 0px black, inset 0px 1px 0px white");
-   -------------------------------------------------------------------------- */
+// --------------------------------------------------------------------------
+// Vendor Prefix
+// -------------
+// Allows the creation of any vendor prefix property, as long as they're
+// all the same property for the different vendor prefixes.
+// for multiple properties, use a string:
+// @include -v(box-shadow, "0px 1px 0px black, inset 0px 1px 0px white");
+// --------------------------------------------------------------------------
 @mixin -v($property, $values, $webkit:true, $moz:true, $ms:true, $o:true) {
   
   @if $webkit == true { -webkit-#{$property}: #{$values}; }
@@ -25,36 +25,36 @@
 }
 
 
-/* --------------------------------------------------------------------------
-   Worth Noting:
-   -------------
-   -ms and -o both implemented box-shadow, text-shadow and border-radius
-   without vendor prefixes. Old versions of Mozilla and Webkit used the
-   prefix, and their numbers are close to being 0, so to save some space
-   in the css, these mixins disable support for vendor prefixes by default.
-   This can be overridden in each mixin: @include box-shadow(..., true, true)
-   will enable vendor prefixes for box shadow for webkit and mozilla.
-   
-   The order of params will always be: webkit, moz, ms, o (longest to shortest)
-   -------------------------------------------------------------------------- */
+// --------------------------------------------------------------------------
+// Worth Noting:
+// -------------
+// -ms and -o both implemented box-shadow, text-shadow and border-radius
+// without vendor prefixes. Old versions of Mozilla and Webkit used the
+// prefix, and their numbers are close to being 0, so to save some space
+// in the css, these mixins disable support for vendor prefixes by default.
+// This can be overridden in each mixin: @include box-shadow(..., true, true)
+// will enable vendor prefixes for box shadow for webkit and mozilla.
+// 
+// The order of params will always be: webkit, moz, ms, o (longest to shortest)
+// --------------------------------------------------------------------------
 
-/* --------------------------------------------------------------------------
-   Box Shadow
-   -------------------------------------------------------------------------- */
+// --------------------------------------------------------------------------
+// Box Shadow
+// --------------------------------------------------------------------------
 @mixin box-shadow($values, $webkit:false, $moz:false) {
 	@include -v(box-shadow, $values, $webkit, $moz, false, false);
 }
 
-/* --------------------------------------------------------------------------
-   Text Shadow
-   -------------------------------------------------------------------------- */
+// --------------------------------------------------------------------------
+// Text Shadow
+// --------------------------------------------------------------------------
 @mixin text-shadow($values, $webkit:false, $moz:false) {
 	@include -v(text-shadow, $values, $webkit, $moz, false, false);
 }
 
-/* --------------------------------------------------------------------------
-   Border Radius
-   -------------------------------------------------------------------------- */
+// --------------------------------------------------------------------------
+// Border Radius
+// --------------------------------------------------------------------------
 @mixin border-radius($values, $webkit:false, $moz:false) {
 	@include -v(border-radius, $values, $webkit, $moz, false, false);
 }
@@ -75,9 +75,9 @@
   @include -v(border-bottom-right-radius, $value, $webkit, $moz, false, false);
 }
 
-/* --------------------------------------------------------------------------
-   Border Radius Utility
-   -------------------------------------------------------------------------- */
+// --------------------------------------------------------------------------
+// Border Radius Utility
+// --------------------------------------------------------------------------
 // lets you generate individual radius calls
 // by optionally placing in values in the following
 // order: top left, top right, bottom right, bottom left
@@ -92,9 +92,9 @@
 }
 
 
-/* --------------------------------------------------------------------------
-   Linear Gradient
-   -------------------------------------------------------------------------- */
+// --------------------------------------------------------------------------
+// Linear Gradient
+// --------------------------------------------------------------------------
 // doesn't set a fallback
 // doesn't include old webkit gradient
 // doesn't include MS Support
@@ -111,9 +111,9 @@
 // Pulling some mixins from Twitter Bootstrap (and converting to sass):
 // https://github.com/twitter/bootstrap/blob/master/less/mixins.less
 
-/* --------------------------------------------------------------------------
-   Opacity
-   -------------------------------------------------------------------------- */
+// --------------------------------------------------------------------------
+// Opacity
+// --------------------------------------------------------------------------
 @mixin opacity($opacity) {
   opacity: $opacity / 100;
   @if $supports-ie8 or $supports-ie7 {
@@ -122,9 +122,9 @@
 }
 
 
-/* --------------------------------------------------------------------------
-   Inline Block (with IE7 compatability)
-   -------------------------------------------------------------------------- */
+// --------------------------------------------------------------------------
+// Inline Block (with IE7 compatability)
+// --------------------------------------------------------------------------
 @mixin display-inline-block($whitespace:false) {
   display: inline-block;
 	@if $supports-ie7 == true {
