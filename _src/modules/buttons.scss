@@ -2,7 +2,7 @@
 // Buttons.scss
 // ------------
 // =============================================================================
-$default-button-color: lighten($silver, 10%);
+$default-button-color: lighten($silver, 15%);
 $default-button-border-radius: 2px;
 $default-button-text-color: darken($light-gray, 20%);
 
@@ -21,10 +21,10 @@ $default-buttons-have-gradient: true;
 @mixin button-color($color: $default-button-color, $gradient:$default-buttons-have-gradient) {
 
   background-color: $color;
-  border-color: darken($color, 5%);
-  border-bottom-color: darken($color, 20%);
+  border-color: darken($color, 15%);
+  border-bottom-color: darken($color, 25%);
   @if $gradient == true {
-    @include background-linear-gradient("top, #{lighten($color, 10%)}, #{$color}");
+    @include background-linear-gradient("top, #{$color}, #{darken($color, 5%)}");
   }
   
 }
@@ -32,17 +32,17 @@ $default-buttons-have-gradient: true;
 // Base Button
 .btn {
     
-//  font-weight: bold;
+  font-weight: bold;
   color: $default-button-text-color;
-  font-size: $font-size-large;
+  font-size: $font-size-medium;
   border: 1px solid;
-  padding: 0.45em 1em;
+  padding: 0.5em 1em;
   text-decoration: none;
   text-align: center;
   
   @include button-color;
   @include text-shadow(0px 1px 0px rgba(255,255,255,0.35));
-  @include box-shadow("0px 0px 3px rgba(0,0,0,0.05), inset 0px 1px 0px rgba(255,255,255,0.5), 0px 1px 1px rgba(0,0,0,0.15)");
+  @include box-shadow(0px 1px 1px rgba(0,0,0,0.15));
   @include border-radius($default-button-border-radius);
   @include display-inline-block;
   

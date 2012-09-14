@@ -18,11 +18,11 @@
 //  --------------------------------------------------------------------------
 
     // Base Colors
-    $red:    #d10000;
+    $red:    #D01616;
     $orange: #ff6622;
-    $yellow: #ffda21;
-    $green:  #33dd00;
-    $blue:   #1133cc;
+    $yellow: #E4C419;
+    $green:  #3DA20E;
+    $blue:   #196AE4;
     $indigo: #220066;
     $violet: #330044;
 
@@ -46,10 +46,10 @@
 
     // Status
     $primary: #ef5223; // Think Shift Rorange
-    $info: darken($blue, 5%); // blue
-    $alert: darken($red, 5%); // red
-    $warning: darken($yellow, 20%); // amber
-    $confirm: darken($green, 15%); // green
+    $info: $blue; // blue
+    $alert: $red; // red
+    $warning: $yellow; // amber
+    $confirm: $green; // green
    
 //  --------------------------------------------------------------------------
 //  Fonts and Sizes
