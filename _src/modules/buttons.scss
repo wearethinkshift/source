@@ -152,20 +152,6 @@ $default-buttons-have-gradient: true;
       @include button-color(darken($default-confirm-button-color, 5%));
     }
   }
-  
-  // removes gradient
-  &.btn-flat {
-    background-image: none;
-    @include box-shadow(none);
-    
-    &:hover {
-      background-image: none;
-    }
-    &:active {
-      background-image: none;
-    }
-  }
-  
 }
 
 .btn-group {

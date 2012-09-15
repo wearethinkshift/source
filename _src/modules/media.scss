@@ -28,6 +28,7 @@ $default-media-spacing: 10px;
 	.media-head {
 		float: left;
 		margin-right: $default-media-spacing;
+    
 	}
 
 	.media-head-alt {
@@ -39,6 +40,10 @@ $default-media-spacing: 10px;
 
 		@include media-flow-context;
 		position: relative;
+    
+    :first-child {
+      margin-top: 0;
+    }
 
 	}
 
