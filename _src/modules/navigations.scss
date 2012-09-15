@@ -111,11 +111,11 @@
   }
   
   li:first-child a {
-    @include border-radius-utility(5px, false, false, 5px);
+    @include border-radius-utility(5px, 5px, false, false);
   }
   
   li:last-child a {
-    @include border-radius-utility(false, 5px, 5px, false);
+    @include border-radius-utility(false, false, 5px, 5px);
   }
   
 }
