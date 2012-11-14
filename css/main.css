@@ -381,9 +381,10 @@ td {
   color: #666666;
   font-size: 13px;
   border: 1px solid;
-  padding: 0.5em 1em;
+  padding: 0.55em 1em;
   text-decoration: none;
   text-align: center;
+  line-height: 1;
   background-color: #f2f2f2;
   border-color: #cccccc;
   border-bottom-color: #b3b3b3;
@@ -423,14 +424,21 @@ td {
     background-image: -o-linear-gradient(top, #cccccc, #bfbfbf);
     background-image: linear-gradient(top, #cccccc, #bfbfbf);
     box-shadow: inset 0px 1px 3px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.8); }
+  .btn.icon:before, .btn[data-icon]:before {
+    margin-right: 1em; }
   .btn.btn-large {
     font-size: 18px;
     padding: 0.5em 1em; }
   .btn.btn-small {
     padding: 0.25em 0.75em; }
+    .btn.btn-small.icon:before, .btn.btn-small[data-icon]:before {
+      margin-right: 0.75em; }
   .btn.btn-mini {
     font-size: 11px;
-    padding: 0.1em 0.5em; }
+    font-weight: normal;
+    padding: 0.25em 0.5em; }
+    .btn.btn-mini.icon:before, .btn.btn-mini[data-icon]:before {
+      margin-right: 0.5em; }
   .btn.btn-primary, .btn.btn-info, .btn.btn-alert, .btn.btn-warning, .btn.btn-confirm {
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
     color: white; }
@@ -569,8 +577,6 @@ td {
       background-image: -ms-linear-gradient(top, #348b0c, #2b730a);
       background-image: -o-linear-gradient(top, #348b0c, #2b730a);
       background-image: linear-gradient(top, #348b0c, #2b730a); }
-  .btn.icon:before, .btn[data-icon]:before {
-    margin-right: 1em; }
 
 .btn-group .btn {
   float: left;
@@ -666,23 +672,6 @@ td {
   .nav-menu li:last-child a {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px; }
-
-.media {
-  overflow: hidden;
-  padding: 10px; }
-  .media img.media-head {
-    display: block; }
-  .media .media-head {
-    float: left;
-    margin-right: 10px; }
-  .media .media-head-alt {
-    float: right;
-    margin-left: 10px; }
-  .media .media-body {
-    overflow: hidden;
-    position: relative; }
-    .media .media-body :first-child {
-      margin-top: 0; }
 
 .field {
   margin-bottom: 10px;
@@ -791,3 +780,24 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
   width: 952px; }
   .grid .span12.field {
     width: 942px; }
+
+.media {
+  overflow: hidden;
+  padding: 10px; }
+  .media img.media-head {
+    display: block; }
+  .media .media-head {
+    float: left;
+    margin-right: 10px; }
+  .media .media-head-alt {
+    float: right;
+    margin-left: 10px; }
+  .media .media-body {
+    overflow: hidden;
+    position: relative; }
+    .media .media-body :first-child {
+      margin-top: 0; }
+  .media .media-controls {
+    position: absolute;
+    top: 0;
+    right: 1px; }

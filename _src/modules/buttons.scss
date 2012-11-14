@@ -36,9 +36,10 @@ $default-buttons-have-gradient: true;
   color: $default-button-text-color;
   font-size: $font-size-medium;
   border: 1px solid;
-  padding: 0.5em 1em;
+  padding: 0.55em 1em;
   text-decoration: none;
   text-align: center;
+  line-height: 1;
   
   @include button-color;
   @include text-shadow(0px 1px 0px rgba(255,255,255,0.35));
@@ -72,6 +73,13 @@ $default-buttons-have-gradient: true;
 //    color: $default-button-text-color;
 //  }
   
+  // Dependency: data-icon
+  &.icon, &[data-icon] {
+    &:before {
+      margin-right: 1em;
+    }
+  }
+  
   // Modified Buttons
   &.btn-large {
     font-size: $font-size-xlarge;
@@ -81,11 +89,26 @@ $default-buttons-have-gradient: true;
   &.btn-small {
 //    font-size: $font-size-normal;
     padding: 0.25em 0.75em;
+    
+    // Dependency: data-icon
+    &.icon, &[data-icon] {
+      &:before {
+        margin-right: 0.75em;
+      }
+    }
   }
   
   &.btn-mini {
     font-size: $font-size-fine;
-    padding: 0.1em 0.5em;
+    font-weight: normal;
+    padding: 0.25em 0.5em;
+    
+    // Dependency: data-icon
+    &.icon, &[data-icon] {
+      &:before {
+        margin-right: 0.5em;
+      }
+    }
   }
   
   &%btn-status {
@@ -150,13 +173,6 @@ $default-buttons-have-gradient: true;
     }
     &:active {
       @include button-color(darken($default-confirm-button-color, 5%));
-    }
-  }
-  
-  // Dependency: data-icon
-  &.icon, &[data-icon] {
-    &:before {
-      margin-right: 1em;
     }
   }
 }
