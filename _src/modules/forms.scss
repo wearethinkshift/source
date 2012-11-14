@@ -45,3 +45,30 @@ textarea {
   }
   
 }
+
+
+::-webkit-input-placeholder {
+  opacity: 1;
+  -webkit-transition: opacity 0.15s linear;
+}
+:-moz-input-placeholder {
+  opacity: 1;
+  -moz-transition: opacity 0.15s linear;
+}
+:input-placeholder {
+  opacity: 1;
+  transition: opacity 0.15s linear;
+}
+
+
+input:focus, textarea:focus {
+  &::-webkit-input-placeholder {
+    opacity: 0;
+  }
+  &:-moz-input-placeholder {
+    opacity: 0;
+  }
+  &:input-placeholder {
+    opacity: 0;
+  }
+}

@@ -152,6 +152,13 @@ $default-buttons-have-gradient: true;
       @include button-color(darken($default-confirm-button-color, 5%));
     }
   }
+  
+  // Dependency: data-icon
+  &.icon, &[data-icon] {
+    &:before {
+      margin-right: 1em;
+    }
+  }
 }
 
 .btn-group {

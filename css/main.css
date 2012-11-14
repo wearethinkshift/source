@@ -62,7 +62,7 @@ body {
    Text Block Elements
    -------------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
-  margin: 0.75em 0 0.5em;
+  margin: 0.9em 0 0.3em;
   line-height: 1.2; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -78,8 +78,7 @@ h1 {
   font-size: 36px; }
 
 h2 {
-  font-size: 30px;
-  border-bottom: 1px solid #999999; }
+  font-size: 30px; }
 
 h3 {
   font-size: 24px;
@@ -115,7 +114,7 @@ dd {
 
 p, ul, ol {
   margin: 0.25em 0 1em;
-  line-height: 1.3; }
+  line-height: 1.5; }
 
 /* Navigation lists will not have bullets. */
 nav ul, nav ol {
@@ -566,6 +565,8 @@ td {
       background-image: -ms-linear-gradient(top, #348b0c, #2b730a);
       background-image: -o-linear-gradient(top, #348b0c, #2b730a);
       background-image: linear-gradient(top, #348b0c, #2b730a); }
+  .btn.icon:before, .btn[data-icon]:before {
+    margin-right: 1em; }
 
 .btn-group .btn {
   float: left;
@@ -707,6 +708,25 @@ textarea {
     color: #b4725e; }
     .actions a:hover {
       color: #ef5223; }
+
+::-webkit-input-placeholder {
+  opacity: 1;
+  -webkit-transition: opacity 0.15s linear; }
+
+:-moz-input-placeholder {
+  opacity: 1;
+  -moz-transition: opacity 0.15s linear; }
+
+:input-placeholder {
+  opacity: 1;
+  transition: opacity 0.15s linear; }
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+  opacity: 0; }
+input:focus:-moz-input-placeholder, textarea:focus:-moz-input-placeholder {
+  opacity: 0; }
+input:focus:input-placeholder, textarea:focus:input-placeholder {
+  opacity: 0; }
 
 .grid.grid6 .grid-column {
   float: left;
