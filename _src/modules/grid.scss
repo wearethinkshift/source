@@ -7,10 +7,12 @@
 // Grid Config
 // -----------------------------------------------------------------------------
 $grid-container-width: 960px!default; // the width of the grid container.
-$grid-columns:             6!default; // number of columns in the grid.
+$grid-columns:            12!default; // number of columns in the grid.
 $grid-padding:             0!default; // padding within a column.
-$grid-border:           none!default; // border-style for grid columns.
+//$grid-border-width:        0!default; // width of the border, for maths.
+//$grid-border:           none!default; // border-style for grid columns.
 $grid-spacing:          20px!default; // spacing in between grid columns.
+$form-field-padding:       0!default; // no form-grid compatability unless specified in forms.scss
 
 // -----------------------------------------------------------------------------
 // Grid Mixins
@@ -24,16 +26,15 @@ $grid-spacing:          20px!default; // spacing in between grid columns.
 // $namespace: optional namespace to greate new grid systems.
 @mixin grid-init($grid-container-width, $grid-columns, $namespace:"") {
 
-	// Margins
-	$margin: (floor($grid-spacing/2));
+	// Dimensions
+	$margin: (floor($grid-spacing/2)); // left and right margin.
+  
 
 	// Column Width.
 	// Subtract the width of the margin multiplied by the number of grid columns
 	// less two (first and last have no margins), then divide the remaining value
 	// and round it down.
-
-	// Example: (960 - (20 * (6-1 = 5) = 100) = 900) / 6 = 920/6 = 150
-	$column-width: floor(($grid-container-width - ($grid-spacing * ($grid-columns - 1)) )/$grid-columns);
+  $column-width: floor(($grid-container-width - ($grid-spacing * ($grid-columns - 1)) )/$grid-columns);
 
 	.#{$namespace}grid {
 
@@ -41,56 +42,62 @@ $grid-spacing:          20px!default; // spacing in between grid columns.
 		@extend .clearfix;
 
 		// build the classes.
-		&.#{$namespace}grid#{$grid-columns} {
-
-			.#{$namespace}grid-column {
-				float: left;
+		.#{$namespace}column {
+			float: left;
 				
-				@if $column-width > 0 {
-					width: $column-width;
-				}
+			@if $column-width > 0 {
+				width: $column-width;
+			}
 				
-				@if $margin != 0 {
-					margin: 0 $margin;
-				}
+			@if $margin != 0 {
+				margin: 0 $margin;
+			}
 				
-				@if $grid-padding != 0 {
-					padding: $grid-padding;
-				}
-
-				@if $grid-border != none {
-					border: $grid-border;
-				}
-
-        &:first-child,
-				&.#{$namespace}grid-column-first {
-					margin-left: 0!important;
-				}
-
-        &:last-child,
-				&.#{$namespace}grid-column-last {
-					margin-right: 0!important;
-				}
-
+			@if $grid-padding != 0 {
+				padding: $grid-padding;
 			}
 
-			// we don't include span 1 because default column is the proper size.
-			@for $n from 2 to $grid-columns + 1 {
-				.#{$namespace}span#{$n} {
-					// width is the column width + spacing.
-					// |column|mm|column|
-					width: floor(($column-width * $n) + ($grid-spacing * ($n - 1)));
-				}
+      &:first-child,
+			&.#{$namespace}first {
+				margin-left: 0!important;
 			}
 
+      &:last-child,
+			&.#{$namespace}last {
+				margin-right: 0!important;
+			}
+        
+      @if $form-field-padding > 0 {
+        &.field {
+          padding: 0 $form-field-padding;
+        }
+      }
+        
 		}
 
+		// we don't include span 1 because default column is the proper size.
+		@for $n from 2 to $grid-columns + 1 {
+        
+      $span-width: floor(($column-width * $n) + ($grid-spacing * ($n - 1)));
+        
+			.#{$namespace}span#{$n} {
+				// width is the column width + spacing.
+				// |column|mm|column|
+				width: $span-width;
+          
+        // form field compatability.
+        @if $form-field-padding > 0 {
+          &.field {
+            // width = (column width - $form-field-padding) + spacing.
+            width: $span-width - ($form-field-padding * 2);
+          }
+        }
+			} 
+		}
 	}
-
 }
 
 // -----------------------------------------------------------------------------
 // Grid Styles
 // -----------------------------------------------------------------------------
 @include grid-init($grid-container-width, $grid-columns); // grid6
-@include grid-init(960, 8); // grid8
