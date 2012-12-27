@@ -34,6 +34,23 @@ textarea {
   max-width: 100%;
 }
 
+//select {
+//  -webkit-appearance: none;
+//  @extend .btn;
+//  
+//  &:active, &:focus {
+//    position: relative;
+//    text-decoration: none;
+//    z-index: 1;
+//    
+//    color: $default-button-text-color;
+//    @include button-color(lighten($default-button-color, 5%));
+//    @include box-shadow(0px 1px 1px rgba(0,0,0,0.15));
+//    border-color: $dark-gray;
+//  }
+//  
+//}
+
 .actions {
   padding: 20px;
   background: lighten($silver, 18%);

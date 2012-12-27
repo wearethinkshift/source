@@ -4,3 +4,14 @@
   margin: 0 auto;
   @include box-shadow(0px 1px 5px rgba(0,0,0,0.25));
 }
+
+.sample {
+  padding: 20px;
+  border: 2px dashed lighten($silver, 10%);
+  background: lighten($silver, 18%);
+  margin-bottom: 30px;
+  
+  &:hover {
+    background: white;
+  }
+}

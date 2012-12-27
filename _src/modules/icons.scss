@@ -14,14 +14,13 @@
 }
 
 %iconstyles {
-    @include display-inline-block;
     font-family: 'fonticons';
     font-style: normal;
     font-weight: normal;
     speak: none;
     text-decoration: inherit;
-    width: 1em;
     text-align: center;
+    line-height: 0;
 //    opacity: 0.8;
     
 }
@@ -41,5 +40,15 @@
     @extend %iconstyles;
     content: attr(data-icon-after);
     margin-left: 0.5em;
+  }
+}
+
+.nav-menu {
+  .icon-after, [data-icon-after] {
+    &:after {
+      display: inline-block;
+      float: right;
+      line-height: inherit;
+    }
   }
 }
