@@ -1,0 +1,174 @@
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Text Block Elements
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 { margin: 0.9em 0 0.2em; line-height: 1.1; }
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+  
+  &:first-child { margin-top: 0; }
+}
+
+h1 { font-size: $font-size-enormous; }
+h2 { font-size: $font-size-huge; }
+h3 { font-size: $font-size-xxlarge; margin-bottom: 0.25em; }
+h4 { font-size: $font-size-xlarge; } 
+h5 { font-size: $font-size-large; }
+h6 { font-size: $font-size-medium; }
+
+h4, h5, h6 { margin: 1em 0 0; line-height: 1; }
+h5, h6 { color: $gray; }
+h6 { font-style: italic; }
+
+ul, ol { padding-left: 2.15em; }
+dd     { margin-left: 40px; }
+
+p, ul, ol {
+  margin: 0.25em 0 1em;
+  line-height: 1.5;
+}
+
+/* Heading Combinations */
+h1+h2, h2+h3, h3+h4, h4+h5, h5+h6 {
+  margin-top: 0.3em;
+}
+
+
+/* Navigation lists will not have bullets. */
+nav ul, nav ol {
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Links
+   -------------------------------------------------------------------------- */
+
+a {
+    color: $link-color;
+    text-decoration: none;
+    
+    &:hover {
+        color: $link-hover-color;
+        text-decoration: underline;
+    }
+
+    &:active, &:focus {
+      color: $link-active-color;
+      text-decoration: underline;
+    }
+
+//    &:visited {
+//        color: $link-visited-color;
+//    }
+//
+//    &:focus {
+//        outline: thin dotted;
+//    }
+}
+
+// Improve readability when focused and hovered in all browsers: h5bp.com/h
+a:hover, a:active {
+    outline: 0;
+//    text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   Semantic Tags
+   -------------------------------------------------------------------------- */
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+blockquote {
+    margin: 1em 40px;
+}
+
+dfn {
+    font-style: italic;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $silver;
+    margin: 1em 0;
+    padding: 0;
+}
+
+ins {
+    background: $light-yellow;
+    color: $black;
+    text-decoration: none;
+}
+
+mark {
+    background: $yellow;
+    color: $black;
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+// Redeclare monospace font family: h5bp.com/j
+pre, code, kbd, samp {
+    font-family: $font-monospace;
+    font-size: 1em;
+
+    @if $supports-ie6 == true {
+        _font-family: 'courier new', $font-monospace; // < ie6
+    }
+}
+
+
+// Improve readability of pre-formatted text
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+q {
+    quotes: none;
+}
+
+q:before, q:after {
+    content: "";
+    content: none;
+}
+
+small {
+    font-size: $font-size-small;
+}
+
+// Position subscript and superscript content without affecting line-height: h5bp.com/k
+sub, sup {
+    font-size: $font-size-xsmall;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
