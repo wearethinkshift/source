@@ -1,17 +1,67 @@
-.container {
+.container { // 1000px total
   width: 960px;
-  padding: 20px;
+  padding: 0 20px;
   margin: 0 auto;
-  @include box-shadow(0px 1px 5px rgba(0,0,0,0.25));
 }
 
-.sample {
-  padding: 20px;
-  border: 2px dashed lighten($silver, 10%);
-  background: lighten($silver, 18%);
-  margin-bottom: 30px;
-  
-  &:hover {
-    background: white;
+.masthead {
+  min-height: 200px;
+  h1 {
+    font-size: ($font-size-enormous*1.5);
+    margin-top: 50px;
   }
 }
+
+.panel {
+  border: 1px solid lighten($silver, 5%);
+  margin-bottom: 20px;
+  padding: 20px;
+  @include border-radius(5px);
+  
+  &:hover, &:focus, &:active {
+     @include box-shadow(0px 1px 10px rgba(0,0,0,0.1));
+  }
+  
+  &:target {
+    @include box-shadow(0px 1px 10px rgba(0,0,0,0.1));
+  }
+  
+  header {
+    position: relative;
+    margin: -20px -20px 20px;
+    padding: 10px 20px;
+    border-bottom: 1px solid lighten($silver, 5%);
+    background: lighten($silver, 18%);
+    @include border-radius(4px 4px 0 0);
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-size: $font-size-large;
+      font-weight: normal;
+      color: $gray;
+      line-height: 1;
+      margin: 0;
+      @include text-shadow(0px 1px 0px rgba(255,255,255,1));
+    }
+    
+    .btn-close {
+      position: absolute;
+      right: 4px;
+      top: 4px;
+      background: none;
+      border: none;
+      @include box-shadow(none);
+    }
+    
+  }
+}
+
+//.sample {
+//  padding: 20px;
+//  border: 2px dashed lighten($silver, 10%);
+//  background: lighten($silver, 18%);
+//  margin-bottom: 30px;
+//  
+//  &:hover {
+//    background: white;
+//  }
+//}

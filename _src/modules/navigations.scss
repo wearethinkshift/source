@@ -2,8 +2,6 @@
 // Navigations.scss
 // ----------------
 // =============================================================================
-
-
 %nav {
   
   font-size: $font-size-medium;
@@ -89,7 +87,8 @@
   @extend .nav-h;
   @extend %menubar;
   
-  padding: 4px; 
+  margin: 0;
+  padding: 4px;
   
   li {
     border:none;
@@ -119,6 +118,8 @@
   @extend .nav-v;
   @extend %menubar;
   @include border-radius(5px);
+  
+  background: white;
   
   a {
     &:hover {

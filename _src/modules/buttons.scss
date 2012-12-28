@@ -32,11 +32,11 @@ $default-buttons-have-gradient: true;
 // Base Button
 .btn {
     
-  font-weight: bold;
+//  font-weight: bold;
   color: $default-button-text-color;
   font-size: $font-size-medium;
   border: 1px solid;
-  padding: 0.55em 1em;
+  padding: 0.5em 1em;
   text-decoration: none;
   text-align: center;
   line-height: 1;
@@ -109,6 +109,11 @@ $default-buttons-have-gradient: true;
         margin-right: 0.5em;
       }
     }
+  }
+  
+  &.btn-close {
+    content: 'x';
+    font-family: 'fonticons';
   }
   
   &%btn-status {
