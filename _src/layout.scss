@@ -1,18 +1,18 @@
 .container { // 1000px total
   padding: 0 20px;
   
-  @include breakpoint(handheld) {  
-    outline: 1px dashed green;
-  }
-  
-  @include breakpoint(tablet) {
-    outline: 1px dashed red;
-  }
+//  @include breakpoint(handheld) {  
+//    outline: 1px dashed green;
+//  }
+//  
+//  @include breakpoint(tablet) {
+//    outline: 1px dashed red;
+//  }
   
   @include breakpoint(monitor) {
     width: 960px;
     margin: 0 auto;
-    outline: 1px dashed blue;
+//    outline: 1px dashed blue;
   }
   
 }
