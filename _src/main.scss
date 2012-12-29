@@ -47,3 +47,29 @@
 // THEME
 // ==================================================
 @import "theme";
+
+body {
+  &:after {
+    padding: 5px;
+    display: block;
+    font-weight: bold;
+    background: lighten($silver, 10%);
+    color: $dark-gray;
+    opacity: 0.5;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    
+    @include breakpoint(handheld) {
+      content: 'handheld';
+    }
+
+    @include breakpoint(tablet) {
+      content: 'tablet';
+    }
+
+    @include breakpoint(monitor) {
+      content: 'monitor';
+    }
+  }
+}

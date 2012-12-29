@@ -152,3 +152,16 @@
 // --------------------------------------------------------------------------
 // Breakpoints
 // --------------------------------------------------------------------------
+@mixin breakpoint($size) {
+  @if $size == monitor {
+    @media only screen and (min-width: 1024px) { @content }
+  }
+  
+  @else if $size == tablet {
+    @media only screen and (min-width: 600px) { @content }
+  }
+  
+  @else if $size == handheld {
+    @media only screen and (min-width: 320px) { @content }
+  }
+}
