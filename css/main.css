@@ -363,12 +363,12 @@ sub {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.clearfix:before, .nav-h:before, .nav-bar:before, .grid:before, .clearfix:after, .nav-h:after, .nav-bar:after, .grid:after {
+.clearfix:before, .nav-h:before, .nav-bar:before, .nav-tabs:before, .grid:before, .clearfix:after, .nav-h:after, .nav-bar:after, .nav-tabs:after, .grid:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
-.clearfix:after, .nav-h:after, .nav-bar:after, .grid:after {
+.clearfix:after, .nav-h:after, .nav-bar:after, .nav-tabs:after, .grid:after {
   clear: both; }
 
 /*
@@ -466,24 +466,47 @@ sub {
     background-image: -o-linear-gradient(top, #cccccc, #bfbfbf);
     background-image: linear-gradient(top, #cccccc, #bfbfbf);
     box-shadow: inset 0px 1px 3px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.8); }
-  .btn.icon:before, .btn[data-icon]:before {
-    margin-right: 1em; }
   .btn.btn-large {
     font-size: 18px;
     padding: 0.5em 1em; }
+    .btn.btn-large.icon, .btn.btn-large[data-icon] {
+      padding-left: 2.5em; }
+    .btn.btn-large.icon-after, .btn.btn-large[data-icon-after] {
+      padding-right: 2.5em; }
   .btn.btn-small {
     padding: 0.25em 0.75em; }
-    .btn.btn-small.icon:before, .btn.btn-small[data-icon]:before {
-      margin-right: 0.75em; }
+    .btn.btn-small.icon, .btn.btn-small[data-icon] {
+      padding-left: 2em; }
+      .btn.btn-small.icon:before, .btn.btn-small[data-icon]:before {
+        width: 2em;
+        height: 1.5em;
+        line-height: 1.5em;
+        margin-top: -0.75em; }
+    .btn.btn-small.icon-after, .btn.btn-small[data-icon-after] {
+      padding-right: 2em; }
+      .btn.btn-small.icon-after:after, .btn.btn-small[data-icon-after]:after {
+        width: 2em;
+        height: 1.5em;
+        line-height: 1.5em;
+        margin-top: -0.75em; }
   .btn.btn-mini {
     font-size: 12px;
     font-weight: normal;
     padding: 0.25em 0.5em; }
-    .btn.btn-mini.icon:before, .btn.btn-mini[data-icon]:before {
-      margin-right: 0.5em; }
-  .btn.btn-close {
-    content: 'x';
-    font-family: 'fonticons'; }
+    .btn.btn-mini.icon, .btn.btn-mini[data-icon] {
+      padding-left: 2em; }
+      .btn.btn-mini.icon:before, .btn.btn-mini[data-icon]:before {
+        width: 2em;
+        height: 1.5em;
+        margin-top: -0.75em;
+        line-height: 1.5em; }
+    .btn.btn-mini.icon-after, .btn.btn-mini[data-icon-after] {
+      padding-right: 2em; }
+      .btn.btn-mini.icon-after:after, .btn.btn-mini[data-icon-after]:after {
+        width: 2em;
+        height: 1.5em;
+        line-height: 1.5em;
+        margin-top: -0.75em; }
   .btn.btn-primary, .btn.btn-info, .btn.btn-alert, .btn.btn-warning, .btn.btn-confirm {
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
     color: white; }
@@ -634,49 +657,28 @@ sub {
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px; }
 
-@font-face {
-  font-family: 'fonticons';
-  src: url("fonts/icons/fonticons.eot");
-  src: url("fonts/icons/fonticons.eot?#iefix") format("embedded-opentype"), url("fonts/icons/fonticons.woff") format("woff"), url("fonts/icons/fonticons.ttf") format("truetype"), url("fonts/icons/fonticons.svg#fonticons") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-.icon:before, [data-icon]:before, .icon-after:after, [data-icon-after]:after {
-  font-family: 'fonticons';
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  text-decoration: inherit;
-  text-align: center;
-  line-height: 0; }
-
-.icon:before, [data-icon]:before {
-  content: attr(data-icon);
-  margin-right: 0.5em; }
-
-.icon-after:after, [data-icon-after]:after {
-  content: attr(data-icon-after);
-  margin-left: 0.5em; }
-
-.nav-menu .icon-after:after, .nav-menu [data-icon-after]:after {
-  display: inline-block;
-  float: right;
-  line-height: inherit; }
-
-.nav-h, .nav-bar, .nav-v, .nav-menu {
+.nav-h, .nav-bar, .nav-v, .nav-menu, .nav-tabs {
   font-size: 14px; }
-  .nav-h li, .nav-bar li, .nav-v li, .nav-menu li, .nav-h a, .nav-bar a, .nav-v a, .nav-menu a {
+  .nav-h li, .nav-bar li, .nav-v li, .nav-menu li, .nav-tabs li, .nav-h a, .nav-bar a, .nav-v a, .nav-menu a, .nav-tabs a {
     display: block; }
-  .nav-h li.active a, .nav-bar li.active a, .nav-v li.active a, .nav-menu li.active a {
+  .nav-h li.active a, .nav-bar li.active a, .nav-v li.active a, .nav-menu li.active a, .nav-tabs li.active a {
     color: #ef5223; }
-  .nav-h a, .nav-bar a, .nav-v a, .nav-menu a {
+  .nav-h a, .nav-bar a, .nav-v a, .nav-menu a, .nav-tabs a {
     padding: 0.5em 1em;
     color: #666666; }
-    .nav-h a:hover, .nav-bar a:hover, .nav-v a:hover, .nav-menu a:hover {
+    .nav-h a:hover, .nav-bar a:hover, .nav-v a:hover, .nav-menu a:hover, .nav-tabs a:hover {
       text-decoration: none;
       color: #999999; }
-    .nav-h a:active, .nav-bar a:active, .nav-v a:active, .nav-menu a:active, .nav-h a:focus, .nav-bar a:focus, .nav-v a:focus, .nav-menu a:focus {
+    .nav-h a:active, .nav-bar a:active, .nav-v a:active, .nav-menu a:active, .nav-tabs a:active, .nav-h a:focus, .nav-bar a:focus, .nav-v a:focus, .nav-menu a:focus, .nav-tabs a:focus {
       color: #333333; }
+    .nav-h a.icon, .nav-bar a.icon, .nav-v a.icon, .nav-menu a.icon, .nav-tabs a.icon, .nav-h a[data-icon], .nav-bar a[data-icon], .nav-v a[data-icon], .nav-menu a[data-icon], .nav-tabs a[data-icon] {
+      padding-left: 2.5em; }
+      .nav-h a.icon:after, .nav-bar a.icon:after, .nav-v a.icon:after, .nav-menu a.icon:after, .nav-tabs a.icon:after, .nav-h a[data-icon]:after, .nav-bar a[data-icon]:after, .nav-v a[data-icon]:after, .nav-menu a[data-icon]:after, .nav-tabs a[data-icon]:after {
+        width: 2.5em; }
+    .nav-h a.icon-after, .nav-bar a.icon-after, .nav-v a.icon-after, .nav-menu a.icon-after, .nav-tabs a.icon-after, .nav-h a[data-icon-after], .nav-bar a[data-icon-after], .nav-v a[data-icon-after], .nav-menu a[data-icon-after], .nav-tabs a[data-icon-after] {
+      padding-right: 2.5em; }
+      .nav-h a.icon-after:after, .nav-bar a.icon-after:after, .nav-v a.icon-after:after, .nav-menu a.icon-after:after, .nav-tabs a.icon-after:after, .nav-h a[data-icon-after]:after, .nav-bar a[data-icon-after]:after, .nav-v a[data-icon-after]:after, .nav-menu a[data-icon-after]:after, .nav-tabs a[data-icon-after]:after {
+        width: 2.5em; }
 
 .nav-h, .nav-bar {
   margin-top: 0.5em;
@@ -696,29 +698,12 @@ sub {
   .nav-v li:first-child, .nav-menu li:first-child {
     border: none; }
 
-.nav-bar, .nav-menu {
+.nav-menu, .nav-bar {
   border: 1px solid #e6e6e6;
   border-bottom-color: #cccccc;
   background: #fafafa;
   margin-bottom: 20px;
   box-shadow: 0px 1px 3px rgba(0,0,0,0.05), 0px 1px 1px rgba(0,0,0,0.1); }
-
-.nav-bar {
-  margin: 0;
-  padding: 4px; }
-  .nav-bar li {
-    border: none; }
-  .nav-bar a {
-    border: 1px solid #fafafa;
-    margin-top: 0;
-    margin-bottom: 0;
-    border-radius: 3px; }
-    .nav-bar a:hover, .nav-bar a:active, .nav-bar a:focus {
-      background: white;
-      border-color: #e6e6e6; }
-    .nav-bar a:active, .nav-bar a:focus {
-      border-color: #cccccc;
-      background: #e6e6e6; }
 
 .nav-menu {
   border-radius: 5px;
@@ -733,6 +718,100 @@ sub {
   .nav-menu li:last-child a {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px; }
+
+.nav-bar {
+  margin: 0;
+  padding: 4px; }
+  .nav-bar li {
+    border: none;
+    position: relative;
+    z-index: 20; }
+    .nav-bar li .nav-menu {
+      position: absolute;
+      z-index: 40;
+      top: 2.5em;
+      right: 0; }
+      .nav-bar li .nav-menu li, .nav-bar li .nav-menu a {
+        float: none;
+        white-space: nowrap; }
+      .nav-bar li .nav-menu:before {
+        width: 10px;
+        height: 10px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        display: block;
+        content: ' ';
+        position: absolute;
+        top: -6px;
+        right: .75em;
+        background: white;
+        border-top: 1px solid #cccccc;
+        border-left: 1px solid #cccccc;
+        z-index: 60;
+        white-space: nowrap; }
+  .nav-bar a {
+    border: 1px solid #fafafa;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 3px; }
+    .nav-bar a:hover, .nav-bar a:active, .nav-bar a:focus {
+      background: white;
+      border-color: #e6e6e6; }
+    .nav-bar a:active, .nav-bar a:focus {
+      border-color: #cccccc;
+      background: #e6e6e6; }
+
+.nav-tabs {
+  border-bottom: 1px solid #e6e6e6; }
+  .nav-tabs li, .nav-tabs a {
+    float: left; }
+  .nav-tabs li {
+    border: 1px solid transparent;
+    margin-bottom: -1px; }
+    .nav-tabs li.active {
+      border: 1px solid #e6e6e6;
+      border-bottom-color: white; }
+
+@font-face {
+  font-family: 'fonticons';
+  src: url("fonts/icons/fonticons.eot");
+  src: url("fonts/icons/fonticons.eot?#iefix") format("embedded-opentype"), url("fonts/icons/fonticons.woff") format("woff"), url("fonts/icons/fonticons.ttf") format("truetype"), url("fonts/icons/fonticons.svg#fonticons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.icon:before, [data-icon]:before, .icon-after:after, [data-icon-after]:after {
+  font-family: 'fonticons';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  text-decoration: inherit;
+  text-align: center;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -1em;
+  width: 2.5em;
+  height: 2em;
+  line-height: 2em; }
+
+.icon, [data-icon] {
+  position: relative;
+  padding-left: 2.5em; }
+  .icon:before, [data-icon]:before {
+    left: 0;
+    content: attr(data-icon);
+    margin-right: 0.5em; }
+
+.icon-after, [data-icon-after] {
+  position: relative;
+  padding-right: 2.5em; }
+  .icon-after:after, [data-icon-after]:after {
+    right: 0;
+    content: attr(data-icon-after);
+    margin-left: 0.5em; }
 
 @media only screen and (min-width: 600px) {
   .grid .col {

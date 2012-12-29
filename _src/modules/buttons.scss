@@ -73,17 +73,19 @@ $default-buttons-have-gradient: true;
 //    color: $default-button-text-color;
 //  }
   
-  // Dependency: data-icon
-  &.icon, &[data-icon] {
-    &:before {
-      margin-right: 1em;
-    }
-  }
-  
   // Modified Buttons
   &.btn-large {
     font-size: $font-size-xlarge;
     padding: 0.5em 1em;
+    
+    // Dependency: data-icon
+    &.icon, &[data-icon] {
+      padding-left: 2.5em;
+    }
+    
+    &.icon-after, &[data-icon-after] {
+      padding-right: 2.5em;
+    }
   }
   
   &.btn-small {
@@ -92,8 +94,22 @@ $default-buttons-have-gradient: true;
     
     // Dependency: data-icon
     &.icon, &[data-icon] {
+      padding-left: 2em;
       &:before {
-        margin-right: 0.75em;
+        width: 2em;
+        height: 1.5em;
+        line-height: 1.5em;
+        margin-top: -.75em;
+      }
+    }
+    
+    &.icon-after, &[data-icon-after] {
+      padding-right: 2em;
+      &:after {
+        width: 2em;
+        height: 1.5em;
+        line-height: 1.5em;
+        margin-top: -.75em;
       }
     }
   }
@@ -105,15 +121,24 @@ $default-buttons-have-gradient: true;
     
     // Dependency: data-icon
     &.icon, &[data-icon] {
+      padding-left: 2em;
       &:before {
-        margin-right: 0.5em;
+        width: 2em;
+        height: 1.5em;
+        margin-top: -.75em;
+        line-height: 1.5em;
       }
     }
-  }
-  
-  &.btn-close {
-    content: 'x';
-    font-family: 'fonticons';
+    
+    &.icon-after, &[data-icon-after] {
+      padding-right: 2em;
+      &:after {
+        width: 2em;
+        height: 1.5em;
+        line-height: 1.5em;
+        margin-top: -.75em;
+      }
+    }
   }
   
   &%btn-status {
