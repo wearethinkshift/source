@@ -663,21 +663,21 @@ sub {
     display: block; }
   .nav-h li.active a, .nav-bar li.active a, .nav-v li.active a, .nav-menu li.active a, .nav-tabs li.active a {
     color: #ef5223; }
-  .nav-h a, .nav-bar a, .nav-v a, .nav-menu a, .nav-tabs a {
+  .nav-h li a, .nav-bar li a, .nav-v li a, .nav-menu li a, .nav-tabs li a {
     padding: 0.5em 1em;
     color: #666666; }
-    .nav-h a:hover, .nav-bar a:hover, .nav-v a:hover, .nav-menu a:hover, .nav-tabs a:hover {
+    .nav-h li a:hover, .nav-bar li a:hover, .nav-v li a:hover, .nav-menu li a:hover, .nav-tabs li a:hover {
       text-decoration: none;
       color: #999999; }
-    .nav-h a:active, .nav-bar a:active, .nav-v a:active, .nav-menu a:active, .nav-tabs a:active, .nav-h a:focus, .nav-bar a:focus, .nav-v a:focus, .nav-menu a:focus, .nav-tabs a:focus {
+    .nav-h li a:active, .nav-bar li a:active, .nav-v li a:active, .nav-menu li a:active, .nav-tabs li a:active, .nav-h li a:focus, .nav-bar li a:focus, .nav-v li a:focus, .nav-menu li a:focus, .nav-tabs li a:focus {
       color: #333333; }
-    .nav-h a.icon, .nav-bar a.icon, .nav-v a.icon, .nav-menu a.icon, .nav-tabs a.icon, .nav-h a[data-icon], .nav-bar a[data-icon], .nav-v a[data-icon], .nav-menu a[data-icon], .nav-tabs a[data-icon] {
+    .nav-h li a.icon, .nav-bar li a.icon, .nav-v li a.icon, .nav-menu li a.icon, .nav-tabs li a.icon, .nav-h li a[data-icon], .nav-bar li a[data-icon], .nav-v li a[data-icon], .nav-menu li a[data-icon], .nav-tabs li a[data-icon] {
       padding-left: 2.5em; }
-      .nav-h a.icon:after, .nav-bar a.icon:after, .nav-v a.icon:after, .nav-menu a.icon:after, .nav-tabs a.icon:after, .nav-h a[data-icon]:after, .nav-bar a[data-icon]:after, .nav-v a[data-icon]:after, .nav-menu a[data-icon]:after, .nav-tabs a[data-icon]:after {
+      .nav-h li a.icon:after, .nav-bar li a.icon:after, .nav-v li a.icon:after, .nav-menu li a.icon:after, .nav-tabs li a.icon:after, .nav-h li a[data-icon]:after, .nav-bar li a[data-icon]:after, .nav-v li a[data-icon]:after, .nav-menu li a[data-icon]:after, .nav-tabs li a[data-icon]:after {
         width: 2.5em; }
-    .nav-h a.icon-after, .nav-bar a.icon-after, .nav-v a.icon-after, .nav-menu a.icon-after, .nav-tabs a.icon-after, .nav-h a[data-icon-after], .nav-bar a[data-icon-after], .nav-v a[data-icon-after], .nav-menu a[data-icon-after], .nav-tabs a[data-icon-after] {
+    .nav-h li a.icon-after, .nav-bar li a.icon-after, .nav-v li a.icon-after, .nav-menu li a.icon-after, .nav-tabs li a.icon-after, .nav-h li a[data-icon-after], .nav-bar li a[data-icon-after], .nav-v li a[data-icon-after], .nav-menu li a[data-icon-after], .nav-tabs li a[data-icon-after] {
       padding-right: 2.5em; }
-      .nav-h a.icon-after:after, .nav-bar a.icon-after:after, .nav-v a.icon-after:after, .nav-menu a.icon-after:after, .nav-tabs a.icon-after:after, .nav-h a[data-icon-after]:after, .nav-bar a[data-icon-after]:after, .nav-v a[data-icon-after]:after, .nav-menu a[data-icon-after]:after, .nav-tabs a[data-icon-after]:after {
+      .nav-h li a.icon-after:after, .nav-bar li a.icon-after:after, .nav-v li a.icon-after:after, .nav-menu li a.icon-after:after, .nav-tabs li a.icon-after:after, .nav-h li a[data-icon-after]:after, .nav-bar li a[data-icon-after]:after, .nav-v li a[data-icon-after]:after, .nav-menu li a[data-icon-after]:after, .nav-tabs li a[data-icon-after]:after {
         width: 2.5em; }
 
 .nav-h, .nav-bar {
@@ -689,9 +689,9 @@ sub {
     border-left: 1px solid #e6e6e6; }
     .nav-h li:first-child, .nav-bar li:first-child {
       border: none; }
-  .nav-h a, .nav-bar a {
-    margin-top: -0.5em;
-    margin-bottom: -0.5em; }
+    .nav-h li a, .nav-bar li a {
+      margin-top: -0.5em;
+      margin-bottom: -0.5em; }
 
 .nav-v li, .nav-menu li {
   border-top: 1px solid #e6e6e6; }
@@ -708,9 +708,9 @@ sub {
 .nav-menu {
   border-radius: 5px;
   background: white; }
-  .nav-menu a:hover {
+  .nav-menu li a:hover {
     background: #fcfcfc; }
-  .nav-menu a:active, .nav-menu a:focus {
+  .nav-menu li a:active, .nav-menu li a:focus {
     background: #f2f2f2; }
   .nav-menu li:first-child a {
     border-top-left-radius: 5px;
@@ -752,17 +752,17 @@ sub {
         border-left: 1px solid #cccccc;
         z-index: 60;
         white-space: nowrap; }
-  .nav-bar a {
-    border: 1px solid #fafafa;
-    margin-top: 0;
-    margin-bottom: 0;
-    border-radius: 3px; }
-    .nav-bar a:hover, .nav-bar a:active, .nav-bar a:focus {
-      background: white;
-      border-color: #e6e6e6; }
-    .nav-bar a:active, .nav-bar a:focus {
-      border-color: #cccccc;
-      background: #e6e6e6; }
+    .nav-bar li a {
+      border: 1px solid #fafafa;
+      margin-top: 0;
+      margin-bottom: 0;
+      border-radius: 3px; }
+      .nav-bar li a:hover, .nav-bar li a:active, .nav-bar li a:focus {
+        background: white;
+        border-color: #e6e6e6; }
+      .nav-bar li a:active, .nav-bar li a:focus {
+        border-color: #cccccc;
+        background: #e6e6e6; }
 
 .nav-tabs {
   border-bottom: 1px solid #e6e6e6; }
@@ -926,13 +926,16 @@ sub {
     top: 0;
     right: 1px; }
 
-.masthead h1 {
-  font-family: 'oswald', sans-serif;
-  font-weight: 300; }
+.primary-navigation {
+  float: right;
+  margin-top: 8px;
+  font-weight: bold; }
 
-h1 {
-  font-family: 'oswald', sans-serif;
-  text-transform: uppercase; }
+.masthead .logo {
+  float: left;
+  margin: 0; }
+  .masthead .logo img {
+    display: block; }
 
 body:after {
   padding: 5px;
@@ -943,7 +946,8 @@ body:after {
   opacity: 0.5;
   position: fixed;
   bottom: 0;
-  left: 0; }
+  right: 0;
+  outline: 1px dotted red; }
   @media only screen and (min-width: 320px) {
     body:after {
       content: 'handheld'; } }
