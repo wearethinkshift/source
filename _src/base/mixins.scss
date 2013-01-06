@@ -174,4 +174,10 @@
      and (min-width: 320px)
      and (max-width: 600px) { @content }
   }
+  
+  // Assume that $size is an expression...
+  @else if (type-of($size) == string) {
+    @media #{$size} { @content }
+  }
+  
 }

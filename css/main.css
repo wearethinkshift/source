@@ -961,7 +961,7 @@ body:after {
   opacity: 0.5;
   position: fixed;
   bottom: 0;
-  right: 0;
+  left: 0;
   outline: 1px dotted red; }
   @media only screen and (min-width: 320px) and (max-width: 600px) {
     body:after {
