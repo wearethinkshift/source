@@ -60,6 +60,13 @@
 }
 
 // --------------------------------------------------------------------------
+// Transform
+// --------------------------------------------------------------------------
+@mixin transform($values, $webkit:true, $moz:true, $ms:true) {
+	@include -v(transform, $values, $webkit, $moz, $ms, false);
+}
+
+// --------------------------------------------------------------------------
 // Border Radius
 // --------------------------------------------------------------------------
 @mixin border-radius($values, $webkit:false, $moz:false) {
@@ -104,7 +111,7 @@
 // --------------------------------------------------------------------------
 // doesn't set a fallback
 // doesn't include old webkit gradient
-// doesn't include MS Support
+// doesn't include old MS Support
 @mixin background-linear-gradient($values) {
 
 	background-image: -webkit-linear-gradient(#{$values});
@@ -147,21 +154,24 @@
 }
 
 
-
-
 // --------------------------------------------------------------------------
 // Breakpoints
 // --------------------------------------------------------------------------
 @mixin breakpoint($size) {
   @if $size == monitor {
-    @media only screen and (min-width: 1024px) { @content }
+    @media only screen
+     and (min-width: 1024px) { @content }
   }
   
   @else if $size == tablet {
-    @media only screen and (min-width: 600px) { @content }
+    @media only screen
+     and (min-width: 600px)
+     and (max-width: 1024px) { @content }
   }
   
   @else if $size == handheld {
-    @media only screen and (min-width: 320px) { @content }
+    @media only screen
+     and (min-width: 320px)
+     and (max-width: 600px) { @content }
   }
 }

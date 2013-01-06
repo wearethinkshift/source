@@ -14,11 +14,13 @@ $default-warning-button-color: $warning;
 $default-confirm-button-color: $confirm;
 
 // Gradients on all buttons
-$default-buttons-have-gradient: true;
+$include-button-gradient: true;
+$include-button-sizes: true;
+$include-button-statuses: true;
 
 
 // Depends on base/mixins
-@mixin button-color($color: $default-button-color, $gradient:$default-buttons-have-gradient) {
+@mixin button-color($color: $default-button-color, $gradient:$include-button-gradient) {
 
   background-color: $color;
   border-color: darken($color, 15%);
@@ -29,10 +31,9 @@ $default-buttons-have-gradient: true;
   
 }
 
-// Base Button
+// BASE BUTTON
 .btn {
-    
-//  font-weight: bold;
+  
   color: $default-button-text-color;
   font-size: $font-size-medium;
   border: 1px solid;
@@ -52,8 +53,8 @@ $default-buttons-have-gradient: true;
     position: relative;
     text-decoration: none;
     z-index: 1;
-    
     color: $default-button-text-color;
+    
     @include button-color(lighten($default-button-color, 5%));
   
   }
@@ -64,155 +65,155 @@ $default-buttons-have-gradient: true;
     text-decoration: none;
     z-index: 1;
     color: darken($light-gray, 10%);
+    
     @include button-color(darken($default-button-color, 15%));
     @include box-shadow("inset 0px 1px 3px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.8)")
     
   }
   
-//  &:visited {
-//    color: $default-button-text-color;
-//  }
-  
-  // Modified Buttons
-  &.btn-large {
-    font-size: $font-size-xlarge;
-    padding: 0.5em 1em;
+  // BUTTON EXTENSIONS
+  // Different Button Sizes: Optional, On by default.
+  @if $include-button-sizes == true {
+    &.btn-large {
+      font-size: $font-size-xlarge;
+      padding: 0.5em 1em;
     
-    // Dependency: data-icon
-    &.icon, &[data-icon] {
-      padding-left: 2.5em;
-    }
+      // Dependency: data-icon
+      &.icon, &[data-icon] {
+        padding-left: 2.5em;
+      }
     
-    &.icon-after, &[data-icon-after] {
-      padding-right: 2.5em;
-    }
-  }
-  
-  &.btn-small {
-//    font-size: $font-size-normal;
-    padding: 0.25em 0.75em;
-    
-    // Dependency: data-icon
-    &.icon, &[data-icon] {
-      padding-left: 2em;
-      &:before {
-        width: 2em;
-        height: 1.5em;
-        line-height: 1.5em;
-        margin-top: -.75em;
+      &.icon-after, &[data-icon-after] {
+        padding-right: 2.5em;
       }
     }
+  
+    &.btn-small {
+      padding: 0.25em 0.75em;
     
-    &.icon-after, &[data-icon-after] {
-      padding-right: 2em;
-      &:after {
-        width: 2em;
-        height: 1.5em;
-        line-height: 1.5em;
-        margin-top: -.75em;
+      // Dependency: data-icon
+      &.icon, &[data-icon] {
+        padding-left: 2em;
+        &:before {
+          width: 2em;
+          height: 1.5em;
+          line-height: 1.5em;
+          margin-top: -.75em;
+        }
+      }
+    
+      &.icon-after, &[data-icon-after] {
+        padding-right: 2em;
+        &:after {
+          width: 2em;
+          height: 1.5em;
+          line-height: 1.5em;
+          margin-top: -.75em;
+        }
       }
     }
-  }
   
-  &.btn-mini {
-    font-size: $font-size-fine;
-    font-weight: normal;
-    padding: 0.25em 0.5em;
+    &.btn-mini {
+      font-size: $font-size-fine;
+      font-weight: normal;
+      padding: 0.25em 0.5em;
     
-    // Dependency: data-icon
-    &.icon, &[data-icon] {
-      padding-left: 2em;
-      &:before {
-        width: 2em;
-        height: 1.5em;
-        margin-top: -.75em;
-        line-height: 1.5em;
+      // Dependency: data-icon
+      &.icon, &[data-icon] {
+        padding-left: 2em;
+        &:before {
+          width: 2em;
+          height: 1.5em;
+          margin-top: -.75em;
+          line-height: 1.5em;
+        }
+      }
+    
+      &.icon-after, &[data-icon-after] {
+        padding-right: 2em;
+        &:after {
+          width: 2em;
+          height: 1.5em;
+          line-height: 1.5em;
+          margin-top: -.75em;
+        }
       }
     }
+  } // ENDIF $include-button-sizes
+  
+  @if $include-button-statuses {
+    &%btn-status {
+      @include text-shadow(0px -1px 0px rgba(0,0,0,0.25));
+      color: white;
+    }
+  
+    &.btn-primary {
+      @extend %btn-status;
+      @include button-color($default-primary-button-color);
     
-    &.icon-after, &[data-icon-after] {
-      padding-right: 2em;
-      &:after {
-        width: 2em;
-        height: 1.5em;
-        line-height: 1.5em;
-        margin-top: -.75em;
+      &:hover {
+        @include button-color(lighten($default-primary-button-color, 5%));
+      }
+      &:active {
+        @include button-color(darken($default-primary-button-color, 5%));
       }
     }
-  }
   
-  &%btn-status {
-    @include text-shadow(0px -1px 0px rgba(0,0,0,0.25));
-    color: white;
-  }
-  
-  &.btn-primary {
-    @extend %btn-status;
-    @include button-color($default-primary-button-color);
+    &.btn-info {
+      @extend %btn-status;
+      @include button-color($default-info-button-color);
     
-    &:hover {
-      @include button-color(lighten($default-primary-button-color, 5%));
+      &:hover {
+        @include button-color(lighten($default-info-button-color, 5%));
+      }
+      &:active {
+        @include button-color(darken($default-info-button-color, 5%));
+      }
     }
-    &:active {
-      @include button-color(darken($default-primary-button-color, 5%));
-    }
-  }
   
-  &.btn-info {
-    @extend %btn-status;
-    @include button-color($default-info-button-color);
+    &.btn-alert {
+      @extend %btn-status;
+      @include button-color($default-alert-button-color);
     
-    &:hover {
-      @include button-color(lighten($default-info-button-color, 5%));
+      &:hover {
+        @include button-color(lighten($default-alert-button-color, 5%));
+      }
+      &:active {
+        @include button-color(darken($default-alert-button-color, 5%));
+      }
     }
-    &:active {
-      @include button-color(darken($default-info-button-color, 5%));
-    }
-  }
   
-  &.btn-alert {
-    @extend %btn-status;
-    @include button-color($default-alert-button-color);
+    &.btn-warning {
+      @extend %btn-status;
+      @include button-color($default-warning-button-color);
     
-    &:hover {
-      @include button-color(lighten($default-alert-button-color, 5%));
+      &:hover {
+        @include button-color(lighten($default-warning-button-color, 5%));
+      }
+      &:active {
+        @include button-color(darken($default-warning-button-color, 5%));
+      }
     }
-    &:active {
-      @include button-color(darken($default-alert-button-color, 5%));
-    }
-  }
   
-  &.btn-warning {
-    @extend %btn-status;
-    @include button-color($default-warning-button-color);
+    &.btn-confirm {
+      @extend %btn-status;
+      @include button-color($default-confirm-button-color);
     
-    &:hover {
-      @include button-color(lighten($default-warning-button-color, 5%));
+      &:hover {
+        @include button-color(lighten($default-confirm-button-color, 5%));
+      }
+      &:active {
+        @include button-color(darken($default-confirm-button-color, 5%));
+      }
     }
-    &:active {
-      @include button-color(darken($default-warning-button-color, 5%));
-    }
-  }
-  
-  &.btn-confirm {
-    @extend %btn-status;
-    @include button-color($default-confirm-button-color);
-    
-    &:hover {
-      @include button-color(lighten($default-confirm-button-color, 5%));
-    }
-    &:active {
-      @include button-color(darken($default-confirm-button-color, 5%));
-    }
-  }
-}
+  } // ENDIF $include-button-statuses
+} // .btn
 
 .btn-group {
   
-  // requires clearfix
+  @extend .clearfix;
   
   .btn {
-    
     float: left;
     @include border-radius(0px);
     margin-right: -1px;
@@ -224,7 +225,5 @@ $default-buttons-have-gradient: true;
     &:last-child {
       @include border-radius-utility(false, $default-button-border-radius, $default-button-border-radius, false);
     }
-    
   }
-
 }
