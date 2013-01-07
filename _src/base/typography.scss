@@ -196,12 +196,18 @@ sub {
    Typographic Classes
    -------------------------------------------------------------------------- */
 .lead {
-  font-size: $font-size-xxlarge;
-  line-height: 1.4em;
-  color: $gray;
-  margin: 40px 0;
-  font-weight: 200; // if it's supported?
+ font-size: $font-size-xxlarge;
+ line-height: 1.4em;
+ color: $gray;
+ margin: 40px 0;
+ font-weight: 200; // if it's supported?
+  
+ @include breakpoint(handheld) {
+   font-size: $font-size-xlarge;
+   margin: 20px 0;
+ }
 }
+
 
 .text-right { text-align: right; }
 .text-left { text-align: left; }
