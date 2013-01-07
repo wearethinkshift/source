@@ -192,6 +192,14 @@ sub {
     bottom: -0.25em;
 }
 
+code {
+  padding: 2px 5px;
+  border: 1px solid $silver;
+  background: lighten($silver, 15%);
+  color: $gray;
+  @include border-radius(3px);
+}
+
 /* --------------------------------------------------------------------------
    Typographic Classes
    -------------------------------------------------------------------------- */
@@ -208,7 +216,8 @@ sub {
  }
 }
 
-
 .text-right { text-align: right; }
 .text-left { text-align: left; }
 .text-center { text-align: center; }
+
+.mute { color: $light-gray; }

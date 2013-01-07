@@ -299,6 +299,13 @@ sup {
 sub {
   bottom: -0.25em; }
 
+code {
+  padding: 2px 5px;
+  border: 1px solid #cccccc;
+  background: #f2f2f2;
+  color: #666666;
+  border-radius: 3px; }
+
 /* --------------------------------------------------------------------------
    Typographic Classes
    -------------------------------------------------------------------------- */
@@ -321,6 +328,9 @@ sub {
 
 .text-center {
   text-align: center; }
+
+.mute {
+  color: #999999; }
 
 /* ==========================================================================
    Helper classes
