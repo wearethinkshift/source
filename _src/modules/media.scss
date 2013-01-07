@@ -30,11 +30,27 @@ $default-media-spacing: 10px;
 		float: left;
 		margin-right: $default-media-spacing;
     
+    @include breakpoint(handheld) {
+      float: none;
+      clear: both;
+      text-align: center;
+      margin: 0 auto $default-media-spacing;
+      
+    }
+    
 	}
 
 	.media-head-alt {
 		float: right;
 		margin-left: $default-media-spacing;
+    
+    @include breakpoint(handheld) {
+      float: none;
+      clear: both;
+      text-align: center;
+      margin: 0 auto $default-media-spacing;
+    }
+    
 	}
 
 	.media-body {

@@ -44,6 +44,7 @@ $form-field-padding:       0!default; // no form-grid compatability unless speci
         
         $margin: percentage(floor($grid-spacing/2)/$grid-container-width);
         float: left;
+        display: block;
         
         @if $column-width > 0 {
           width: percentage(round($column-width/$grid-container-width));

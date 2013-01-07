@@ -299,6 +299,25 @@ sup {
 sub {
   bottom: -0.25em; }
 
+/* --------------------------------------------------------------------------
+   Typographic Classes
+   -------------------------------------------------------------------------- */
+.lead {
+  font-size: 24px;
+  line-height: 1.4em;
+  color: #666666;
+  margin: 40px 0;
+  font-weight: 200; }
+
+.text-right {
+  text-align: right; }
+
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -816,6 +835,7 @@ sub {
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
   .grid .col {
     float: left;
+    display: block;
     width: 0%;
     margin: 0 1.04167%; }
     .grid .col:first-child, .grid .col.first {
@@ -905,9 +925,12 @@ sub {
   .table.with-row-hover tbody tr:hover th, .table.with-row-hover tbody tr:hover td {
     background: #fafafa; }
 
-.img-rounded {
+.img-circle {
   border-radius: 50%;
   box-shadow: 0px 0px 0px 3px white, 0px 1px 7px rgba(0,0,0,0.8); }
+
+.img-rounded {
+  border-radius: 20px; }
 
 .img-polaroid {
   box-shadow: 0px 0px 0px 3px white, 0px 1px 7px rgba(0,0,0,0.8);
@@ -931,9 +954,21 @@ sub {
   .media .media-head {
     float: left;
     margin-right: 10px; }
+    @media only screen and (min-width: 320px) and (max-width: 600px) {
+      .media .media-head {
+        float: none;
+        clear: both;
+        text-align: center;
+        margin: 0 auto 10px; } }
   .media .media-head-alt {
     float: right;
     margin-left: 10px; }
+    @media only screen and (min-width: 320px) and (max-width: 600px) {
+      .media .media-head-alt {
+        float: none;
+        clear: both;
+        text-align: center;
+        margin: 0 auto 10px; } }
   .media .media-body {
     overflow: hidden;
     position: relative; }

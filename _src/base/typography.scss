@@ -191,3 +191,18 @@ sup {
 sub {
     bottom: -0.25em;
 }
+
+/* --------------------------------------------------------------------------
+   Typographic Classes
+   -------------------------------------------------------------------------- */
+.lead {
+  font-size: $font-size-xxlarge;
+  line-height: 1.4em;
+  color: $gray;
+  margin: 40px 0;
+  font-weight: 200; // if it's supported?
+}
+
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+.text-center { text-align: center; }
