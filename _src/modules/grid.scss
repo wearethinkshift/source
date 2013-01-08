@@ -12,7 +12,7 @@ $grid-columns:            12!default; // number of columns in the grid.
 //$grid-border-width:        0!default; // width of the border, for maths.
 //$grid-border:           none!default; // border-style for grid columns.
 $grid-spacing:          20px!default; // spacing in between grid columns.
-$form-field-padding:       0!default; // no form-grid compatability unless specified in forms.scss
+//$form-field-padding:       0!default; // no form-grid compatability unless specified in forms.scss
 
 // -----------------------------------------------------------------------------
 // Grid Mixins
@@ -40,23 +40,21 @@ $form-field-padding:       0!default; // no form-grid compatability unless speci
 		// build the classes.
 		.#{$namespace}col {
       
+      display: block;
+      
       @include breakpoint(tablet) {
         
-        $margin: percentage(floor($grid-spacing/2)/$grid-container-width);
         float: left;
-        display: block;
         
         @if $column-width > 0 {
           width: percentage(round($column-width/$grid-container-width));
         }
         
+        $margin: percentage(floor($grid-spacing/2)/$grid-container-width);
   			@if $margin != 0 {
   				margin: 0 $margin;
   			}
         
-//        @if $grid-padding != 0 {
-//          padding: $grid-padding;
-//        }
         &:first-child,
         &.#{$namespace}first {
         	margin-left: 0!important;
@@ -67,12 +65,6 @@ $form-field-padding:       0!default; // no form-grid compatability unless speci
         	margin-right: 0!important;
         }
         
-        @if $form-field-padding > 0 {
-          &.field {
-            padding: 0 $form-field-padding;
-          }
-        }
-        
         @for $n from 2 to $grid-columns + 1 {
         
           $span-width: percentage(floor(($column-width * $n) + ($grid-spacing * ($n - 1)))/$grid-container-width);
@@ -81,52 +73,43 @@ $form-field-padding:       0!default; // no form-grid compatability unless speci
             // width is the column width + spacing.
             // |column|mm|column|
             width: $span-width;
-          
-            // form field compatability.
-            @if $form-field-padding > 0 {
-              &.field {
-                // width = (column width - $form-field-padding) + spacing.
-                width: $span-width - ($form-field-padding * 2);
+            
+            // recursive grids, percentage recalculations only...
+            @for $rn from 2 to $grid-columns + 1 {
+              
+              .#{$namespace}colspan#{$rn} {
+                width: 100%;
+                margin: 0;
               }
+              
             }
           } 
         }
-        
-      }
+      } // breakpoint tablet
       
       @include breakpoint(monitor) {
         
-      	$margin: (floor($grid-spacing/2)); // left and right margin.
         float: left;
         
         @if $column-width > 0 {
           width: $column-width;
         }
         
+        $margin: (floor($grid-spacing/2)); // left and right margin.
   			@if $margin != 0 {
   				margin: 0 $margin;
   			}
-				
-//        @if $grid-padding != 0 {
-//          padding: $grid-padding;
-//        }
-
+        
         &:first-child,
   			&.#{$namespace}first {
   				margin-left: 0!important;
   			}
-
+        
         &:last-child,
   			&.#{$namespace}last {
   				margin-right: 0!important;
   			}
         
-        @if $form-field-padding > 0 {
-          &.field {
-            padding: 0 $form-field-padding;
-          }
-        }
-      
         @for $n from 2 to $grid-columns + 1 {
         
           $span-width: floor(($column-width * $n) + ($grid-spacing * ($n - 1)));
@@ -135,20 +118,14 @@ $form-field-padding:       0!default; // no form-grid compatability unless speci
             // width is the column width + spacing.
             // |column|mm|column|
             width: $span-width;
-          
-            // form field compatability.
-            @if $form-field-padding > 0 {
-              &.field {
-                // width = (column width - $form-field-padding) + spacing.
-                width: $span-width - ($form-field-padding * 2);
-              }
-            }
+
           } 
         }
-      } // breakpoint
-		}
-	}
-}
+      } // breakpoint monitor
+      
+		} // col
+	} // grid
+} // mixin
 
 // -----------------------------------------------------------------------------
 // Grid Styles

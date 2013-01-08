@@ -3,18 +3,128 @@ $form-field-padding: 5px; // this would set grid compatability.
 .field {
   margin-bottom: 10px;
   padding: 0px $form_field_padding;
+  position: relative;
   
   label, select {
     margin-left: -5px;
     margin-right: 10px;
   }
+  
+  .hint {
+    font-size: $font-size-fine;
+    font-style: italic;
+    color: $light-gray;
+  }
+  
+  .field-message {
+    background: lighten($silver, 10%);
+    font-weight: bold;
+    margin: -8px -4px 7px -5px;
+    padding: 5px;
+    border: 1px solid $silver;
+    @include border-radius(0 0 2px 2px)
+  }
+  
+  &.with-error {
+    
+    &:before {
+      font-family: 'fonticons';
+      content: 'w';
+      display: block;
+      position: absolute;
+      right: -25px;
+      top: 1.75em;
+      margin-right: 0.25em;
+      color: $alert;
+    }
+    
+    label {
+      color: $alert;
+    }
+    
+    input {
+      border-color: $alert;
+      color: $alert;
+      background-color: lighten($alert, 50%);
+    }
+    
+    .field-message {
+      border-color: darken($alert, 10%);
+      background-color: $alert;
+      color: white;
+    }
+  }
+  
+  &.with-notice {
+    
+    &:before {
+      font-family: 'fonticons';
+      content: 'w';
+      display: block;
+      position: absolute;
+      right: -25px;
+      top: 1.75em;
+      margin-right: 0.25em;
+      color: darken($warning, 10%);
+    }
+    
+    label {
+      color: darken($warning, 10%);
+    }
+    
+    input {
+      border-color: darken($warning, 10%);
+      color: darken($warning, 20%);
+      background-color: lighten($warning, 35%);
+    }
+    
+    .field-message {
+      border-color: darken($warning, 20%);
+      background-color: darken($warning, 10%);
+      color: white;
+    }
+    
+  }
+  
+  &.with-success {
+    
+    &:before {
+      font-family: 'fonticons';
+      content: 't';
+      display: block;
+      position: absolute;
+      right: -25px;
+      top: 1.75em;
+      margin-right: 0.25em;
+      color: $confirm;
+    }
+    
+    label {
+      color: darken($confirm, 5%);
+    }
+    
+    input {
+      border-color: darken($confirm, 5%);
+      color: darken($confirm, 5%);
+      background-color: lighten($confirm, 55%);
+    }
+    
+    .field-message {
+      border-color: darken($confirm, 20%);
+      background-color: darken($confirm, 5%);
+      color: white;
+    }
+    
+  }
+  
 }
 
 %textinput {
   display: block;
+  position: relative;
   width: 100%;
   font-size: $font-size-medium;
-  padding: 0.5em 0.25em;
+  padding: 0.40em 0.25em;
   margin: 0 -5px 0.5em;
   
   @include border-radius(2px);
@@ -34,23 +144,6 @@ textarea {
   max-width: 100%;
 }
 
-//select {
-//  -webkit-appearance: none;
-//  @extend .btn;
-//  
-//  &:active, &:focus {
-//    position: relative;
-//    text-decoration: none;
-//    z-index: 1;
-//    
-//    color: $default-button-text-color;
-//    @include button-color(lighten($default-button-color, 5%));
-//    @include box-shadow(0px 1px 1px rgba(0,0,0,0.15));
-//    border-color: $dark-gray;
-//  }
-//  
-//}
-
 .actions {
   padding: 20px;
   background: lighten($silver, 18%);
@@ -64,6 +157,11 @@ textarea {
     }
   }
   
+  .disclaimer {
+    text-align: left;
+    font-size: $font-size-fine;
+    float: left;
+  }
 }
 
 ::-webkit-input-placeholder {

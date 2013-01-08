@@ -53,10 +53,6 @@
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   
-  li, a {
-    float: left;
-  }
-  
   li {
     border-left: 1px solid lighten($silver, 10%);
     &:first-child {
@@ -67,6 +63,24 @@
       margin-bottom: -0.5em;
     }
   }
+  
+  li, a {
+    float: left;
+  }
+  
+  @include breakpoint(handheld) {
+    margin: 0;
+    
+    li, a {
+      float: none;
+      border: none;
+    }
+    
+    li a {
+      margin: 0;
+    }
+  }
+  
 }
 
 // vertical navigation
@@ -132,34 +146,35 @@
     border:none;
     position: relative;
     z-index: 20;
-    .nav-menu {
-      position: absolute;
-      z-index: 40;
-      top: 2.5em;
-      right: 0;
-      
-      li, a {
-        float: none;
-        white-space: nowrap;
-      }
-      
-      &:before {
-        width: 10px;
-        height: 10px;
-        @include -v(transform, rotate(45deg));
-        display: block;
-        content: ' ';
-        position: absolute;
-        top: -6px;
-        right: .75em;
-        background: white;
-        border-top: 1px solid $silver;
-        border-left: 1px solid $silver;
-        z-index: 60;
-        white-space: nowrap;
-      }
-      
-    }
+    
+//    .nav-menu {
+//      position: absolute;
+//      z-index: 40;
+//      top: 2.5em;
+//      right: 0;
+//      
+//      li, a {
+//        float: none;
+//        white-space: nowrap;
+//      }
+//      
+//      &:before {
+//        width: 10px;
+//        height: 10px;
+//        @include -v(transform, rotate(45deg));
+//        display: block;
+//        content: ' ';
+//        position: absolute;
+//        top: -6px;
+//        right: .75em;
+//        background: white;
+//        border-top: 1px solid $silver;
+//        border-left: 1px solid $silver;
+//        z-index: 60;
+//        white-space: nowrap;
+//      }
+//      
+//    }
     
     a {
       border: 1px solid lighten($silver, 18%);
@@ -200,4 +215,22 @@
       border-bottom-color: white;
     }
   }
+  
+  @include breakpoint(handheld) {
+    
+    border: none;
+    
+    li, a {
+      float: none;
+    }
+    
+    li {
+      margin: none;
+      border: none;
+      &.active {
+        border: none;
+      }
+    }
+  }
+  
 }

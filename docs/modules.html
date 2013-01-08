@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width">
   
   <link rel="stylesheet" href="/css/main.css">
-  <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+  <script src="/js/libs/modernizr/modernizr-2.6.2.dev.js"></script>
   
   <!-- Start Here -->
   <link href='http://fonts.googleapis.com/css?family=Oswald:300,400' rel='stylesheet' type='text/css'>
@@ -187,21 +187,54 @@
     
     <h2>Forms and Grids</h2>
     <div class="grid">
-      <div class="field column span3">
-        <label for="test1">Testing 1</label>
-        <input type="text" id="test1" placeholder="testing" />
+      <div class="col colspan3">
+        <div class="field">
+          <label for="test1">Testing 1</label>
+          <input type="text" id="test1" placeholder="testing" />
+        </div>
       </div>
-      <div class="field column span3">
-        <label for="test2">Testing 2</label>
-        <input type="text" id="test2" placeholder="testing" />
+      <div class="col colspan3">
+        <div class="field">
+          <label for="test2">Testing 2</label>
+          <input type="text" id="test2" placeholder="testing" />
+        </div>
       </div>
-      <div class="field column span3">
-        <label for="test3">Testing 3</label>
-        <input type="text" id="test3" placeholder="testing" />
+      <div class="col colspan3">
+        <div class="field">
+          <label for="test3">Testing 3</label>
+          <input type="text" id="test3" placeholder="testing" />
+        </div>
       </div>
     </div>
     <div class="actions">
+      <p class="disclaimer"><label><input type="checkbox"> I have read and agree</label> to the <a href="#">Terms and Conditions</a></p>
       <button class="btn btn-primary" data-icon="t">I accept</button> or <a href="#">Cancel</a>
+    </div>
+    
+    <h2>Field Decorations</h2>
+    <div class="field">
+      <label for="test4">Field with a hint:</label>
+      <input type="text" id="test4">
+      <p class="hint">Here's your hint! It's pretty basic.</p>
+    </div>
+    
+    <div class="field with-error">
+      <label for="test5">Field with an error:</label>
+      <input type="text" id="test5">
+      <p class="field-message">Here is an additional message that can go with the field error.</p>
+    </div>
+    
+    <div class="field with-notice">
+      <label for="test6">Field with a warning:</label>
+      <input type="text" id="test6">
+      <p class="field-message">Here is an additional message that can go with the field warning.</p>
+    </div>
+    
+    <div class="field with-success">
+      <label for="test6">Field with a success:</label>
+      <input type="text" id="test6">
+      <p class="field-message">Here is an additional message that can go with the field success.</p>
+      <p class="hint">And this one has a hint too!</p>
     </div>
     
     <h1>Tables</h1>
