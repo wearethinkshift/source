@@ -18,7 +18,6 @@ $default-media-spacing: 10px;
 
 .media {
   
-  
 	@include media-flow-context;
 	padding: $default-media-spacing;
 
