@@ -4,11 +4,11 @@
   margin: 0 auto;
   
   @include breakpoint(handheld) {  
-    width: 100%;
+    width: auto;
   }
   
   @include breakpoint(tablet) {
-    width: 100%;
+    width: auto;
   }
   
 }
