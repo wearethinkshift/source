@@ -40,11 +40,40 @@ $grid-spacing:          20px!default; // spacing in between grid columns.
 		// build the classes.
 		.#{$namespace}col {
       
+      // monitor styles by default.. override where necessary...
       display: block;
+      float: left;
+        
+      @if $column-width > 0 {
+        width: $column-width;
+      }
+        
+      $margin: (floor($grid-spacing/2)); // left and right margin.
+			@if $margin != 0 {
+				margin: 0 $margin;
+			}
+      
+      &:last-child {
+				margin-right: 0!important;
+			}
+      
+      &:first-child {
+      	margin-left: 0!important;
+      }
+        
+      @for $n from 2 to $grid-columns + 1 {
+        
+        $span-width: floor(($column-width * $n) + ($grid-spacing * ($n - 1)));
+        
+        &.#{$namespace}colspan#{$n} {
+          // width is the column width + spacing.
+          // |column|mm|column|
+          width: $span-width;
+
+        } 
+      }
       
       @include breakpoint(tablet) {
-        
-        float: left;
         
         @if $column-width > 0 {
           width: percentage(round($column-width/$grid-container-width));
@@ -54,16 +83,6 @@ $grid-spacing:          20px!default; // spacing in between grid columns.
   			@if $margin != 0 {
   				margin: 0 $margin;
   			}
-        
-        &:first-child,
-        &.#{$namespace}first {
-        	margin-left: 0!important;
-        }
-
-        &:last-child,
-        &.#{$namespace}last {
-        	margin-right: 0!important;
-        }
         
         @for $n from 2 to $grid-columns + 1 {
         
@@ -87,41 +106,26 @@ $grid-spacing:          20px!default; // spacing in between grid columns.
         }
       } // breakpoint tablet
       
-      @include breakpoint(monitor) {
-        
-        float: left;
-        
-        @if $column-width > 0 {
-          width: $column-width;
-        }
-        
-        $margin: (floor($grid-spacing/2)); // left and right margin.
-  			@if $margin != 0 {
-  				margin: 0 $margin;
-  			}
-        
-        &:first-child,
-  			&.#{$namespace}first {
-  				margin-left: 0!important;
-  			}
-        
-        &:last-child,
-  			&.#{$namespace}last {
-  				margin-right: 0!important;
-  			}
-        
+      @include breakpoint(handheld) {
+        width: 100%;
+        margin: 0;
         @for $n from 2 to $grid-columns + 1 {
-        
-          $span-width: floor(($column-width * $n) + ($grid-spacing * ($n - 1)));
-        
           &.#{$namespace}colspan#{$n} {
-            // width is the column width + spacing.
-            // |column|mm|column|
-            width: $span-width;
-
+            width: 100%;
           } 
         }
-      } // breakpoint monitor
+      }
+      
+      // Some extra classes for IE6/7/8
+      @if $supports-ie8 == true or $supports-ie7 == true or $supports-ie6 == true {  
+        &.#{$namespace}first {
+  				margin-left: 0!important;
+  			}
+      
+        &.#{$namespace}last {
+  				margin-right: 0!important;
+  			}
+      }
       
 		} // col
 	} // grid

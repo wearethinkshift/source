@@ -409,11 +409,15 @@ code {
  * Include this rule to trigger hasLayout and contain floats.
  */
 .container {
-  padding: 0 20px; }
-  @media only screen and (min-width: 1024px) {
+  padding: 0 20px;
+  width: 960px;
+  margin: 0 auto; }
+  @media only screen and (min-width: 320px) and (max-width: 600px) {
     .container {
-      width: 960px;
-      margin: 0 auto; } }
+      width: 100%; } }
+  @media only screen and (min-width: 600px) and (max-width: 1024px) {
+    .container {
+      width: 100%; } }
 
 .masthead .intro {
   padding: 50px 0; }
@@ -905,7 +909,8 @@ textarea {
 .field {
   margin-bottom: 10px;
   padding: 0px 5px;
-  position: relative; }
+  position: relative;
+  z-index: 1; }
   .field input[type=text], .field input[type=email], .field input[type=tel], .field input[type=url],
   .field input[type=number], .field input[type=password], .field input[type=search], .field input[type=date],
   .field input[type=week], .field input[type=month], .field input[type=time], .field input[type=datetime],
@@ -1016,16 +1021,40 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
   opacity: 0; }
 
 .grid .col {
-  display: block; }
+  display: block;
+  float: left;
+  width: 61px;
+  margin: 0 10px; }
+  .grid .col:last-child {
+    margin-right: 0!important; }
+  .grid .col:first-child {
+    margin-left: 0!important; }
+  .grid .col.colspan2 {
+    width: 142px; }
+  .grid .col.colspan3 {
+    width: 223px; }
+  .grid .col.colspan4 {
+    width: 304px; }
+  .grid .col.colspan5 {
+    width: 385px; }
+  .grid .col.colspan6 {
+    width: 466px; }
+  .grid .col.colspan7 {
+    width: 547px; }
+  .grid .col.colspan8 {
+    width: 628px; }
+  .grid .col.colspan9 {
+    width: 709px; }
+  .grid .col.colspan10 {
+    width: 790px; }
+  .grid .col.colspan11 {
+    width: 871px; }
+  .grid .col.colspan12 {
+    width: 952px; }
   @media only screen and (min-width: 600px) and (max-width: 1024px) {
     .grid .col {
-      float: left;
       width: 0%;
       margin: 0 1.04167%; }
-      .grid .col:first-child, .grid .col.first {
-        margin-left: 0!important; }
-      .grid .col:last-child, .grid .col.last {
-        margin-right: 0!important; }
       .grid .col.colspan2 {
         width: 14.79167%; }
         .grid .col.colspan2 .colspan2 {
@@ -1411,37 +1440,36 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
         .grid .col.colspan12 .colspan12 {
           width: 100%;
           margin: 0; } }
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 320px) and (max-width: 600px) {
     .grid .col {
-      float: left;
-      width: 61px;
-      margin: 0 10px; }
-      .grid .col:first-child, .grid .col.first {
-        margin-left: 0!important; }
-      .grid .col:last-child, .grid .col.last {
-        margin-right: 0!important; }
+      width: 100%;
+      margin: 0; }
       .grid .col.colspan2 {
-        width: 142px; }
+        width: 100%; }
       .grid .col.colspan3 {
-        width: 223px; }
+        width: 100%; }
       .grid .col.colspan4 {
-        width: 304px; }
+        width: 100%; }
       .grid .col.colspan5 {
-        width: 385px; }
+        width: 100%; }
       .grid .col.colspan6 {
-        width: 466px; }
+        width: 100%; }
       .grid .col.colspan7 {
-        width: 547px; }
+        width: 100%; }
       .grid .col.colspan8 {
-        width: 628px; }
+        width: 100%; }
       .grid .col.colspan9 {
-        width: 709px; }
+        width: 100%; }
       .grid .col.colspan10 {
-        width: 790px; }
+        width: 100%; }
       .grid .col.colspan11 {
-        width: 871px; }
+        width: 100%; }
       .grid .col.colspan12 {
-        width: 952px; } }
+        width: 100%; } }
+  .grid .col.first {
+    margin-left: 0!important; }
+  .grid .col.last {
+    margin-right: 0!important; }
 
 .table {
   width: 100%; }
