@@ -396,12 +396,12 @@ code {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.clearfix:before, .btn-group:before, .nav-h:before, .nav-bar:before, .nav-tabs:before, .grid:before, .clearfix:after, .btn-group:after, .nav-h:after, .nav-bar:after, .nav-tabs:after, .grid:after {
+.clearfix:before, .container:before, .btn-group:before, .nav-h:before, .nav-bar:before, .nav-tabs:before, .grid:before, .clearfix:after, .container:after, .btn-group:after, .nav-h:after, .nav-bar:after, .nav-tabs:after, .grid:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
-.clearfix:after, .btn-group:after, .nav-h:after, .nav-bar:after, .nav-tabs:after, .grid:after {
+.clearfix:after, .container:after, .btn-group:after, .nav-h:after, .nav-bar:after, .nav-tabs:after, .grid:after {
   clear: both; }
 
 /*
@@ -409,6 +409,7 @@ code {
  * Include this rule to trigger hasLayout and contain floats.
  */
 .container {
+  position: relative;
   padding: 0 20px;
   width: 960px;
   margin: 0 auto; }
