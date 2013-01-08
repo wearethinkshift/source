@@ -838,10 +838,45 @@ code {
     content: attr(data-icon-after);
     margin-left: 0.5em; }
 
+input[type=text], input[type=email], input[type=tel], input[type=url],
+input[type=number], input[type=password], input[type=search], input[type=date],
+input[type=week], input[type=month], input[type=time], input[type=datetime],
+input[type=datetime-local], .text-input, textarea {
+  position: relative;
+  font-size: 14px;
+  padding: 0.5em 0.25em;
+  margin: 0 0 0.5em;
+  border: 1px solid #b3b3b3;
+  border-radius: 2px;
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1); }
+
+textarea {
+  resize: both;
+  max-width: 100%; }
+
 .field {
   margin-bottom: 10px;
   padding: 0px 5px;
   position: relative; }
+  .field input[type=text], .field input[type=email], .field input[type=tel], .field input[type=url],
+  .field input[type=number], .field input[type=password], .field input[type=search], .field input[type=date],
+  .field input[type=week], .field input[type=month], .field input[type=time], .field input[type=datetime],
+  .field input[type=datetime-local], .field .text-input, .field textarea {
+    margin: 0 -5px 0.5em;
+    width: 100%;
+    display: block; }
+  .field:after {
+    font-family: 'fonticons';
+    content: '';
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 1.35em;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    z-index: 5; }
   .field label, .field select {
     margin-left: -5px;
     margin-right: 10px; }
@@ -851,20 +886,15 @@ code {
     color: #999999; }
   .field .field-message {
     background: #e6e6e6;
-    font-weight: bold;
     margin: -8px -4px 7px -5px;
     padding: 5px;
     border: 1px solid #cccccc;
-    border-radius: 0 0 2px 2px; }
-  .field.with-error:before {
-    font-family: 'fonticons';
+    border-radius: 0 0 2px 2px;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5); }
+  .field.with-error:after {
     content: 'w';
-    display: block;
-    position: absolute;
-    right: -25px;
-    top: 1.75em;
-    margin-right: 0.25em;
-    color: #d01616; }
+    color: #d01616;
+    display: block; }
   .field.with-error label {
     color: #d01616; }
   .field.with-error input {
@@ -875,15 +905,10 @@ code {
     border-color: #a21111;
     background-color: #d01616;
     color: white; }
-  .field.with-notice:before {
-    font-family: 'fonticons';
+  .field.with-notice:after {
     content: 'w';
-    display: block;
-    position: absolute;
-    right: -25px;
-    top: 1.75em;
-    margin-right: 0.25em;
-    color: #b69c14; }
+    color: #b69c14;
+    display: block; }
   .field.with-notice label {
     color: #b69c14; }
   .field.with-notice input {
@@ -894,15 +919,10 @@ code {
     border-color: #88750f;
     background-color: #b69c14;
     color: white; }
-  .field.with-success:before {
-    font-family: 'fonticons';
+  .field.with-success:after {
     content: 't';
-    display: block;
-    position: absolute;
-    right: -25px;
-    top: 1.75em;
-    margin-right: 0.25em;
-    color: #3da20e; }
+    color: #3da20e;
+    display: block; }
   .field.with-success label {
     color: #348b0c; }
   .field.with-success input {
@@ -913,24 +933,6 @@ code {
     border-color: #1a4406;
     background-color: #348b0c;
     color: white; }
-
-input[type=text], input[type=email], input[type=tel], input[type=url],
-input[type=number], input[type=password], input[type=search], input[type=date],
-input[type=week], input[type=month], input[type=time], input[type=datetime],
-input[type=datetime-local], .text-input, textarea {
-  display: block;
-  position: relative;
-  width: 100%;
-  font-size: 14px;
-  padding: 0.40em 0.25em;
-  margin: 0 -5px 0.5em;
-  border-radius: 2px;
-  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
-  border: 1px solid #b3b3b3; }
-
-textarea {
-  resize: both;
-  max-width: 100%; }
 
 .actions {
   padding: 20px;

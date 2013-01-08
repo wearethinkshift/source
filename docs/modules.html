@@ -18,7 +18,7 @@
 
 <header class="masthead">
   <nav class="nav-bar">
-    <ul class="container">
+    <ul class="container" data-menu-icon="=">
       <li><a href="/docs">Base</a></li>
       <li class="active"><a href="/docs/modules.html">Modules</a></li>
     </ul>
@@ -121,19 +121,6 @@
         <li><a href="#">Fourth Item</a></li>
       </ul>
       
-      <h2>Navigation Bar with Menu</h2>
-      <ul class="nav-bar">
-        <li><a href="#">First Item</a></li>
-        <li><a href="#">Second Item</a></li>
-        <li>
-          <a href="#" data-icon-after="v">Third Item</a>
-          <ul class="nav-menu">
-            <li><a href="#">First Item with a long label</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Fourth Item</a></li>
-      </ul>
-      
       <h2>Tabs</h2>
       <ul class="nav-tabs">
         <li><a href="#">First Item</a></li>
@@ -161,6 +148,8 @@
       <input type="datetime" placeholder="input:datetime">
       <input type="datetime-local" placeholder="input:datetime-local">
     </div>
+    
+    <p><input type="text" placeholder="input"><button class="btn">with a button</button> <span class="mute">(not in a <code>&lt;div class="field"&gt;</code>)</span></p>
       
     <div class="field">
       <label><input type="checkbox"> Checkbox with Text</label>
@@ -186,6 +175,7 @@
 
     
     <h2>Forms and Grids</h2>
+    <!-- Note that for tablets, these nested grid columns will become 100% widths. -->
     <div class="grid">
       <div class="col colspan3">
         <div class="field">
@@ -207,8 +197,8 @@
       </div>
     </div>
     <div class="actions">
-      <p class="disclaimer"><label><input type="checkbox"> I have read and agree</label> to the <a href="#">Terms and Conditions</a></p>
-      <button class="btn btn-primary" data-icon="t">I accept</button> or <a href="#">Cancel</a>
+      <p class="disclaimer"><label><input type="checkbox"> I have read and agree</label> to the <a href="#">Terms and Conditions</a>.</p>
+      <button class="btn btn-primary" data-icon="t">Submit</button> or <a href="#">Cancel</a>
     </div>
     
     <h2>Field Decorations</h2>
@@ -231,10 +221,26 @@
     </div>
     
     <div class="field with-success">
-      <label for="test6">Field with a success:</label>
-      <input type="text" id="test6">
+      <label for="test7">Field with a success:</label>
+      <input type="text" id="test7">
       <p class="field-message">Here is an additional message that can go with the field success.</p>
       <p class="hint">And this one has a hint too!</p>
+    </div>
+    
+    <p>One more time without the messages.</p>
+    <div class="field with-error">
+      <label for="test8">Field with an error:</label>
+      <input type="text" id="test8">
+    </div>
+    
+    <div class="field with-notice">
+      <label for="test9">Field with a warning:</label>
+      <input type="text" id="test9">
+    </div>
+    
+    <div class="field with-success">
+      <label for="test10">Field with a success:</label>
+      <input type="text" id="test10">
     </div>
     
     <h1>Tables</h1>
