@@ -485,7 +485,7 @@ code {
     background-image: -ms-linear-gradient(top, white, #f2f2f2);
     background-image: -o-linear-gradient(top, white, #f2f2f2);
     background-image: linear-gradient(top, white, #f2f2f2); }
-  .btn:active, .btn:focus {
+  .btn:active {
     position: relative;
     text-decoration: none;
     z-index: 1;
@@ -499,6 +499,9 @@ code {
     background-image: -o-linear-gradient(top, #cccccc, #bfbfbf);
     background-image: linear-gradient(top, #cccccc, #bfbfbf);
     box-shadow: inset 0px 1px 3px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.8); }
+  .btn:focus {
+    text-decoration: none;
+    color: #666666; }
   .btn.btn-large {
     font-size: 18px;
     padding: 0.5em 1em; }
@@ -552,6 +555,15 @@ code {
     background-image: -ms-linear-gradient(top, #ef5223, #e84211);
     background-image: -o-linear-gradient(top, #ef5223, #e84211);
     background-image: linear-gradient(top, #ef5223, #e84211); }
+    .btn.btn-primary:focus {
+      background-color: #ef5223;
+      border-color: #b8350d;
+      border-bottom-color: #89270a;
+      background-image: -webkit-linear-gradient(top, #ef5223, #e84211);
+      background-image: -moz-linear-gradient(top, #ef5223, #e84211);
+      background-image: -ms-linear-gradient(top, #ef5223, #e84211);
+      background-image: -o-linear-gradient(top, #ef5223, #e84211);
+      background-image: linear-gradient(top, #ef5223, #e84211); }
     .btn.btn-primary:hover {
       background-color: #f1653b;
       border-color: #d03c0f;
@@ -579,6 +591,15 @@ code {
     background-image: -ms-linear-gradient(top, #196ae4, #165fcd);
     background-image: -o-linear-gradient(top, #196ae4, #165fcd);
     background-image: linear-gradient(top, #196ae4, #165fcd); }
+    .btn.btn-info:focus {
+      background-color: #196ae4;
+      border-color: #114a9f;
+      border-bottom-color: #0c3571;
+      background-image: -webkit-linear-gradient(top, #196ae4, #165fcd);
+      background-image: -moz-linear-gradient(top, #196ae4, #165fcd);
+      background-image: -ms-linear-gradient(top, #196ae4, #165fcd);
+      background-image: -o-linear-gradient(top, #196ae4, #165fcd);
+      background-image: linear-gradient(top, #196ae4, #165fcd); }
     .btn.btn-info:hover {
       background-color: #2e78e8;
       border-color: #1455b6;
@@ -606,6 +627,15 @@ code {
     background-image: -ms-linear-gradient(top, #d01616, #b91414);
     background-image: -o-linear-gradient(top, #d01616, #b91414);
     background-image: linear-gradient(top, #d01616, #b91414); }
+    .btn.btn-alert:focus {
+      background-color: #d01616;
+      border-color: #8b0f0f;
+      border-bottom-color: #5d0a0a;
+      background-image: -webkit-linear-gradient(top, #d01616, #b91414);
+      background-image: -moz-linear-gradient(top, #d01616, #b91414);
+      background-image: -ms-linear-gradient(top, #d01616, #b91414);
+      background-image: -o-linear-gradient(top, #d01616, #b91414);
+      background-image: linear-gradient(top, #d01616, #b91414); }
     .btn.btn-alert:hover {
       background-color: #e71919;
       border-color: #a21111;
@@ -633,6 +663,15 @@ code {
     background-image: -ms-linear-gradient(top, #e4c419, #cdb016);
     background-image: -o-linear-gradient(top, #e4c419, #cdb016);
     background-image: linear-gradient(top, #e4c419, #cdb016); }
+    .btn.btn-warning:focus {
+      background-color: #e4c419;
+      border-color: #9f8911;
+      border-bottom-color: #71610c;
+      background-image: -webkit-linear-gradient(top, #e4c419, #cdb016);
+      background-image: -moz-linear-gradient(top, #e4c419, #cdb016);
+      background-image: -ms-linear-gradient(top, #e4c419, #cdb016);
+      background-image: -o-linear-gradient(top, #e4c419, #cdb016);
+      background-image: linear-gradient(top, #e4c419, #cdb016); }
     .btn.btn-warning:hover {
       background-color: #e8cb2e;
       border-color: #b69c14;
@@ -660,6 +699,15 @@ code {
     background-image: -ms-linear-gradient(top, #3da20e, #348b0c);
     background-image: -o-linear-gradient(top, #3da20e, #348b0c);
     background-image: linear-gradient(top, #3da20e, #348b0c); }
+    .btn.btn-confirm:focus {
+      background-color: #3da20e;
+      border-color: #225c08;
+      border-bottom-color: #112d04;
+      background-image: -webkit-linear-gradient(top, #3da20e, #348b0c);
+      background-image: -moz-linear-gradient(top, #3da20e, #348b0c);
+      background-image: -ms-linear-gradient(top, #3da20e, #348b0c);
+      background-image: -o-linear-gradient(top, #3da20e, #348b0c);
+      background-image: linear-gradient(top, #3da20e, #348b0c); }
     .btn.btn-confirm:hover {
       background-color: #46b910;
       border-color: #2b730a;

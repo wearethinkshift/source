@@ -59,7 +59,7 @@ $include-button-statuses: true;
   
   }
   
-  &:active, &:focus {
+  &:active {
     
     position: relative;
     text-decoration: none;
@@ -69,6 +69,11 @@ $include-button-statuses: true;
     @include button-color(darken($default-button-color, 15%));
     @include box-shadow("inset 0px 1px 3px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.8)")
     
+  }
+  
+  &:focus {
+    text-decoration: none;
+    color: $default-button-text-color;
   }
   
   // BUTTON EXTENSIONS
@@ -150,7 +155,9 @@ $include-button-statuses: true;
     &.btn-primary {
       @extend %btn-status;
       @include button-color($default-primary-button-color);
-    
+      &:focus {
+        @include button-color($default-primary-button-color);
+      }
       &:hover {
         @include button-color(lighten($default-primary-button-color, 5%));
       }
@@ -162,7 +169,9 @@ $include-button-statuses: true;
     &.btn-info {
       @extend %btn-status;
       @include button-color($default-info-button-color);
-    
+      &:focus {
+        @include button-color($default-info-button-color);
+      }
       &:hover {
         @include button-color(lighten($default-info-button-color, 5%));
       }
@@ -174,7 +183,9 @@ $include-button-statuses: true;
     &.btn-alert {
       @extend %btn-status;
       @include button-color($default-alert-button-color);
-    
+      &:focus {
+        @include button-color($default-alert-button-color);
+      }
       &:hover {
         @include button-color(lighten($default-alert-button-color, 5%));
       }
@@ -186,7 +197,9 @@ $include-button-statuses: true;
     &.btn-warning {
       @extend %btn-status;
       @include button-color($default-warning-button-color);
-    
+      &:focus {
+        @include button-color($default-warning-button-color);
+      }
       &:hover {
         @include button-color(lighten($default-warning-button-color, 5%));
       }
@@ -198,7 +211,9 @@ $include-button-statuses: true;
     &.btn-confirm {
       @extend %btn-status;
       @include button-color($default-confirm-button-color);
-    
+      &:focus {
+        @include button-color($default-confirm-button-color);
+      }
       &:hover {
         @include button-color(lighten($default-confirm-button-color, 5%));
       }
