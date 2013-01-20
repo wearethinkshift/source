@@ -20,34 +20,23 @@
   speak: none;
   text-decoration: inherit;
   text-align: center;
-  line-height: 0;
-  position: absolute;
-  top: 50%;
-  margin-top: -1em;
-  width: 2.5em;
-  height: 2em;
-  line-height: 2em;
+  padding: 0.5em 1em;
+  margin: -0.5em 0 -0.5em -1em;
+  opacity: 0.8;
 }
 
 .icon, [data-icon] {
-  position: relative;
-  padding-left: 2.5em;
   &:before {
     @extend %iconstyles;
-    left: 0;
     content: attr(data-icon);
-    margin-right: 0.5em;
   }
   
 }
 
 .icon-after, [data-icon-after] {
-  position: relative;
-  padding-right: 2.5em;
   &:after {
-    right: 0;
     @extend %iconstyles;
+    margin: -0.5em -1em -0.5em 0;
     content: attr(data-icon-after);
-    margin-left: 0.5em;
   }
 }

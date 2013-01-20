@@ -82,15 +82,6 @@ $include-button-statuses: true;
     &.btn-large {
       font-size: $font-size-xlarge;
       padding: 0.5em 1em;
-    
-      // Dependency: data-icon
-      &.icon, &[data-icon] {
-        padding-left: 2.5em;
-      }
-    
-      &.icon-after, &[data-icon-after] {
-        padding-right: 2.5em;
-      }
     }
   
     &.btn-small {
@@ -98,22 +89,16 @@ $include-button-statuses: true;
     
       // Dependency: data-icon
       &.icon, &[data-icon] {
-        padding-left: 2em;
         &:before {
-          width: 2em;
-          height: 1.5em;
-          line-height: 1.5em;
-          margin-top: -.75em;
+          padding: 0.25em 0.75em;
+          margin: -0.25em 0 -0.25em -0.7em;
         }
       }
     
       &.icon-after, &[data-icon-after] {
-        padding-right: 2em;
         &:after {
-          width: 2em;
-          height: 1.5em;
-          line-height: 1.5em;
-          margin-top: -.75em;
+          padding: 0.25em 0.75em;
+          margin: -0.25em -0.7em -0.25em 0em;
         }
       }
     }
@@ -125,22 +110,16 @@ $include-button-statuses: true;
     
       // Dependency: data-icon
       &.icon, &[data-icon] {
-        padding-left: 2em;
         &:before {
-          width: 2em;
-          height: 1.5em;
-          margin-top: -.75em;
-          line-height: 1.5em;
+          padding: 0.25em 0.5em;
+          margin: -0.25em 0 -0.25em -0.5em;
         }
       }
     
       &.icon-after, &[data-icon-after] {
-        padding-right: 2em;
         &:after {
-          width: 2em;
-          height: 1.5em;
-          line-height: 1.5em;
-          margin-top: -.75em;
+          padding: 0.25em 0.5em;
+          margin: -0.25em -0.5em -0.25em 0em;
         }
       }
     }
