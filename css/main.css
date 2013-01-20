@@ -737,14 +737,12 @@ code {
       color: #999999; }
     .nav-h li a:active, .nav-bar li a:active, .nav-v li a:active, .nav-menu li a:active, .nav-tabs li a:active, .nav-h li a:focus, .nav-bar li a:focus, .nav-v li a:focus, .nav-menu li a:focus, .nav-tabs li a:focus {
       color: #333333; }
-    .nav-h li a.icon, .nav-bar li a.icon, .nav-v li a.icon, .nav-menu li a.icon, .nav-tabs li a.icon, .nav-h li a[data-icon], .nav-bar li a[data-icon], .nav-v li a[data-icon], .nav-menu li a[data-icon], .nav-tabs li a[data-icon] {
-      padding-left: 2.5em; }
-      .nav-h li a.icon:after, .nav-bar li a.icon:after, .nav-v li a.icon:after, .nav-menu li a.icon:after, .nav-tabs li a.icon:after, .nav-h li a[data-icon]:after, .nav-bar li a[data-icon]:after, .nav-v li a[data-icon]:after, .nav-menu li a[data-icon]:after, .nav-tabs li a[data-icon]:after {
-        width: 2.5em; }
-    .nav-h li a.icon-after, .nav-bar li a.icon-after, .nav-v li a.icon-after, .nav-menu li a.icon-after, .nav-tabs li a.icon-after, .nav-h li a[data-icon-after], .nav-bar li a[data-icon-after], .nav-v li a[data-icon-after], .nav-menu li a[data-icon-after], .nav-tabs li a[data-icon-after] {
-      padding-right: 2.5em; }
-      .nav-h li a.icon-after:after, .nav-bar li a.icon-after:after, .nav-v li a.icon-after:after, .nav-menu li a.icon-after:after, .nav-tabs li a.icon-after:after, .nav-h li a[data-icon-after]:after, .nav-bar li a[data-icon-after]:after, .nav-v li a[data-icon-after]:after, .nav-menu li a[data-icon-after]:after, .nav-tabs li a[data-icon-after]:after {
-        width: 2.5em; }
+    .nav-h li a.icon:after, .nav-bar li a.icon:after, .nav-v li a.icon:after, .nav-menu li a.icon:after, .nav-tabs li a.icon:after, .nav-h li a[data-icon]:after, .nav-bar li a[data-icon]:after, .nav-v li a[data-icon]:after, .nav-menu li a[data-icon]:after, .nav-tabs li a[data-icon]:after {
+      padding: 0.5em 1em;
+      margin: -0.5em 0 -0.5em -1em; }
+    .nav-h li a.icon-after:after, .nav-bar li a.icon-after:after, .nav-v li a.icon-after:after, .nav-menu li a.icon-after:after, .nav-tabs li a.icon-after:after, .nav-h li a[data-icon-after]:after, .nav-bar li a[data-icon-after]:after, .nav-v li a[data-icon-after]:after, .nav-menu li a[data-icon-after]:after, .nav-tabs li a[data-icon-after]:after {
+      padding: 0.5em 1em;
+      margin: -0.5em -1em -0.5em 0em; }
 
 .nav-h, .nav-bar {
   margin-top: 0.5em;
@@ -849,7 +847,8 @@ code {
   text-align: center;
   padding: 0.5em 1em;
   margin: -0.5em 0 -0.5em -1em;
-  opacity: 0.8; }
+  opacity: 0.8;
+  display: inline-block; }
 
 .icon:before, [data-icon]:before {
   content: attr(data-icon); }

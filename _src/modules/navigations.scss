@@ -28,18 +28,17 @@
       }
     
       &.icon, &[data-icon] {
-        padding-left: 2.5em;
         &:after {
-          width: 2.5em;
+          padding: 0.5em 1em;
+          margin: -0.5em 0 -0.5em -1em;
         }
       }
       &.icon-after, &[data-icon-after] {
-        padding-right: 2.5em;
         &:after {
-          width: 2.5em;
+          padding: 0.5em 1em;
+          margin: -0.5em -1em -0.5em 0em;
         }
       }
-    
     }
   }
   
