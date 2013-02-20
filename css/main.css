@@ -1442,7 +1442,7 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
   width: 100%; }
   .table td, .table th {
     border-bottom: 1px solid #e6e6e6;
-    padding: 0.5em 1em;
+    padding: .5em 1em;
     text-align: left;
     background: white; }
   .table tbody tr:last-child td, .table tbody tr:last-child th {
@@ -1522,11 +1522,11 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
     right: 1px; }
 
 .masthead h1 {
-  font-family: "oswald", sans-serif;
+  font-family: 'oswald', sans-serif;
   font-weight: 300; }
 
 h1 {
-  font-family: "oswald", sans-serif;
+  font-family: 'oswald', sans-serif;
   text-transform: uppercase; }
 
 body:after {
