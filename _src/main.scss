@@ -3,56 +3,21 @@
 // ==================================================
 
 // Variables and Options
-@import "base/config";
-
-// Some handy-dandy mixins
-@import "base/mixins";
-
-// Browser Default Style Normalization
-@import "base/normalize";
-
-// Base Typographic Settings
-@import "base/typography";
-
-// CSS Helper Classes
-@import "base/helpers";
-
-// ==================================================
-// LAYOUT
-// ==================================================
-@import "layout";
-
-// ==================================================
-// MODULES
-// ==================================================
-// Buttons
-@import "modules/buttons";
-
-// Navigations
-@import "modules/navigations";
-
-// Icons
-@import "modules/icons";
-
-// Forms
-@import "modules/forms";
-
-// Grid
-@import "modules/grid";
-
-// Table
-@import "modules/table";
-
-// Images
-@import "modules/images";
-
-// Layout Modules?
-@import "modules/media";
+@import "source/source";
 
 // ==================================================
 // THEME
 // ==================================================
-@import "theme";
+.masthead h1 {
+  font-family: 'oswald', sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-family: 'oswald', sans-serif;
+  text-transform: uppercase;
+}
+
 
 body {
   &:after {
