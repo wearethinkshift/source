@@ -27,6 +27,7 @@
 }
 
 .icon, [data-icon] {
+  position: relative;
   &:before {
     @extend %iconstyles;
     content: attr(data-icon);
@@ -35,6 +36,7 @@
 }
 
 .icon-after, [data-icon-after] {
+  position: relative;
   &:after {
     @extend %iconstyles;
     margin: -0.5em -1em -0.5em 0;
