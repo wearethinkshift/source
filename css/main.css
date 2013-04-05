@@ -737,7 +737,7 @@ code {
   .nav-h li.active a, .nav-bar li.active a, .nav-v li.active a, .nav-menu li.active a, .nav-tabs li.active a {
     color: #ef5223; }
   .nav-h li a, .nav-bar li a, .nav-v li a, .nav-menu li a, .nav-tabs li a {
-    padding: 0.5em 1em;
+    padding: 7px 14px;
     color: #666666; }
     .nav-h li a:hover, .nav-bar li a:hover, .nav-v li a:hover, .nav-menu li a:hover, .nav-tabs li a:hover {
       text-decoration: none;
