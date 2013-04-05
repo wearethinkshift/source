@@ -5,6 +5,11 @@
 // hacks and other gotchas.
 // =============================================================================
 
+$webkit:true!default;
+$moz:true!default;
+$ms:true!default;
+$o:true!default;
+
 // --------------------------------------------------------------------------
 // Vendor Prefix
 // -------------
@@ -13,7 +18,7 @@
 // for multiple properties, use a string:
 // @include -v(box-shadow, "0px 1px 0px black, inset 0px 1px 0px white");
 // --------------------------------------------------------------------------
-@mixin -v($property, $values, $webkit:true, $moz:true, $ms:true, $o:true) {
+@mixin -v($property, $values, $webkit, $moz, $ms, $o) {
   
   @if $webkit == true { -webkit-#{$property}: #{$values}; }
 	@if $moz == true { -moz-#{$property}: #{$values}; }
@@ -42,51 +47,51 @@
 // Box Shadow
 // --------------------------------------------------------------------------
 @mixin box-shadow($values, $webkit:false, $moz:false) {
-	@include -v(box-shadow, $values, $webkit, $moz, false, false);
+	@include -v(box-shadow, $values, $webkit, $moz, $ms:false, $o:false);
 }
 
 // --------------------------------------------------------------------------
 // Text Shadow
 // --------------------------------------------------------------------------
 @mixin text-shadow($values, $webkit:false, $moz:false) {
-	@include -v(text-shadow, $values, $webkit, $moz, false, false);
+	@include -v(text-shadow, $values, $webkit, $moz, $ms:false, $o:false);
 }
 
 // --------------------------------------------------------------------------
 // Transition
 // --------------------------------------------------------------------------
 @mixin transition($values, $webkit:true, $moz:true) {
-	@include -v(transition, $values, $webkit, $moz, false, false);
+	@include -v(transition, $values, $webkit, $moz, $ms:false, $o:false);
 }
 
 // --------------------------------------------------------------------------
 // Transform
 // --------------------------------------------------------------------------
 @mixin transform($values, $webkit:true, $moz:true, $ms:true) {
-	@include -v(transform, $values, $webkit, $moz, $ms, false);
+	@include -v(transform, $values, $webkit, $moz, $ms, $o:false);
 }
 
 // --------------------------------------------------------------------------
 // Border Radius
 // --------------------------------------------------------------------------
 @mixin border-radius($values, $webkit:false, $moz:false) {
-	@include -v(border-radius, $values, $webkit, $moz, false, false);
+	@include -v(border-radius, $values, $webkit, $moz, $ms:false, $o:false);
 }
 
 @mixin border-top-left-radius($value, $webkit:false, $moz:false) {
-  @include -v(border-top-left-radius, $value, $webkit, $moz, false, false);
+  @include -v(border-top-left-radius, $value, $webkit, $moz, $ms:false, $o:false);
 }
 
 @mixin border-top-right-radius($value, $webkit:false, $moz:false) {
-  @include -v(border-top-right-radius, $value, $webkit, $moz, false, false);
+  @include -v(border-top-right-radius, $value, $webkit, $moz, $ms:false, $o:false);
 }
 
 @mixin border-bottom-left-radius($value, $webkit:false, $moz:false) {
-  @include -v(border-bottom-left-radius, $value, $webkit, $moz, false, false);
+  @include -v(border-bottom-left-radius, $value, $webkit, $moz, $ms:false, $o:false);
 }
 
 @mixin border-bottom-right-radius($value, $webkit:false, $moz:false) {
-  @include -v(border-bottom-right-radius, $value, $webkit, $moz, false, false);
+  @include -v(border-bottom-right-radius, $value, $webkit, $moz, $ms:false, $o:false);
 }
 
 // --------------------------------------------------------------------------
