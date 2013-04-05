@@ -1,21 +1,35 @@
-$form-field-padding: 5px; // this would set grid compatability.
+$grid-form-field-padding: 5px; // this would set grid compatability.
 
-%textinput {
+$with-field-message:          true;
+$with-error-message:          true;
+$with-notice-message:         true;
+$with-success-message:        true;
+$with-placeholder-animations: true;
+
+// Removed these types because of size issues.
+input[type=text], input[type=email], input[type=tel], input[type=url],
+input[type=number], input[type=password], input[type=search], .text-input, textarea,
+input[type=date], input[type=week], input[type=month],
+input[type=time], input[type=datetime], input[type=datetime-local] {
   position: relative;
-  font-size: $font-size-medium;
-  padding: 0.5em 0.25em;
+  
+  padding: 7px 3.5px; // decimal pixels... I know it's weird.
   margin: 0 0 0.5em;
   border: 1px solid lighten($light-gray, 10%);
   
+  font-size: $font-size-medium;
+  height: $font-size-medium;
+  line-height: $font-size-medium;
+  
   @include border-radius(2px);
   @include box-shadow(inset 0px 1px 2px rgba(0,0,0,0.1));
+  
 }
 
-input[type=text], input[type=email], input[type=tel], input[type=url],
-input[type=number], input[type=password], input[type=search], input[type=date],
-input[type=week], input[type=month], input[type=time], input[type=datetime],
-input[type=datetime-local], .text-input, textarea {
-  @extend %textinput;
+// adjusted because they're weird in size.
+input[type=date], input[type=week], input[type=month],
+input[type=time], input[type=datetime-local] {
+  -webkit-appearance: border-box;
 }
 
 textarea {
@@ -25,14 +39,14 @@ textarea {
 
 .field {
   margin-bottom: 10px;
-  padding: 0px $form_field_padding;
+  padding: 0px $grid-form-field-padding;
   position: relative;
   z-index: 1;
   
   input[type=text], input[type=email], input[type=tel], input[type=url],
-  input[type=number], input[type=password], input[type=search], input[type=date],
-  input[type=week], input[type=month], input[type=time], input[type=datetime],
-  input[type=datetime-local], .text-input, textarea {
+  input[type=number], input[type=password], input[type=search], .text-input, textarea,
+  input[type=date], input[type=week], input[type=month],
+  input[type=time], input[type=datetime], input[type=datetime-local] {
     margin: 0 -5px 0.5em;
     width: 100%;
     display: block;
@@ -64,92 +78,103 @@ textarea {
     color: $light-gray;
   }
   
-  .field-message {
-    background: lighten($silver, 10%);
-    margin: -8px -4px 7px -5px;
-    padding: 5px;
-    border: 1px solid $silver;
-    
-    @include border-radius(0 0 2px 2px);
-    @include text-shadow(0px 1px 1px rgba(0,0,0,0.5))
-  }
-  
-  &.with-error {
-    
-    &:after {
-      content: 'w';
-      color: $alert;
-      display: block;
-    }
-    
-    label {
-      color: $alert;
-    }
-    
-    input {
-      border-color: $alert;
-      color: $alert;
-      background-color: lighten($alert, 50%);
-    }
-    
+  @if $with-field-message == true {
     .field-message {
-      border-color: darken($alert, 10%);
-      background-color: $alert;
-      color: white;
+      background: lighten($silver, 10%);
+      margin: -8px -4px 7px -5px;
+      padding: 5px;
+      border: 1px solid $silver;
+    
+      @include border-radius(0 0 2px 2px);
+      @include text-shadow(0px 1px 1px rgba(0,0,0,0.5))
     }
   }
-  
-  &.with-notice {
-    
-    &:after {
-      content: 'w';
-      color: darken($warning, 10%);
-      display: block;
+
+  @if $with-error-message == true {
+    &.with-error {
+      &:after {
+        content: 'x';
+        color: $alert;
+        display: block;
+      }
+
+      label {
+        color: $alert;
+      }
+
+      input {
+        border-color: $alert;
+        color: $alert;
+        background-color: lighten($alert, 50%);
+      }
+      
+      @if $with-field-message {
+        .field-message {
+          border-color: darken($alert, 10%);
+          background-color: $alert;
+          color: white;
+        }
+      } // ENDIF $with-field-message
     }
-    
-    label {
-      color: darken($warning, 10%);
+  } // ENDIF $with-error-message
+
+  @if $with-notice-message == true {
+    &.with-notice {
+
+      &:after {
+        content: 'w';
+        color: darken($warning, 10%);
+        display: block;
+      }
+
+      label {
+        color: darken($warning, 10%);
+      }
+
+      input {
+        border-color: darken($warning, 10%);
+        color: darken($warning, 20%);
+        background-color: lighten($warning, 35%);
+      }
+      
+      @if $with-field-message {
+        .field-message {
+          border-color: darken($warning, 20%);
+          background-color: darken($warning, 10%);
+          color: white;
+        }
+      } // ENDIF $with-field-message
     }
-    
-    input {
-      border-color: darken($warning, 10%);
-      color: darken($warning, 20%);
-      background-color: lighten($warning, 35%);
+  } // ENDIF $with-notice-message
+
+  @if $with-success-message {
+    &.with-success {
+
+      &:after {
+        content: 't';
+        color: $confirm;
+        display: block;
+      }
+
+      label {
+        color: darken($confirm, 5%);
+      }
+
+      input {
+        border-color: darken($confirm, 5%);
+        color: darken($confirm, 5%);
+        background-color: lighten($confirm, 55%);
+      }
+      
+      @if $with-field-message {
+        .field-message {
+          border-color: darken($confirm, 20%);
+          background-color: darken($confirm, 5%);
+          color: white;
+        }
+      } // ENDIF $with-field-message
     }
-    
-    .field-message {
-      border-color: darken($warning, 20%);
-      background-color: darken($warning, 10%);
-      color: white;
-    }
-    
-  }
-  
-  &.with-success {
-    
-    &:after {
-      content: 't';
-      color: $confirm;
-      display: block;
-    }
-    
-    label {
-      color: darken($confirm, 5%);
-    }
-    
-    input {
-      border-color: darken($confirm, 5%);
-      color: darken($confirm, 5%);
-      background-color: lighten($confirm, 55%);
-    }
-    
-    .field-message {
-      border-color: darken($confirm, 20%);
-      background-color: darken($confirm, 5%);
-      color: white;
-    }
-    
-  }
+  } // ENDIF $with-success-message
   
 }
 
@@ -167,34 +192,39 @@ textarea {
   }
   
   .disclaimer {
+    margin: 0;
+    padding: 9px 0;
     text-align: left;
     font-size: $font-size-fine;
+    line-height: $font-size-fine;
     float: left;
   }
 }
 
-::-webkit-input-placeholder {
-  opacity: 1;
-  -webkit-transition: opacity 0.15s linear;
-}
-:-moz-input-placeholder {
-  opacity: 1;
-  -moz-transition: opacity 0.15s linear;
-}
-:input-placeholder {
-  opacity: 1;
-  transition: opacity 0.15s linear;
-}
+@if $with-placeholder-animations {
+  ::-webkit-input-placeholder {
+    opacity: 1;
+    -webkit-transition: opacity 0.15s linear;
+  }
+  :-moz-input-placeholder {
+    opacity: 1;
+    -moz-transition: opacity 0.15s linear;
+  }
+  :input-placeholder {
+    opacity: 1;
+    transition: opacity 0.15s linear;
+  }
 
 
-input:focus, textarea:focus {
-  &::-webkit-input-placeholder {
-    opacity: 0;
+  input:focus, textarea:focus {
+    &::-webkit-input-placeholder {
+      opacity: 0;
+    }
+    &:-moz-input-placeholder {
+      opacity: 0;
+    }
+    &:input-placeholder {
+      opacity: 0;
+    }
   }
-  &:-moz-input-placeholder {
-    opacity: 0;
-  }
-  &:input-placeholder {
-    opacity: 0;
-  }
-}
+} // ENDIF $with-placeholder-animations

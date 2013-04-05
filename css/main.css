@@ -461,7 +461,7 @@ code {
   color: #666666;
   font-size: 14px;
   border: 1px solid;
-  padding: 0.5em 1em;
+  padding: 7px 14px;
   text-decoration: none;
   text-align: center;
   line-height: 1;
@@ -528,10 +528,9 @@ code {
     .btn.btn-mini.icon-after:after, .btn.btn-mini[data-icon-after]:after {
       padding: 0.25em 0.5em;
       margin: -0.25em -0.5em -0.25em 0em; }
-  .btn.btn-primary, .btn.btn-info, .btn.btn-alert, .btn.btn-warning, .btn.btn-confirm {
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
-    color: white; }
   .btn.btn-primary {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+    color: white;
     background-color: #ef5223;
     border-color: #b8350d;
     border-bottom-color: #89270a;
@@ -568,6 +567,8 @@ code {
       background-image: -o-linear-gradient(top, #e84211, #d03c0f);
       background-image: linear-gradient(top, #e84211, #d03c0f); }
   .btn.btn-info {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+    color: white;
     background-color: #196ae4;
     border-color: #114a9f;
     border-bottom-color: #0c3571;
@@ -604,6 +605,8 @@ code {
       background-image: -o-linear-gradient(top, #165fcd, #1455b6);
       background-image: linear-gradient(top, #165fcd, #1455b6); }
   .btn.btn-alert {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+    color: white;
     background-color: #d01616;
     border-color: #8b0f0f;
     border-bottom-color: #5d0a0a;
@@ -640,6 +643,8 @@ code {
       background-image: -o-linear-gradient(top, #b91414, #a21111);
       background-image: linear-gradient(top, #b91414, #a21111); }
   .btn.btn-warning {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+    color: white;
     background-color: #e4c419;
     border-color: #9f8911;
     border-bottom-color: #71610c;
@@ -676,6 +681,8 @@ code {
       background-image: -o-linear-gradient(top, #cdb016, #b69c14);
       background-image: linear-gradient(top, #cdb016, #b69c14); }
   .btn.btn-confirm {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+    color: white;
     background-color: #3da20e;
     border-color: #225c08;
     border-bottom-color: #112d04;
@@ -872,16 +879,22 @@ code {
     content: attr(data-icon-after); }
 
 input[type=text], input[type=email], input[type=tel], input[type=url],
-input[type=number], input[type=password], input[type=search], input[type=date],
-input[type=week], input[type=month], input[type=time], input[type=datetime],
-input[type=datetime-local], .text-input, textarea {
+input[type=number], input[type=password], input[type=search], .text-input, textarea,
+input[type=date], input[type=week], input[type=month],
+input[type=time], input[type=datetime], input[type=datetime-local] {
   position: relative;
-  font-size: 14px;
-  padding: 0.5em 0.25em;
+  padding: 7px 3.5px;
   margin: 0 0 0.5em;
   border: 1px solid #b3b3b3;
+  font-size: 14px;
+  height: 14px;
+  line-height: 14px;
   border-radius: 2px;
   box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1); }
+
+input[type=date], input[type=week], input[type=month],
+input[type=time], input[type=datetime-local] {
+  -webkit-appearance: border-box; }
 
 textarea {
   resize: both;
@@ -893,9 +906,9 @@ textarea {
   position: relative;
   z-index: 1; }
   .field input[type=text], .field input[type=email], .field input[type=tel], .field input[type=url],
-  .field input[type=number], .field input[type=password], .field input[type=search], .field input[type=date],
-  .field input[type=week], .field input[type=month], .field input[type=time], .field input[type=datetime],
-  .field input[type=datetime-local], .field .text-input, .field textarea {
+  .field input[type=number], .field input[type=password], .field input[type=search], .field .text-input, .field textarea,
+  .field input[type=date], .field input[type=week], .field input[type=month],
+  .field input[type=time], .field input[type=datetime], .field input[type=datetime-local] {
     margin: 0 -5px 0.5em;
     width: 100%;
     display: block; }
@@ -926,7 +939,7 @@ textarea {
     border-radius: 0 0 2px 2px;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5); }
   .field.with-error:after {
-    content: 'w';
+    content: 'x';
     color: #d01616;
     display: block; }
   .field.with-error label {
@@ -978,8 +991,11 @@ textarea {
     .actions a:hover {
       color: #ef5223; }
   .actions .disclaimer {
+    margin: 0;
+    padding: 9px 0;
     text-align: left;
     font-size: 12px;
+    line-height: 12px;
     float: left; }
 
 ::-webkit-input-placeholder {

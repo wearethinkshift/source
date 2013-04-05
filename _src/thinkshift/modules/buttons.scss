@@ -2,91 +2,134 @@
 // Buttons.scss
 // ------------
 // =============================================================================
-$default-button-color: lighten($silver, 15%);
+$default-button-color:         lighten($silver, 15%);
 $default-button-border-radius: 2px;
-$default-button-text-color: darken($light-gray, 20%);
+$default-button-text-color:    darken($light-gray, 20%);
 
 // Status Buttons
 $default-primary-button-color: $primary;
-$default-info-button-color: $info;
-$default-alert-button-color: $alert;
+$default-info-button-color:    $info;
+$default-alert-button-color:   $alert;
 $default-warning-button-color: $warning;
 $default-confirm-button-color: $confirm;
 
 // Gradients on all buttons
-$include-button-gradient: true;
-$include-button-sizes: true;
-$include-button-statuses: true;
+$with-gradient: true;
+
+// Button Size Variants
+$with-btn-large: true;
+$with-btn-small: true;
+$with-btn-mini:  true;
+
+// Button Colour Variants
+$with-btn-primary: true;
+$with-btn-info:    true;
+$with-btn-alert:   true;
+$with-btn-warning: true;
+$with-btn-confirm: true;
 
 
-// Depends on base/mixins
-@mixin button-color($color: $default-button-color, $gradient:$include-button-gradient) {
+// Mixin to apply a colour to the buttons
+// Applies a border color,
+// a background color,
+// optionally a gradient,
+@mixin colorize-button($color: $default-button-color, $with-gradient:$with-gradient) {
 
   background-color: $color;
   border-color: darken($color, 15%);
   border-bottom-color: darken($color, 25%);
-  @if $gradient == true {
+  @if $with-gradient == true {
     @include background-linear-gradient("top, #{$color}, #{darken($color, 5%)}");
   }
   
 }
 
+// Mixin to add colour variants for buttons, can be used to
+// extend the default colour variants with other colours
+// and class names.
+// $namespace = html class attribute value: btn-[whatever]
+@mixin btn-color( $namespace,
+                  $base-color:$default-button-color,
+                  $text-color: $default-button-text-color,
+                  $text-shadow:0px -1px 0px rgba(0,0,0,0.25)) {
+  
+  &.btn-#{$namespace} {
+    @include text-shadow($text-shadow);
+    color: $text-color;
+    @include colorize-button($base-color);
+    &:focus {
+      @include colorize-button($base-color);
+    }
+    &:hover {
+      @include colorize-button(lighten($base-color, 5%));
+    }
+    &:active {
+      @include colorize-button(darken($base-color, 5%));
+    }
+  }
+}
+
 // BASE BUTTON
 .btn {
-  
+
   color: $default-button-text-color;
   font-size: $font-size-medium;
   border: 1px solid;
-  padding: 0.5em 1em;
+  padding: 7px 14px;
   text-decoration: none;
   text-align: center;
   line-height: 1;
-  
-  @include button-color;
+
+  @include colorize-button;
   @include text-shadow(0px 1px 0px rgba(255,255,255,0.35));
   @include box-shadow(0px 1px 1px rgba(0,0,0,0.15));
   @include border-radius($default-button-border-radius);
   @include display-inline-block;
-  
+
   &:hover {
-    
+  
     position: relative;
     text-decoration: none;
     z-index: 1;
     color: $default-button-text-color;
-    
-    @include button-color(lighten($default-button-color, 5%));
   
+    @include colorize-button(lighten($default-button-color, 5%));
+
   }
-  
+
   &:active {
-    
+  
     position: relative;
     text-decoration: none;
     z-index: 1;
     color: darken($light-gray, 10%);
-    
-    @include button-color(darken($default-button-color, 15%));
-    @include box-shadow("inset 0px 1px 3px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.8)")
-    
-  }
   
+    @include colorize-button(darken($default-button-color, 15%));
+    @include box-shadow("inset 0px 1px 3px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.8)")
+  
+  }
+
   &:focus {
     text-decoration: none;
     color: $default-button-text-color;
   }
-  
-  // BUTTON EXTENSIONS
+
+// =================
+// BUTTON EXTENSIONS
+// =================
+
   // Different Button Sizes: Optional, On by default.
-  @if $include-button-sizes == true {
+  @if $with-btn-large == true {
     &.btn-large {
       font-size: $font-size-xlarge;
       padding: 0.5em 1em;
     }
+  } // ENDIF $with-btn-large
   
+  @if $with-btn-small {
     &.btn-small {
       padding: 0.25em 0.75em;
-    
+  
       // Dependency: data-icon
       &.icon, &[data-icon] {
         &:before {
@@ -94,7 +137,7 @@ $include-button-statuses: true;
           margin: -0.25em 0 -0.25em -0.7em;
         }
       }
-    
+  
       &.icon-after, &[data-icon-after] {
         &:after {
           padding: 0.25em 0.75em;
@@ -102,12 +145,14 @@ $include-button-statuses: true;
         }
       }
     }
+  } // ENDIF $with-btn-small
   
+  @if $with-btn-mini == true {
     &.btn-mini {
       font-size: $font-size-fine;
       font-weight: normal;
       padding: 0.25em 0.5em;
-    
+  
       // Dependency: data-icon
       &.icon, &[data-icon] {
         &:before {
@@ -115,7 +160,7 @@ $include-button-statuses: true;
           margin: -0.25em 0 -0.25em -0.5em;
         }
       }
-    
+  
       &.icon-after, &[data-icon-after] {
         &:after {
           padding: 0.25em 0.5em;
@@ -123,84 +168,37 @@ $include-button-statuses: true;
         }
       }
     }
-  } // ENDIF $include-button-sizes
+  } // ENDIF $with-btn-mini
+
+// =============
+// BUTTON COLORS
+// =============
   
-  @if $include-button-statuses {
-    &%btn-status {
-      @include text-shadow(0px -1px 0px rgba(0,0,0,0.25));
-      color: white;
-    }
+  // Base Colour Settings
+//  &%btn-status {
+//    @include text-shadow(0px -1px 0px rgba(0,0,0,0.25));
+//    color: white;
+//  }
+
+  @if $with-btn-primary == true {
+    @include btn-color('primary', $base-color: $default-primary-button-color, $text-color: white);
+  } // ENDIF $with-btn-primary
   
-    &.btn-primary {
-      @extend %btn-status;
-      @include button-color($default-primary-button-color);
-      &:focus {
-        @include button-color($default-primary-button-color);
-      }
-      &:hover {
-        @include button-color(lighten($default-primary-button-color, 5%));
-      }
-      &:active {
-        @include button-color(darken($default-primary-button-color, 5%));
-      }
-    }
+  @if $with-btn-info {
+    @include btn-color('info', $base-color: $default-info-button-color, $text-color: white);
+  } // ENDIF $with-btn-info
   
-    &.btn-info {
-      @extend %btn-status;
-      @include button-color($default-info-button-color);
-      &:focus {
-        @include button-color($default-info-button-color);
-      }
-      &:hover {
-        @include button-color(lighten($default-info-button-color, 5%));
-      }
-      &:active {
-        @include button-color(darken($default-info-button-color, 5%));
-      }
-    }
+  @if $with-btn-alert == true {
+    @include btn-color('alert', $base-color: $default-alert-button-color, $text-color: white);
+  } // ENDIF $with-btn-alert
   
-    &.btn-alert {
-      @extend %btn-status;
-      @include button-color($default-alert-button-color);
-      &:focus {
-        @include button-color($default-alert-button-color);
-      }
-      &:hover {
-        @include button-color(lighten($default-alert-button-color, 5%));
-      }
-      &:active {
-        @include button-color(darken($default-alert-button-color, 5%));
-      }
-    }
+  @if $with-btn-warning == true {
+    @include btn-color('warning', $base-color: $default-warning-button-color, $text-color: white);
+  } // ENDIF $with-btn-warning
   
-    &.btn-warning {
-      @extend %btn-status;
-      @include button-color($default-warning-button-color);
-      &:focus {
-        @include button-color($default-warning-button-color);
-      }
-      &:hover {
-        @include button-color(lighten($default-warning-button-color, 5%));
-      }
-      &:active {
-        @include button-color(darken($default-warning-button-color, 5%));
-      }
-    }
-  
-    &.btn-confirm {
-      @extend %btn-status;
-      @include button-color($default-confirm-button-color);
-      &:focus {
-        @include button-color($default-confirm-button-color);
-      }
-      &:hover {
-        @include button-color(lighten($default-confirm-button-color, 5%));
-      }
-      &:active {
-        @include button-color(darken($default-confirm-button-color, 5%));
-      }
-    }
-  } // ENDIF $include-button-statuses
+  @if $with-btn-confirm == true {
+    @include btn-color('confirm', $base-color: $default-confirm-button-color, $text-color: white);
+  } // ENDIF $with-btn-confirm
 } // .btn
 
 .btn-group {
