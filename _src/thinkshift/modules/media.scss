@@ -29,13 +29,13 @@ $default-media-spacing: 10px;
 		float: left;
 		margin-right: $default-media-spacing;
     
-    @include breakpoint(handheld) {
-      float: none;
-      clear: both;
-      text-align: center;
-      margin: 0 auto $default-media-spacing;
-      
-    }
+//    @include breakpoint(handheld) {
+//      float: none;
+//      clear: both;
+//      text-align: center;
+//      margin: 0 auto $default-media-spacing;
+//      
+//    }
     
 	}
 
@@ -43,19 +43,20 @@ $default-media-spacing: 10px;
 		float: right;
 		margin-left: $default-media-spacing;
     
-    @include breakpoint(handheld) {
-      float: none;
-      clear: both;
-      text-align: center;
-      margin: 0 auto $default-media-spacing;
-    }
+//    @include breakpoint(handheld) {
+//      float: none;
+//      clear: both;
+//      text-align: center;
+//      margin: 0 auto $default-media-spacing;
+//    }
     
 	}
 
 	.media-body {
 		@include media-flow-context;
 		position: relative;
-    
+    display: block;
+		
     :first-child {
       margin-top: 0;
     }
