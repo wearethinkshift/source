@@ -50,7 +50,7 @@ $grid-spacing:          20px!default; // spacing in between grid columns.
         
       $margin: (floor($grid-spacing/2)); // left and right margin.
 			@if $margin != 0 {
-				margin: 0 $margin;
+				margin: 0 $margin 20px;
 			}
       
       &:last-child {
@@ -98,7 +98,7 @@ $grid-spacing:          20px!default; // spacing in between grid columns.
               
               .#{$namespace}colspan#{$rn} {
                 width: 100%;
-                margin: 0;
+                margin: 0 0 20px 0;
               }
               
             }
@@ -108,7 +108,7 @@ $grid-spacing:          20px!default; // spacing in between grid columns.
       
       @include breakpoint(handheld) {
         width: 100%;
-        margin: 0;
+        margin: 0 0 20px 0;
         @for $n from 2 to $grid-columns + 1 {
           &.#{$namespace}colspan#{$n} {
             width: 100%;
