@@ -36,6 +36,9 @@ $grid-spacing:          20px!default; // spacing in between grid columns.
 
 		// add the grid container to the clearfix styles.
 		@extend .clearfix;
+		
+		// opinionated default, so we can position things absolute in the grid.
+		position: relative;
 
 		// build the classes.
 		.#{$namespace}col {
