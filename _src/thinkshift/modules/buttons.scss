@@ -17,6 +17,7 @@ $default-confirm-button-color: $confirm;
 $with-gradient: true;
 
 // Button Size Variants
+$with-btn-huge:  true;
 $with-btn-large: true;
 $with-btn-small: true;
 $with-btn-mini:  true;
@@ -119,6 +120,13 @@ $with-btn-confirm: true;
 // =================
 
   // Different Button Sizes: Optional, On by default.
+	@if $with-btn-huge == true {
+		&.btn-huge {
+			font-size: $font-size-huge;
+			padding: 0.5em 1em;
+		}
+	}// ENDIF $with-btn-huge
+	
   @if $with-btn-large == true {
     &.btn-large {
       font-size: $font-size-xlarge;
