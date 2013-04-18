@@ -14,6 +14,12 @@ $grid-columns:            12!default; // number of columns in the grid.
 $grid-spacing:          20px!default; // spacing in between grid columns.
 //$form-field-padding:       0!default; // no form-grid compatability unless specified in forms.scss
 
+// Options
+$with-colshift:   true!default;
+$with-colpush:    true!default;
+$with-colstretch: true!default;
+
+
 // -----------------------------------------------------------------------------
 // Grid Mixins
 // -----------------------------------------------------------------------------
@@ -55,53 +61,85 @@ $grid-spacing:          20px!default; // spacing in between grid columns.
 			@if $margin != 0 {
 				margin: 0 $margin 20px;
 			}
-//      
-//      &:last-child {
-//        margin-right: 0!important;
-//      }
-//      
-//      &:first-child {
-//        margin-left: 0!important;
-//      }
+      
+      // =========
+      // RECURSION
+      // =========
+      // Remove the first and last column margins
+      .col {
+        &:last-child {
+          margin-right: 0!important;
+        }
+      
+        &:first-child {
+          margin-left: 0!important;
+        }
         
+        // Some extra classes for IE6/7/8
+        @if $supports-ie8 == true or $supports-ie7 == true or $supports-ie6 == true {  
+          &.#{$namespace}first {
+            margin-left: 0!important;
+          }
+      
+          &.#{$namespace}last {
+            margin-right: 0!important;
+          }
+        }
+      }
+
+      // =======
+      // COLUMNS
+      // =======
       @for $n from 1 to $grid-columns + 1 {
         
         $span-width: floor(($column-width * $n) + ($grid-spacing * ($n - 1)));
         
-        &.#{$namespace}colspan#{$n} {
-          // width is the column width + spacing.
-          // |m|column|mm|column|m|
-          width: $span-width;
+        // Colspan: colspan1 = col, so we're not including it.
+        @if $n > 1 {
+          &.#{$namespace}colspan#{$n} {
+            // width is the column width + spacing.
+            // |m|column|mm|column|m|
+            width: $span-width;
 
+          }
         }
         
-        &.#{$namespace}colshift#{$n} {
-          margin-left: $span-width + $margin + $margin + $margin;
-        }
+        // Colshift, Colpush or Colstretch: 12 spans will break things.
+        @if $n < 12 {
+          @if $with-colshift == true {
+            &.#{$namespace}colshift#{$n} {
+              margin-left: $span-width + $margin + $margin + $margin;
+            }
+          } // ENDIF $with-colshift
         
-        &.#{$namespace}colpush#{$n} {
-          margin-right: $span-width + $margin + $margin + $margin;
-        }
+          @if $with-colpush == true {
+            &.#{$namespace}colpush#{$n} {
+              margin-right: $span-width + $margin + $margin + $margin;
+            }
+          } // ENDIF $with-colpush
+          
+          @if $with-colstretch == true {
+            &.#{$namespace}colstretch#{$n} {
+              padding-left: floor($span-width / 2) + $margin;
+              padding-right: floor($span-width / 2) + $margin;
+            }
         
-        &.#{$namespace}colstretch#{$n} {
-          padding-left: floor($span-width / 2) + $margin;
-          padding-right: floor($span-width / 2) + $margin;
-        }
+            &.#{$namespace}colstretch-left#{$n} {
+              padding-left: $span-width + $margin + $margin;
+            }
         
-        &.#{$namespace}colstretch-left#{$n} {
-          padding-left: $span-width + $margin + $margin;
-        }
-        
-        &.#{$namespace}colstretch-right#{$n} {
-          padding-right: $span-width + $margin + $margin;
-        }
+            &.#{$namespace}colstretch-right#{$n} {
+              padding-right: $span-width + $margin + $margin;
+            }
+          } // ENDIF $with-colstretch
+        } // ENDIF $n < 12
         
       }
       
       @include breakpoint(tablet) {
         
         @if $column-width > 0 {
-          width: percentage(round($column-width/$grid-container-width));
+          width: percentage($column-width/$grid-container-width);
         }
         
         $margin: percentage(floor($grid-spacing/2)/$grid-container-width);
@@ -109,25 +147,58 @@ $grid-spacing:          20px!default; // spacing in between grid columns.
   				margin: 0 $margin;
   			}
         
-        @for $n from 2 to $grid-columns + 1 {
+        @for $n from 1 to $grid-columns + 1 {
         
           $span-width: percentage(floor(($column-width * $n) + ($grid-spacing * ($n - 1)))/$grid-container-width);
-        
-          &.#{$namespace}colspan#{$n} {
-            // width is the column width + spacing.
-            // |column|mm|column|
-            width: $span-width;
+          
+          // Colspan
+          @if $n > 1 {
+            &.#{$namespace}colspan#{$n} {
+              // width is the column width + spacing.
+              // |column|mm|column|
+              width: $span-width;
             
-            // recursive grids, percentage recalculations only...
-            @for $rn from 2 to $grid-columns + 1 {
+              // recursive grids, percentage recalculations only...
+//              @for $rn from 2 to $grid-columns + 1 {
               
-              .#{$namespace}colspan#{$rn} {
-                width: 100%;
-                margin: 0 0 20px 0;
-              }
+                .#{$namespace}col{
+                  width: 100%!important;
+                  margin: 0 0 20px 0!important;
+                }
               
+//              }
             }
-          } 
+          } // ENDIF $n > 1
+          
+          // Colshift, Colpush or Colstretch: 12 spans will break things.
+          @if $n < 12 {
+            @if $with-colshift == true {
+              &.#{$namespace}colshift#{$n} {
+                margin-left: $span-width + $margin + $margin + $margin;
+              }
+            } // ENDIF $with-colshift
+        
+            @if $with-colpush == true {
+              &.#{$namespace}colpush#{$n} {
+                margin-right: $span-width + $margin + $margin + $margin;
+              }
+            } // ENDIF $with-colpush
+          
+            @if $with-colstretch == true {
+              &.#{$namespace}colstretch#{$n} {
+                padding-left: floor($span-width / 2) + $margin;
+                padding-right: floor($span-width / 2) + $margin;
+              }
+        
+              &.#{$namespace}colstretch-left#{$n} {
+                padding-left: $span-width + $margin + $margin;
+              }
+        
+              &.#{$namespace}colstretch-right#{$n} {
+                padding-right: $span-width + $margin + $margin;
+              }
+            } // ENDIF $with-colstretch
+          } // ENDIF $n < 12
         }
       } // breakpoint tablet
       
@@ -140,17 +211,6 @@ $grid-spacing:          20px!default; // spacing in between grid columns.
           } 
         }
       }
-      
-//      // Some extra classes for IE6/7/8
-//      @if $supports-ie8 == true or $supports-ie7 == true or $supports-ie6 == true {  
-//        &.#{$namespace}first {
-//          margin-left: 0!important;
-//        }
-//      
-//        &.#{$namespace}last {
-//          margin-right: 0!important;
-//        }
-//      }
       
 		} // col
 	} // grid

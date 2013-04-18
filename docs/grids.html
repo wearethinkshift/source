@@ -49,6 +49,7 @@
 <section class="container clearfix grid">
   
   <h2>12 Columns</h2>
+  <p>Grids are calculated based on 960 divided into 12 columns of 60px with 10px margin on the left and right sides.</p>
   <div class="col">Col 1</div>
   <div class="col">Col 1</div>
   <div class="col">Col 1</div>
@@ -63,6 +64,7 @@
   <div class="col">Col 1</div>
 
   <h2>Span</h2>
+  <p>Spans will occupy one or more grid spaces. <code>.col</code> and <code>.col.colspan1</code> are the same.</p>
   <div class="col colspan1">Col 1</div>
   <div class="col">Col 1</div>
   <div class="col">Col 1</div>
@@ -153,7 +155,52 @@
   
   <div class="col colspan12">Col 12</div>
  
+  <h3>Combinations</h3>
+  <p>Colspans of different measurements can be used together in any combination that equals 12.</p>
+  <div class="col colspan2">Col 2</div>
+  <div class="col colspan2">Col 2</div>
+  <div class="col colspan2">Col 2</div>
+  <div class="col colspan2">Col 2</div>
+  <div class="col colspan2">Col 2</div>
+  <div class="col colspan2">Col 2</div>
+  
+  <div class="col colspan3">Col 3</div>
+  <div class="col colspan3">Col 3</div>
+  <div class="col colspan3">Col 3</div>
+  <div class="col colspan3">Col 3</div>
+  
+  <div class="col colspan4">Col 4</div>
+  <div class="col colspan4">Col 4</div>
+  <div class="col colspan4">Col 4</div>
+  
+  <div class="col colspan6">Col 6</div>
+  <div class="col colspan6">Col 6</div>
+  
+  <div class="col colspan2">Col 2</div>
+  <div class="col colspan10">Col 10</div>
+  
+  <div class="col colspan2">Col 2</div>
+  <div class="col colspan8">Col 8</div>
+  <div class="col colspan2">Col 2</div>
+  
+  <div class="col colspan3">Col 3</div>
+  <div class="col colspan3">Col 3</div>
+  <div class="col colspan6">Col 6</div>
+  
+  <div class="col colspan3">Col 3</div>
+  <div class="col colspan9">Col 9</div>
+  
+  <div class="col colspan3">Col 3</div>
+  <div class="col colspan6">Col 6</div>
+  <div class="col colspan3">Col 3</div>
+  
+  <div class="col colspan4">Col 4</div>
+  <div class="col colspan8">Col 8</div>
+  
+  <div class="col colspan12">Etc... You get the point.</div>
+ 
   <h2>Shift</h2>
+  <p>Shift will shift the column over by the number of spaces. <code>.colshift12</code> doesn't exist because it would break the column system.</p>
   <div class="col colshift1">Shift 1</div>
   <div class="col">Col 1</div>
   <div class="col">Col 1</div>
@@ -232,6 +279,7 @@
   <div class="col colshift11">Shift 11</div>
   
   <h2>Push</h2>
+  <p>Push will push columns to the right by the number of spaces specified. <code>.colpush12</code> doesn't exist because it will break the column system.</p>
   <div class="col colpush1">Push 1</div>
   <div class="col">Col 1</div>
   <div class="col">Col 1</div>
