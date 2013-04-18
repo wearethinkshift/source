@@ -30,7 +30,7 @@ $grid-spacing:          20px!default; // spacing in between grid columns.
 	// Subtract the width of the margin multiplied by the number of grid columns
 	// less two (first and last have no margins), then divide the remaining value
 	// and round it down.
-  $column-width: floor(($grid-container-width - ($grid-spacing * ($grid-columns - 1)) )/$grid-columns);
+  $column-width: floor(($grid-container-width - ($grid-spacing * ($grid-columns)) )/$grid-columns);
 
 	.#{$namespace}grid {
 
@@ -55,25 +55,47 @@ $grid-spacing:          20px!default; // spacing in between grid columns.
 			@if $margin != 0 {
 				margin: 0 $margin 20px;
 			}
-      
-      &:last-child {
-				margin-right: 0!important;
-			}
-      
-      &:first-child {
-      	margin-left: 0!important;
-      }
+//      
+//      &:last-child {
+//        margin-right: 0!important;
+//      }
+//      
+//      &:first-child {
+//        margin-left: 0!important;
+//      }
         
-      @for $n from 2 to $grid-columns + 1 {
+      @for $n from 1 to $grid-columns + 1 {
         
         $span-width: floor(($column-width * $n) + ($grid-spacing * ($n - 1)));
         
         &.#{$namespace}colspan#{$n} {
           // width is the column width + spacing.
-          // |column|mm|column|
+          // |m|column|mm|column|m|
           width: $span-width;
 
-        } 
+        }
+        
+        &.#{$namespace}colshift#{$n} {
+          margin-left: $span-width + $margin + $margin + $margin;
+        }
+        
+        &.#{$namespace}colpush#{$n} {
+          margin-right: $span-width + $margin + $margin + $margin;
+        }
+        
+        &.#{$namespace}colstretch#{$n} {
+          padding-left: floor($span-width / 2) + $margin;
+          padding-right: floor($span-width / 2) + $margin;
+        }
+        
+        &.#{$namespace}colstretch-left#{$n} {
+          padding-left: $span-width + $margin + $margin;
+        }
+        
+        &.#{$namespace}colstretch-right#{$n} {
+          padding-right: $span-width + $margin + $margin;
+        }
+        
       }
       
       @include breakpoint(tablet) {
@@ -119,16 +141,16 @@ $grid-spacing:          20px!default; // spacing in between grid columns.
         }
       }
       
-      // Some extra classes for IE6/7/8
-      @if $supports-ie8 == true or $supports-ie7 == true or $supports-ie6 == true {  
-        &.#{$namespace}first {
-  				margin-left: 0!important;
-  			}
-      
-        &.#{$namespace}last {
-  				margin-right: 0!important;
-  			}
-      }
+//      // Some extra classes for IE6/7/8
+//      @if $supports-ie8 == true or $supports-ie7 == true or $supports-ie6 == true {  
+//        &.#{$namespace}first {
+//          margin-left: 0!important;
+//        }
+//      
+//        &.#{$namespace}last {
+//          margin-right: 0!important;
+//        }
+//      }
       
 		} // col
 	} // grid
