@@ -117,13 +117,13 @@ $o:true!default;
 // doesn't set a fallback
 // doesn't include old webkit gradient
 // doesn't include old MS Support
-@mixin background-linear-gradient($values) {
+@mixin background-linear-gradient($values...) {
 
-	background-image: -webkit-linear-gradient(#{$values});
-	background-image:    -moz-linear-gradient(#{$values});
-	background-image:     -ms-linear-gradient(#{$values});
-	background-image:      -o-linear-gradient(#{$values});
-	background-image:         linear-gradient(#{$values});
+	background-image: -webkit-linear-gradient($values);
+	background-image:    -moz-linear-gradient($values);
+	background-image:     -ms-linear-gradient($values);
+	background-image:      -o-linear-gradient($values);
+	background-image:         linear-gradient($values);
 
 }
 
