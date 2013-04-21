@@ -6,7 +6,7 @@
 // -----------------------------------------------------------------------------
 // Grid Config
 // -----------------------------------------------------------------------------
-$grid-container-width:   960!default; // the width of the grid container.
+$grid-container-width:   960px!default; // the width of the grid container.
 $grid-columns:           12!default;  // number of columns in the grid.
 $grid-spacing:           20!default;  // spacing in between grid columns.
 
@@ -31,14 +31,19 @@ $with-colstretch: true!default;
 // $grid-container-width: number in pixels for the container.
 // $grid-columns: number of columns to make divisions from.
 // $namespace: optional namespace to greate new grid systems.
-@mixin grid-init($grid-container-width, $grid-columns, $namespace:"") {
-
-	// Column Width.
+@mixin grid($grid-container-width, $grid-columns, $namespace:"") {
+  
+  // Change the $grid-container-width variable to be unitless so we can do
+  // conversions into percentages (for tablets) later.
+  $grid-container-width: $grid-container-width / ($grid-container-width * 0 + 1);
+  
+  // Column Width.
 	// Subtract the width of the margin multiplied by the number of grid columns
 	// less two (first and last have no margins), then divide the remaining value
 	// and round it down.
   $column-width: floor(($grid-container-width - ($grid-spacing * ($grid-columns)) )/$grid-columns);
-
+  
+  // start the grid.
 	.#{$namespace}grid {
 
 		// add the grid container to the clearfix styles.
@@ -201,7 +206,9 @@ $with-colstretch: true!default;
       
       @include breakpoint(handheld) {
         width: 100%;
-        margin: 0 0 20px 0;
+        margin: 0 0 20px 0!important;
+        padding-left: 0!important;
+        padding-right: 0!important;
         @for $n from 2 to $grid-columns + 1 {
           &.#{$namespace}colspan#{$n} {
             width: 100%;
@@ -216,4 +223,4 @@ $with-colstretch: true!default;
 // -----------------------------------------------------------------------------
 // Grid Styles
 // -----------------------------------------------------------------------------
-@include grid-init($grid-container-width, $grid-columns); // grid12
+@include grid($grid-container-width, $grid-columns); // grid12
