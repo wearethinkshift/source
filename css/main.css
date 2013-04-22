@@ -1442,7 +1442,8 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
   overflow: hidden;
   padding: 10px; }
   .media img.media-head {
-    display: block; }
+    display: block;
+    max-width: 100%; }
   .media .media-head {
     float: left;
     margin-right: 10px; }
