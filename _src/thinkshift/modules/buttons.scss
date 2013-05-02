@@ -110,7 +110,7 @@ $with-btn-group: true!default;
     color: darken($light-gray, 10%);
   
     @include colorize-button(darken($default-button-color, 15%));
-    @include box-shadow("inset 0px 1px 3px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.8)")
+    @include box-shadow(inset 0px 1px 3px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.8))
   
   }
 

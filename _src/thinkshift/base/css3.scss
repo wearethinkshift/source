@@ -46,52 +46,52 @@ $o:true!default;
 // --------------------------------------------------------------------------
 // Box Shadow
 // --------------------------------------------------------------------------
-@mixin box-shadow($values, $webkit:false, $moz:false) {
-	@include -v(box-shadow, $values, $webkit, $moz, $ms:false, $o:false);
+@mixin box-shadow($values...) {
+	@include -v(box-shadow, $values, $webkit:false, $moz:false, $ms:false, $o:false);
 }
 
 // --------------------------------------------------------------------------
 // Text Shadow
 // --------------------------------------------------------------------------
-@mixin text-shadow($values, $webkit:false, $moz:false) {
-	@include -v(text-shadow, $values, $webkit, $moz, $ms:false, $o:false);
+@mixin text-shadow($values...) {
+	@include -v(text-shadow, $values, $webkit:false, $moz:false, $ms:false, $o:false);
 }
 
 // --------------------------------------------------------------------------
 // Transition
 // --------------------------------------------------------------------------
-@mixin transition($values, $webkit:true, $moz:true) {
+@mixin transition($values...) {
 	@include -v(transition, $values, $webkit, $moz, $ms:false, $o:false);
 }
 
 // --------------------------------------------------------------------------
 // Transform
 // --------------------------------------------------------------------------
-@mixin transform($values, $webkit:true, $moz:true, $ms:true) {
+@mixin transform($values...) {
 	@include -v(transform, $values, $webkit, $moz, $ms, $o:false);
 }
 
 // --------------------------------------------------------------------------
 // Border Radius
 // --------------------------------------------------------------------------
-@mixin border-radius($values, $webkit:false, $moz:false) {
-	@include -v(border-radius, $values, $webkit, $moz, $ms:false, $o:false);
+@mixin border-radius($values) {
+	@include -v(border-radius, $values, $webkit:false, $moz:false, $ms:false, $o:false);
 }
 
-@mixin border-top-left-radius($value, $webkit:false, $moz:false) {
-  @include -v(border-top-left-radius, $value, $webkit, $moz, $ms:false, $o:false);
+@mixin border-top-left-radius($value) {
+  @include -v(border-top-left-radius, $value, $webkit:false, $moz:false, $ms:false, $o:false);
 }
 
-@mixin border-top-right-radius($value, $webkit:false, $moz:false) {
-  @include -v(border-top-right-radius, $value, $webkit, $moz, $ms:false, $o:false);
+@mixin border-top-right-radius($value) {
+  @include -v(border-top-right-radius, $value, $webkit:false, $moz:false, $ms:false, $o:false);
 }
 
-@mixin border-bottom-left-radius($value, $webkit:false, $moz:false) {
-  @include -v(border-bottom-left-radius, $value, $webkit, $moz, $ms:false, $o:false);
+@mixin border-bottom-left-radius($value) {
+  @include -v(border-bottom-left-radius, $value, $webkit:false, $moz:false, $ms:false, $o:false);
 }
 
-@mixin border-bottom-right-radius($value, $webkit:false, $moz:false) {
-  @include -v(border-bottom-right-radius, $value, $webkit, $moz, $ms:false, $o:false);
+@mixin border-bottom-right-radius($value) {
+  @include -v(border-bottom-right-radius, $value, $webkit:false, $moz:false, $ms:false, $o:false);
 }
 
 // --------------------------------------------------------------------------
@@ -101,12 +101,12 @@ $o:true!default;
 // by optionally placing in values in the following
 // order: top left, top right, bottom right, bottom left
 // no values = no output.
-@mixin border-radius-utility($topLeft:false, $topRight:false, $bottomRight:false, $bottomLeft:false, $webkit:false, $moz:false) {
+@mixin border-radius-utility($topLeft:false, $topRight:false, $bottomRight:false, $bottomLeft:false) {
   
-  @if $topLeft != false { @include border-top-left-radius($topLeft, $webkit, $moz); }
-  @if $topRight != false { @include border-top-right-radius($topRight, $webkit, $moz); }
-  @if $bottomLeft != false { @include border-bottom-left-radius($bottomLeft, $webkit, $moz); }
-  @if $bottomRight != false { @include border-bottom-right-radius($bottomRight, $webkit, $moz); }
+  @if $topLeft != false { @include border-top-left-radius($topLeft); }
+  @if $topRight != false { @include border-top-right-radius($topRight); }
+  @if $bottomLeft != false { @include border-bottom-left-radius($bottomLeft); }
+  @if $bottomRight != false { @include border-bottom-right-radius($bottomRight); }
 
 }
 
@@ -121,6 +121,7 @@ $o:true!default;
 
 	background-image: -webkit-linear-gradient($values);
 	background-image:    -moz-linear-gradient($values);
+//  background-image:     -ms-linear-gradient($values);
 	background-image:      -o-linear-gradient($values);
 	background-image:         linear-gradient($values);
 
