@@ -1,9 +1,9 @@
 //  --------------------------------------------------------------------------
 //  Browser Support
 //  --------------------------------------------------------------------------
-    $supports-ie8: true;
-    $supports-ie7: true;
-    $supports-ie6: false;
+    $supports-ie8: true!default;
+    $supports-ie7: true!default;
+    $supports-ie6: false!default;
     
 //  --------------------------------------------------------------------------
 //  Rules from Caniuse.com

@@ -3,21 +3,21 @@
 //  -------------------------------------------------------------------------- */
 
     // Core fonts
-    $font-serif:      serif;
-    $font-sans-serif: sans-serif;
-    $font-monospace:  monospace;
+    $font-serif:      serif!default;
+    $font-sans-serif: sans-serif!default;
+    $font-monospace:  monospace!default;
     
     // Base Font Style is "sans-serif" so the user agent chooses their default.
     // Macs = "Helvetica", Windows = "Arial". Everyone's happy. Plus it's short.    
-    $font-family-base: $font-sans-serif;
+    $font-family-base: $font-sans-serif!default;
     
     // Expanded Families
-    $font-family-sans-serif: 'Helvetica Neue', Arial, $font-sans-serif;
-    $font-family-sans-serif: 'Hoefler Text', Georgia, $font-serif;
-    $font-family-monospace: Consolas, Courier, $font-monospace;
+    $font-family-sans-serif: 'Helvetica Neue', Arial, $font-sans-serif!default;
+    $font-family-sans-serif: 'Hoefler Text', Georgia, $font-serif!default;
+    $font-family-monospace: Consolas, Courier, $font-monospace!default;
     
     // Don't use black.
-    $font-color-base: $charcoal;
+    $font-color-base: $charcoal!default;
     
     // base line heights
-    $line-height-base: 1.4em;
+    $line-height-base: 1.4em!default;
