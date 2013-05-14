@@ -33,18 +33,18 @@
 <section class="container clearfix grid">
   
   <nav class="col colspan3 first">
-    <ul class="nav-menu">
-      <li><a href="#" data-icon-after=">">Buttons</a></li>
-      <li><a href="#" data-icon-after=">">Navigations</a></li>
-      <li><a href="#" data-icon-after=">">Forms</a></li>
-      <li><a href="#" data-icon-after=">">Tables</a></li>
-      <li><a href="#" data-icon-after=">">Media</a></li>
+    <ul class="nav-menu" id="secondary-menu">
+      <li><a href="#section-buttons" data-icon-after=">">Buttons</a></li>
+      <li><a href="#section-navigations" data-icon-after=">">Navigations</a></li>
+      <li><a href="#section-forms" data-icon-after=">">Forms</a></li>
+      <li><a href="#section-tables" data-icon-after=">">Tables</a></li>
+      <li><a href="#section-media" data-icon-after=">">Media</a></li>
     </ul>
   </nav>
   
   <div class="col colspan9 last">
     
-    <h1>Buttons</h1>
+    <h1 id="section-buttons">Buttons</h1>
     <p><a href="#" class="btn">Testing</a> and some text</p>
     
     <h2>Button Group</h2>
@@ -87,7 +87,7 @@
       <a href="#" class="btn btn-confirm">Confirm</a>
     </p>
     
-    <h1>Navigations</h1>
+    <h1 id="section-navigations">Navigations</h1>
     <nav role="navigation">
     
       <h2>Horizontal</h2>
@@ -122,6 +122,23 @@
         <li><a href="#">Fourth Item</a></li>
       </ul>
       
+      <h3>Navigation Bar with Menu</h3>
+      <ul class="nav-bar clearfix">
+        <li><a href="#">First Item</a></li>
+        <li><a href="#">Second Item</a></li>
+        <li>
+          <a href="#" data-icon-after="v">Third Item with Menu</a>
+          <ul class="nav-menu">
+            <li><a href="#">First Sub-Item</a></li>
+            <li><a href="#">Second Sub-Item</a></li>
+            <li><a href="#">Third Sub-Item</a></li>
+            <li><a href="#">Fourth Sub-Item</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Fourth Item</a></li>
+        
+      </ul>
+      
       <h2>Tabs</h2>
       <ul class="nav-tabs">
         <li><a href="#">First Item</a></li>
@@ -132,7 +149,7 @@
 
     </nav>
   
-    <h1>Forms</h1>
+    <h1 id="section-forms">Forms</h1>
     <div class="field">
       <label>Text Inputs</label>
       <input type="text" placeholder="input:text">
@@ -244,7 +261,7 @@
       <input type="text" id="test10">
     </div>
     
-    <h1>Tables</h1>
+    <h1 id="section-tables">Tables</h1>
     <h2>Basic Table</h2>
     <table class="table">
       <thead>
@@ -309,7 +326,7 @@
       </tfoot>
     </table>
     
-    <h1>Media</h1>
+    <h1 id="section-media">Media</h1>
     <div class="media">
       <img src="http://placehold.it/100.png" alt="Temp" class="media-head" />
       <div class="media-body">

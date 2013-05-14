@@ -181,7 +181,48 @@ $with-nav-tabs: true!default;
           background: lighten($silver, 10%);
         }
       } 
-    }
+      
+      @if $with-nav-menu == true {
+        
+        .nav-menu {
+          position: absolute;
+          z-index: 100;
+          top: 100%;
+          margin-top: -1px;
+          display: none;
+          
+          li, a {
+            float: none;
+            display: block;
+          }
+          
+          li {
+            border-top: 1px solid lighten($silver, 10%);
+            &:first-child {
+              border: none;
+            }
+          }
+          
+          a {
+            border: none;
+            @include border-radius(0);
+          }
+        }
+        
+        &:hover {
+          a {
+            background: $white;
+            border-color: lighten($silver, 10%);
+          }
+          
+          .nav-menu {
+            display: block;
+          }
+        }
+        
+      } // ENDIF $with-nav-menu
+      
+    } // li
   }
 } // ENDIF $with-nav-h && $with-nav-bar
 
@@ -190,7 +231,7 @@ $with-nav-tabs: true!default;
     @extend %nav;
     @extend .clearfix;
   
-    border-bottom: 1px solid lighten($silver, 10%);
+    border-bottom: 1px solid $silver;
 
     li, a {
       float: left;
@@ -199,7 +240,7 @@ $with-nav-tabs: true!default;
       border: 1px solid transparent;
       margin-bottom: -1px;
       &.active {
-        border: 1px solid lighten($silver, 10%);
+        border: 1px solid $silver;
         border-bottom-color: white;
       }
     }

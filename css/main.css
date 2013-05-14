@@ -741,16 +741,37 @@ code {
       .nav-bar li a:active, .nav-bar li a:focus {
         border-color: #cccccc;
         background: #e6e6e6; }
+    .nav-bar li .nav-menu {
+      position: absolute;
+      z-index: 100;
+      top: 100%;
+      margin-top: -1px;
+      display: none; }
+      .nav-bar li .nav-menu li, .nav-bar li .nav-menu a {
+        float: none;
+        display: block; }
+      .nav-bar li .nav-menu li {
+        border-top: 1px solid #e6e6e6; }
+        .nav-bar li .nav-menu li:first-child {
+          border: none; }
+      .nav-bar li .nav-menu a {
+        border: none;
+        border-radius: 0; }
+    .nav-bar li:hover a {
+      background: white;
+      border-color: #e6e6e6; }
+    .nav-bar li:hover .nav-menu {
+      display: block; }
 
 .nav-tabs {
-  border-bottom: 1px solid #e6e6e6; }
+  border-bottom: 1px solid #cccccc; }
   .nav-tabs li, .nav-tabs a {
     float: left; }
   .nav-tabs li {
     border: 1px solid transparent;
     margin-bottom: -1px; }
     .nav-tabs li.active {
-      border: 1px solid #e6e6e6;
+      border: 1px solid #cccccc;
       border-bottom-color: white; }
   @media only screen and (min-width: 320px) and (max-width: 600px) {
     .nav-tabs {
@@ -1384,6 +1405,18 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
 h1 {
   font-family: "oswald", sans-serif;
   text-transform: uppercase; }
+
+#secondary-menu {
+  position: fixed;
+  width: 220px; }
+  @media only screen and (min-width: 600px) and (max-width: 1000px) {
+    #secondary-menu {
+      position: static;
+      width: auto; } }
+  @media only screen and (min-width: 320px) and (max-width: 600px) {
+    #secondary-menu {
+      position: static;
+      width: auto; } }
 
 body:after {
   padding: 5px;

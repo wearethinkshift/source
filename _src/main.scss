@@ -16,6 +16,21 @@ h1 {
   text-transform: uppercase;
 }
 
+#secondary-menu {
+  position: fixed;
+  width: 220px;
+  
+  @include breakpoint(tablet) {
+    position: static;
+    width: auto;
+  }
+  
+  @include breakpoint(handheld) {
+    position: static;
+    width: auto;
+  }
+}
+
 // ==================================================
 // DEBUGGING
 // ==================================================
