@@ -44,7 +44,7 @@ $with-btn-group: true!default;
   border-color: darken($color, 15%);
   border-bottom-color: darken($color, 25%);
   @if $with-gradient == true {
-    @include background-linear-gradient(top, $color, darken($color, 5%));
+    background-image: linear-gradient(top, $color, darken($color, 5%));
   }
   
 }
@@ -84,12 +84,12 @@ $with-btn-group: true!default;
   text-decoration: none;
   text-align: center;
   line-height: 1;
-
+  
   @include colorize-button;
   @include text-shadow(0px 1px 0px rgba(255,255,255,0.35));
   @include box-shadow(0px 1px 1px rgba(0,0,0,0.15));
   @include border-radius($default-button-border-radius);
-  @include display-inline-block;
+  display: inline-block();
 
   &:hover {
   

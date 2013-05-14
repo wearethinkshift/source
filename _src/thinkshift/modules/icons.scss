@@ -31,6 +31,7 @@
   &:before {
     @extend %iconstyles;
     content: attr(data-icon);
+    text-decoration: none;
   }
   
 }
@@ -41,5 +42,6 @@
     @extend %iconstyles;
     margin: -0.5em -1em -0.5em 0;
     content: attr(data-icon-after);
+    text-decoration: none;
   }
 }
