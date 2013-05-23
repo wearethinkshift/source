@@ -239,25 +239,59 @@
 // --------------------------------------------------------------------------
 // Breakpoints
 // --------------------------------------------------------------------------
+$breakpoint_handheld_min_width: 280px!default;
+$breakpoint_handheld_max_width: 600px!default;
+$breakpoint_tablet_min_width:   600px!default;
+$breakpoint_tablet_max_width:  1000px!default;
+$breakpoint_monitor_min_width: 1000px!default;
+$breakpoint_monitor_max_width: 3600px!default;
+
 @mixin breakpoint($size) {
-  @if $size == monitor {
-    @media only screen
-     and (min-width: 1000px) { @content }
+  
+  // -----------------
+  // MONITOR
+  // -----------------
+  @if ($size == 'monitor' or $size == 'monitor and more') {
+    @media only screen and (min-width: $breakpoint_monitor_min_width) { @content }
   }
   
-  @else if $size == tablet {
-    @media only screen
-     and (min-width: 600px)
-     and (max-width: 1000px) { @content }
+  @else if ($size == 'monitor and less') {
+    @media only screen and (max-width: $breakpoint_monitor_max_width) { @content }
   }
   
-  @else if $size == handheld {
-    @media only screen
-     and (min-width: 320px)
-     and (max-width: 600px) { @content }
+  // -----------------
+  // TABLET
+  // -----------------
+  @else if( $size == 'tablet') {
+    @media only screen and (min-width: $breakpoint_tablet_min_width) and (max-width: $breakpoint_tablet_max_width) { @content }
   }
   
-  // Assume that $size is an expression...
+  @else if ($size == 'tablet and more') {
+    @media only screen and (min-width: $breakpoint_tablet_min_width) { @content }
+  }
+  
+  @else if ($size == 'tablet and less') {
+    @media only screen and (max-width: $breakpoint_tablet_max_width) { @content }
+  }
+  
+  // -----------------
+  // HANDHELD
+  // -----------------
+  @else if ($size == 'handheld') {
+    @media only screen and (min-width: $breakpoint_handheld_min_width) and (max-width: $breakpoint_handheld_max_width) { @content }
+  }
+  
+  @else if ($size == 'handheld and more') {
+    @media only screen and (min-width: $breakpoint_handheld_min_width) { @content }
+  }
+  
+  @else if ($size == 'handheld and less') {
+    @media only screen and (max-width: $breakpoint_handheld_max_width) { @content }
+  }
+  
+  // -----------------
+  // CUSTOM EXPRESSION
+  // -----------------
   @else if (type-of($size) == string) {
     @media #{$size} { @content }
   }
