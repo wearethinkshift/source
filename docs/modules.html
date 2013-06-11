@@ -37,6 +37,7 @@
       <li><a href="#section-buttons" data-icon-after=">">Buttons</a></li>
       <li><a href="#section-navigations" data-icon-after=">">Navigations</a></li>
       <li><a href="#section-forms" data-icon-after=">">Forms</a></li>
+      <li><a href="#section-messages" data-icon-after=">">Messages</a></li>
       <li><a href="#section-tables" data-icon-after=">">Tables</a></li>
       <li><a href="#section-media" data-icon-after=">">Media</a></li>
     </ul>
@@ -229,37 +230,49 @@
     <div class="field with-error">
       <label for="test5">Field with an error:</label>
       <input type="text" id="test5">
-      <p class="field-message">Here is an additional message that can go with the field error.</p>
+      <p class="field-message" data-icon="x">Here is an additional message that can go with the field error.</p>
     </div>
     
     <div class="field with-notice">
       <label for="test6">Field with a warning:</label>
       <input type="text" id="test6">
-      <p class="field-message">Here is an additional message that can go with the field warning.</p>
+      <p class="field-message" data-icon="w">Here is an additional message that can go with the field warning.</p>
     </div>
     
     <div class="field with-success">
       <label for="test7">Field with a success:</label>
       <input type="text" id="test7">
-      <p class="field-message">Here is an additional message that can go with the field success.</p>
+      <p class="field-message" data-icon="t">Here is an additional message that can go with the field success.</p>
       <p class="hint">And this one has a hint too!</p>
     </div>
     
-    <p>One more time without the messages. Note: the symbols require a label to be present, because they're <code>position:absolute</code>, and they anticipate a label to be present.</p>
-    <div class="field with-error">
-      <label for="test8">Field with an error:</label>
-      <input type="text" id="test8">
+    
+    <h1 id="section-messages">Messages</h1>
+    <div class="message-box">
+      <h2>Generic Message Box</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
     
-    <div class="field with-notice">
-      <label for="test9">Field with a warning:</label>
-      <input type="text" id="test9">
+    <div class="message-box error">
+      <h2>Generic Message Box</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
     
-    <div class="field with-success">
-      <label for="test10">Field with a success:</label>
-      <input type="text" id="test10">
+    <div class="message-box notice">
+      <h2>Generic Message Box</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
+    
+    <div class="message-box info">
+      <h2>Generic Message Box</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    
+    <div class="message-box success">
+      <h2>Generic Message Box</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    
     
     <h1 id="section-tables">Tables</h1>
     <h2>Basic Table</h2>
@@ -271,7 +284,10 @@
         <tr><th>1</th><td>One</td><td>Two</td><td>Three</td></tr>
         <tr><th>2</th><td>One</td><td>Two</td><td>Three</td></tr>
         <tr><th>3</th><td>One</td><td>Two</td><td>Three</td></tr>
-        <tr><th>3</th><td>One</td><td>Two</td><td>Three</td></tr>
+        <tr class="success"><th>3</th><td>One</td><td>Two</td><td>Three</td></tr>
+        <tr class="error"><th>3</th><td>One</td><td>Two</td><td>Three</td></tr>
+        <tr class="notice"><th>3</th><td>One</td><td>Two</td><td>Three</td></tr>
+        <tr class="info"><th>3</th><td>One</td><td>Two</td><td>Three</td></tr>
       </tbody>
       <tfoot>
         <tr><th>Foot</th><td>One</td><td>Two</td><td>Three</td></tr>

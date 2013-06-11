@@ -1,10 +1,10 @@
 $grid-form-field-padding: 5px; // this would set grid compatability.
 
-$with-field-message:          true;
-$with-error-message:          true;
-$with-notice-message:         true;
-$with-success-message:        true;
-$with-placeholder-animations: true;
+$with-field-message:          true!default;
+$with-error-message:          true!default;
+$with-notice-message:         true!default;
+$with-success-message:        true!default;
+$with-placeholder-animations: true!default;
 
 // Removed these types because of size issues.
 input[type=text], input[type=email], input[type=tel], input[type=url],
@@ -53,21 +53,6 @@ textarea {
     display: block;
   }
   
-  &:after {
-    font-family: 'fonticons';
-    content: '';
-    display: none;
-    position: absolute;
-    right: 0px;
-    top: 1.35em;
-    
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    z-index: 5;
-  }
-  
   label, select {
     margin-left: -5px;
     margin-right: 10px;
@@ -77,27 +62,19 @@ textarea {
     font-size: $font-size-fine;
     font-style: italic;
     color: $light-gray;
+    margin: 0;
   }
   
   @if $with-field-message == true {
     .field-message {
-      background: lighten($silver, 10%);
-      margin: -8px -4px 7px -5px;
-      padding: 5px;
-      border: 1px solid $silver;
-    
-      @include border-radius(0 0 2px 2px);
-      @include text-shadow(0px 1px 1px rgba(0,0,0,0.5))
+      position: relative;
+      font-size: $font-size-fine;
+      margin: 0px;
     }
   }
 
   @if $with-error-message == true {
     &.with-error {
-      &:after {
-        content: 'x';
-        color: $alert;
-        display: block;
-      }
 
       label {
         color: $alert;
@@ -111,9 +88,7 @@ textarea {
       
       @if $with-field-message {
         .field-message {
-          border-color: darken($alert, 10%);
-          background-color: $alert;
-          color: white;
+          color: $alert;
         }
       } // ENDIF $with-field-message
     }
@@ -121,12 +96,6 @@ textarea {
 
   @if $with-notice-message == true {
     &.with-notice {
-
-      &:after {
-        content: 'w';
-        color: darken($warning, 10%);
-        display: block;
-      }
 
       label {
         color: darken($warning, 10%);
@@ -140,9 +109,7 @@ textarea {
       
       @if $with-field-message {
         .field-message {
-          border-color: darken($warning, 20%);
-          background-color: darken($warning, 10%);
-          color: white;
+          color: darken($warning, 10%);
         }
       } // ENDIF $with-field-message
     }
@@ -150,12 +117,6 @@ textarea {
 
   @if $with-success-message {
     &.with-success {
-
-      &:after {
-        content: 't';
-        color: $confirm;
-        display: block;
-      }
 
       label {
         color: darken($confirm, 5%);
@@ -169,9 +130,7 @@ textarea {
       
       @if $with-field-message {
         .field-message {
-          border-color: darken($confirm, 20%);
-          background-color: darken($confirm, 5%);
-          color: white;
+          color: darken($confirm, 5%);
         }
       } // ENDIF $with-field-message
     }

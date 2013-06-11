@@ -851,36 +851,18 @@ textarea {
     margin: 0 -5px 0.5em;
     width: 100%;
     display: block; }
-  .field:after {
-    font-family: 'fonticons';
-    content: '';
-    display: none;
-    position: absolute;
-    right: 0px;
-    top: 1.35em;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    z-index: 5; }
   .field label, .field select {
     margin-left: -5px;
     margin-right: 10px; }
   .field .hint {
     font-size: 12px;
     font-style: italic;
-    color: #999999; }
+    color: #999999;
+    margin: 0; }
   .field .field-message {
-    background: #e6e6e6;
-    margin: -8px -4px 7px -5px;
-    padding: 5px;
-    border: 1px solid #cccccc;
-    border-radius: 0 0 2px 2px;
-    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5); }
-  .field.with-error:after {
-    content: 'x';
-    color: #d01616;
-    display: block; }
+    position: relative;
+    font-size: 12px;
+    margin: 0px; }
   .field.with-error label {
     color: #d01616; }
   .field.with-error input {
@@ -888,13 +870,7 @@ textarea {
     color: #d01616;
     background-color: #fde8e8; }
   .field.with-error .field-message {
-    border-color: #a21111;
-    background-color: #d01616;
-    color: white; }
-  .field.with-notice:after {
-    content: 'w';
-    color: #b69c14;
-    display: block; }
+    color: #d01616; }
   .field.with-notice label {
     color: #b69c14; }
   .field.with-notice input {
@@ -902,13 +878,7 @@ textarea {
     color: #88750f;
     background-color: #f7edb8; }
   .field.with-notice .field-message {
-    border-color: #88750f;
-    background-color: #b69c14;
-    color: white; }
-  .field.with-success:after {
-    content: 't';
-    color: #3da20e;
-    display: block; }
+    color: #b69c14; }
   .field.with-success label {
     color: #348b0c; }
   .field.with-success input {
@@ -916,9 +886,7 @@ textarea {
     color: #348b0c;
     background-color: #dcfbce; }
   .field.with-success .field-message {
-    border-color: #1a4406;
-    background-color: #348b0c;
-    color: white; }
+    color: #348b0c; }
 
 .actions {
   padding: 20px;
@@ -964,13 +932,13 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
     width: 60px;
     margin: 0 10px 20px; }
     .grid .col .col:last-child {
-      margin-right: 0!important; }
+      margin-right: 0 !important; }
     .grid .col .col:first-child {
-      margin-left: 0!important; }
+      margin-left: 0 !important; }
     .grid .col .col.first {
-      margin-left: 0!important; }
+      margin-left: 0 !important; }
     .grid .col .col.last {
-      margin-right: 0!important; }
+      margin-right: 0 !important; }
     .grid .col.colshift1 {
       margin-left: 90px; }
     .grid .col.colpush1 {
@@ -1132,7 +1100,7 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
         .grid .col.colspan2 {
           width: 14.58333%; }
           .grid .col.colspan2 .col {
-            width: 100%!important;
+            width: 100% !important;
             margin: 0 0 20px 0 !important; }
         .grid .col.colshift2 {
           margin-left: 17.70833%; }
@@ -1148,7 +1116,7 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
         .grid .col.colspan3 {
           width: 22.91667%; }
           .grid .col.colspan3 .col {
-            width: 100%!important;
+            width: 100% !important;
             margin: 0 0 20px 0 !important; }
         .grid .col.colshift3 {
           margin-left: 26.04167%; }
@@ -1164,7 +1132,7 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
         .grid .col.colspan4 {
           width: 31.25%; }
           .grid .col.colspan4 .col {
-            width: 100%!important;
+            width: 100% !important;
             margin: 0 0 20px 0 !important; }
         .grid .col.colshift4 {
           margin-left: 34.375%; }
@@ -1180,7 +1148,7 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
         .grid .col.colspan5 {
           width: 39.58333%; }
           .grid .col.colspan5 .col {
-            width: 100%!important;
+            width: 100% !important;
             margin: 0 0 20px 0 !important; }
         .grid .col.colshift5 {
           margin-left: 42.70833%; }
@@ -1196,7 +1164,7 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
         .grid .col.colspan6 {
           width: 47.91667%; }
           .grid .col.colspan6 .col {
-            width: 100%!important;
+            width: 100% !important;
             margin: 0 0 20px 0 !important; }
         .grid .col.colshift6 {
           margin-left: 51.04167%; }
@@ -1212,7 +1180,7 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
         .grid .col.colspan7 {
           width: 56.25%; }
           .grid .col.colspan7 .col {
-            width: 100%!important;
+            width: 100% !important;
             margin: 0 0 20px 0 !important; }
         .grid .col.colshift7 {
           margin-left: 59.375%; }
@@ -1228,7 +1196,7 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
         .grid .col.colspan8 {
           width: 64.58333%; }
           .grid .col.colspan8 .col {
-            width: 100%!important;
+            width: 100% !important;
             margin: 0 0 20px 0 !important; }
         .grid .col.colshift8 {
           margin-left: 67.70833%; }
@@ -1244,7 +1212,7 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
         .grid .col.colspan9 {
           width: 72.91667%; }
           .grid .col.colspan9 .col {
-            width: 100%!important;
+            width: 100% !important;
             margin: 0 0 20px 0 !important; }
         .grid .col.colshift9 {
           margin-left: 76.04167%; }
@@ -1260,7 +1228,7 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
         .grid .col.colspan10 {
           width: 81.25%; }
           .grid .col.colspan10 .col {
-            width: 100%!important;
+            width: 100% !important;
             margin: 0 0 20px 0 !important; }
         .grid .col.colshift10 {
           margin-left: 84.375%; }
@@ -1276,7 +1244,7 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
         .grid .col.colspan11 {
           width: 89.58333%; }
           .grid .col.colspan11 .col {
-            width: 100%!important;
+            width: 100% !important;
             margin: 0 0 20px 0 !important; }
         .grid .col.colshift11 {
           margin-left: 92.70833%; }
@@ -1292,14 +1260,14 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
         .grid .col.colspan12 {
           width: 97.91667%; }
           .grid .col.colspan12 .col {
-            width: 100%!important;
+            width: 100% !important;
             margin: 0 0 20px 0 !important; } }
     @media only screen and (min-width: 280px) and (max-width: 600px) {
       .grid .col {
         width: 100%;
         margin: 0 0 20px 0 !important;
-        padding-left: 0!important;
-        padding-right: 0!important; }
+        padding-left: 0 !important;
+        padding-right: 0 !important; }
         .grid .col.colspan2 {
           width: 100%; }
         .grid .col.colspan3 {
@@ -1327,7 +1295,7 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
   width: 100%; }
   .table td, .table th {
     border-bottom: 1px solid #e6e6e6;
-    padding: 0.5em 1em;
+    padding: .5em 1em;
     text-align: left;
     background: white; }
   .table tbody tr:last-child td, .table tbody tr:last-child th {
@@ -1351,6 +1319,34 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
     background: #fafafa; }
   .table.with-row-hover tbody tr:hover th, .table.with-row-hover tbody tr:hover td {
     background: #fafafa; }
+
+.message-box {
+  position: relative;
+  background: #e6e6e6;
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #999999;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15); }
+
+.error, .error td, .error th, .message-box.error td, .message-box.error th, .message-box.error, .error td.message-box, .error th.message-box {
+  border-color: #f07575;
+  background-color: #f8baba;
+  color: #a21111; }
+
+.notice, .notice td, .notice th, .message-box.notice td, .message-box.notice th, .message-box.notice, .notice td.message-box, .notice th.message-box {
+  border-color: #ebd145;
+  background-color: #faf3cf;
+  color: #88750f; }
+
+.info, .info td, .info th, .message-box.info td, .message-box.info th, .message-box.info, .info td.message-box, .info th.message-box {
+  border-color: #5c96ed;
+  background-color: #cfe0fa;
+  color: #1455b6; }
+
+.success, .success td, .success th, .message-box.success td, .message-box.success th, .message-box.success, .success td.message-box, .success th.message-box {
+  border-color: #89f158;
+  background-color: #dcfbce;
+  color: #348b0c; }
 
 .img-circle {
   border-radius: 50%;
@@ -1399,11 +1395,11 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
     right: 1px; }
 
 .masthead h1 {
-  font-family: "oswald", sans-serif;
+  font-family: 'oswald', sans-serif;
   font-weight: 300; }
 
 h1 {
-  font-family: "oswald", sans-serif;
+  font-family: 'oswald', sans-serif;
   text-transform: uppercase; }
 
 #secondary-menu {
