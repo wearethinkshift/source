@@ -34,7 +34,7 @@
   }
 }
 
-.panel {
+.pane {
   border: 1px solid lighten($silver, 5%);
   margin-bottom: 20px;
   padding: 20px;
@@ -74,5 +74,9 @@
       @include box-shadow(none);
     }
     
+  }
+  
+  .nav-menu {
+    margin: -20px;
   }
 }

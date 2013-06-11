@@ -151,6 +151,15 @@ $with-nav-tabs: true!default;
       @include border-radius-utility(false, false, 5px, 5px);
     } 
   }
+  
+  .pane {
+    .nav-menu, .nav-v {
+      border: none;
+      @include border-radius(0 0 5px 5px);
+      @include box-shadow(none);
+    }
+  }
+  
 } // ENDIF $with-nav-v && $with-nav-menu
 
 @if $with-nav-h == true and $with-nav-bar == true {
@@ -190,6 +199,8 @@ $with-nav-tabs: true!default;
           top: 100%;
           margin-top: -1px;
           display: none;
+          width: auto;
+          max-width: 200px;
           
           li, a {
             float: none;

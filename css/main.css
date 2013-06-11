@@ -168,6 +168,9 @@ h5 {
 h6 {
   font-size: 14px; }
 
+h2 {
+  font-weight: 300; }
+
 h3, h4, h5, h6 {
   color: gray; }
 
@@ -430,36 +433,38 @@ code {
     font-size: 54px;
     margin: 10px 0; }
 
-.panel {
+.pane {
   border: 1px solid #d9d9d9;
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 5px; }
-  .panel:hover, .panel:focus, .panel:active {
+  .pane:hover, .pane:focus, .pane:active {
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1); }
-  .panel:target {
+  .pane:target {
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1); }
-  .panel header {
+  .pane header {
     position: relative;
     margin: -20px -20px 20px;
     padding: 10px 20px;
     border-bottom: 1px solid #d9d9d9;
     background: #fafafa;
     border-radius: 4px 4px 0 0; }
-    .panel header h1, .panel header h2, .panel header h3, .panel header h4, .panel header h5, .panel header h6 {
+    .pane header h1, .pane header h2, .pane header h3, .pane header h4, .pane header h5, .pane header h6 {
       font-size: 16px;
       font-weight: normal;
       color: gray;
       line-height: 1;
       margin: 0;
       text-shadow: 0px 1px 0px white; }
-    .panel header .btn-close {
+    .pane header .btn-close {
       position: absolute;
       right: 4px;
       top: 4px;
       background: none;
       border: none;
       box-shadow: none; }
+  .pane .nav-menu {
+    margin: -20px; }
 
 .btn {
   color: #666666;
@@ -723,6 +728,11 @@ code {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px; }
 
+.pane .nav-menu, .pane .nav-v, .pane .nav-menu {
+  border: none;
+  border-radius: 0 0 5px 5px;
+  box-shadow: none; }
+
 .nav-bar {
   margin: 0;
   padding: 4px; }
@@ -746,7 +756,9 @@ code {
       z-index: 100;
       top: 100%;
       margin-top: -1px;
-      display: none; }
+      display: none;
+      width: auto;
+      max-width: 200px; }
       .nav-bar li .nav-menu li, .nav-bar li .nav-menu a {
         float: none;
         display: block; }
@@ -1400,7 +1412,8 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
 
 h1 {
   font-family: 'oswald', sans-serif;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-weight: 300; }
 
 #secondary-menu {
   position: fixed;
