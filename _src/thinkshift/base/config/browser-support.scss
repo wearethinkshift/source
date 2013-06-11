@@ -55,6 +55,19 @@ $column-rule-color:          '-webkit-', '-moz-', '';
 $column-span:                '-webkit-', '-moz-', '';
 $column-fill:                '-webkit-', '-moz-', '';
 
+// Text-direction agnostic padding and margin
+// before=top, end=right, after=bottom, start=left (LTR)
+// before=top, end=left, after=bottom, start=right (RTL)
+$padding-before:             '-webkit-', '-moz-', '';
+$padding-end:                '-webkit-', '-moz-', '';
+$padding-after:              '-webkit-', '-moz-', '';
+$padding-start:              '-webkit-', '-moz-', '';
+$margin-before:              '-webkit-', '-moz-', '';
+$margin-end:                 '-webkit-', '-moz-', '';
+$margin-after:               '-webkit-', '-moz-', '';
+$margin-start:               '-webkit-', '-moz-', '';
+
+
 // Lookup Tables
 // I know this is hacky, but it's what we've got.
 $css-support:
@@ -92,7 +105,15 @@ $css-support:
   $column-rule-style,
   $column-rule-color,
   $column-span,
-  $column-fill;
+  $column-fill,
+  $padding-before,
+  $padding-end,
+  $padding-after,
+  $padding-start,
+  $margin-before,
+  $margin-end,
+  $margin-after,
+  $margin-start;
 
 $css-properties:
   border-radius,
@@ -129,7 +150,15 @@ $css-properties:
   column-rule-style,
   column-rule-color,
   column-span,
-  column-fill;
+  column-fill,
+  padding-before,
+  padding-end,
+  padding-after,
+  padding-start,
+  margin-before,
+  margin-end,
+  margin-after,
+  margin-start;
 
 @function support-for($name) {
   @return nth($css-support, index($css-properties, $name));

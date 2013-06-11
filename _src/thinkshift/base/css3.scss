@@ -237,6 +237,42 @@
 
 
 // --------------------------------------------------------------------------
+// Reading Direction Agnostic Margins and Padding
+// --------------------------------------------------------------------------
+@mixin padding-before($value) {
+  @include -v(padding-before, $value);
+}
+
+@mixin padding-end($value) {
+  @include -v(padding-end, $value);
+}
+
+@mixin padding-after($value) {
+  @include -v(padding-after, $value);
+}
+
+@mixin padding-start($value) {
+  @include -v(padding-start, $value);
+}
+
+@mixin margin-before($value) {
+  @include -v(margin-before, $value);
+}
+
+@mixin margin-end($value) {
+  @include -v(margin-end, $value);
+}
+
+@mixin margin-after($value) {
+  @include -v(margin-after, $value);
+}
+
+@mixin margin-start($value) {
+  @include -v(margin-start, $value);
+}
+
+
+// --------------------------------------------------------------------------
 // Breakpoints
 // --------------------------------------------------------------------------
 $breakpoint_handheld_min_width: 280px!default;
