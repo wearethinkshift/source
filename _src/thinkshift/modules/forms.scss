@@ -4,6 +4,7 @@ $with-field-message:          true!default;
 $with-error-message:          true!default;
 $with-notice-message:         true!default;
 $with-success-message:        true!default;
+$with-option-select:          true!default;
 $with-placeholder-animations: true!default;
 
 // Removed these types because of size issues.
@@ -37,6 +38,31 @@ textarea {
   max-width: 100%;
   height: auto;
 }
+
+@if $with-option-select == true {
+  // Mostly stolen from Chrome prefs.
+  select {
+    -webkit-appearance: none;
+    -webkit-padding-before: 6px;
+    -webkit-padding-after: 6px;
+    -webkit-padding-start: 7px;
+    -webkit-padding-end: 20px;
+  
+    color: $default-button-text-color;
+    font-size: $font-size-medium;
+    border: 1px solid darken($default-button-color, 15%);
+    border-bottom-color: darken($default-button-color, 25%);
+  
+  //  @include text-shadow(0px 1px 0px rgba(255,255,255,0.35));
+    @include box-shadow(0px 1px 1px rgba(0,0,0,0.15));
+    @include border-radius($default-button-border-radius);
+    display: inline-block();
+  
+    background-image: -webkit-image-set(url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAICAYAAAAbQcSUAAAAaUlEQVQoz2P4//8/A7UwdkEGhiggTsODo4g2LBEImJmZvwE1/UfHIHGQPNGGAbHCggULFrKxsf1ENgjEB4mD5EnxJoaByAZB5Yk3DNlAPj6+L8gGkWUYzMC3b982IRtEtmFQjaxYxDAwAGi4TwMYKNLfAAAAAElFTkSuQmCC') 1x, url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAQCAYAAACV3GYgAAAAWklEQVRIx+3VOwoAIAwD0B49N686CCJ+K0aHFrIl8LaKqsqvEccxcPEQo8bgNs4KTBth4HaByCMWbhWIcsDEzYCoy2xcD4hW8QWuBqJXeoXLQIwK/iEc57iDBIg+ClNpjek/AAAAAElFTkSuQmCC') 2x), linear-gradient(top,$default-button-color, darken($default-button-color, 5%));
+    background-position: right center;
+    background-repeat: no-repeat;
+  }
+} // ENDIF $with-option-select
 
 .field {
   margin-bottom: 10px;
