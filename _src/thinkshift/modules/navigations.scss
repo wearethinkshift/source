@@ -82,18 +82,20 @@ $with-nav-tabs: true!default;
     li, a {
       float: left;
     }
-  
-    @include breakpoint(handheld) {
-      margin: 0;
+  	
+		&.nav-handheld-switch {
+			@include breakpoint(handheld) {
+	      margin: 0;
     
-      li, a {
-        float: none;
-        border: none;
-      }
+	      li, a {
+	        float: none;
+	        border: none;
+	      }
     
-      li a {
-        margin: 0;
-      }
+	      li a {
+	        margin: 0;
+	      }
+			}
     }
   
   }

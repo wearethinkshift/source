@@ -694,12 +694,12 @@ code {
   .nav-h li, .nav-bar li, .nav-h a, .nav-bar a {
     float: left; }
   @media only screen and (min-width: 280px) and (max-width: 600px) {
-    .nav-h, .nav-bar {
+    .nav-h.nav-handheld-switch, .nav-handheld-switch.nav-bar {
       margin: 0; }
-      .nav-h li, .nav-bar li, .nav-h a, .nav-bar a {
+      .nav-h.nav-handheld-switch li, .nav-handheld-switch.nav-bar li, .nav-h.nav-handheld-switch a, .nav-handheld-switch.nav-bar a {
         float: none;
         border: none; }
-      .nav-h li a, .nav-bar li a {
+      .nav-h.nav-handheld-switch li a, .nav-handheld-switch.nav-bar li a {
         margin: 0; } }
 
 .nav-v li, .nav-menu li {
