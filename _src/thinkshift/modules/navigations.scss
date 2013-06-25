@@ -83,7 +83,7 @@ $with-nav-tabs: true!default;
       float: left;
     }
   	
-		&.nav-handheld-switch {
+		&.nav-v-switch {
 			@include breakpoint(handheld) {
 	      margin: 0;
     
