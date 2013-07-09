@@ -150,7 +150,7 @@ $with-colstretch: true!default;
         
         $margin: percentage(floor($grid-spacing/2)/$grid-container-width);
   			@if $margin != 0 {
-  				margin: 0 $margin;
+  				margin: 0 $margin 20px;
   			}
         
         @for $n from 1 to $grid-columns + 1 {

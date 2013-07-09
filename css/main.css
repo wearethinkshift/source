@@ -1101,7 +1101,7 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
     @media only screen and (min-width: 600px) and (max-width: 1000px) {
       .grid .col {
         width: 6.25%;
-        margin: 0 1.04167%; }
+        margin: 0 1.04167% 20px; }
         .grid .col.colshift1 {
           margin-left: 9.375%; }
         .grid .col.colpush1 {
