@@ -49,7 +49,7 @@
 <section class="container clearfix grid">
   
   <h2>12 Columns</h2>
-  <p>Grids are calculated based on 960 divided into 12 columns of 60px with 10px margin on the left and right sides.</p>
+  <p>Grids are calculated based on 960 divided into 12 columns of 60px with 10px margin on the left and right sides, but are converted to percentage based measurements.</p>
   <div class="col">Col 1</div>
   <div class="col">Col 1</div>
   <div class="col">Col 1</div>
@@ -65,98 +65,123 @@
 
   <h2>Span</h2>
   <p>Spans will occupy one or more grid spaces. <code>.col</code> and <code>.col.colspan1</code> are the same.</p>
-  <div class="col colspan1">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colspan1">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colspan2">Col 2</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colspan2">Col 2</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colspan3">Col 3</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colspan3">Col 3</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colspan4">Col 4</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colspan4">Col 4</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colspan5">Col 5</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colspan5">Col 5</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colspan6">Col 6</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colspan6">Col 6</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colspan7">Col 7</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colspan7">Col 7</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colspan8">Col 8</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colspan8">Col 8</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colspan9">Col 9</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colspan9">Col 9</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colspan10">Col 10</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colspan10">Col 10</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colspan11">Col 11</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colspan11">Col 11</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colspan12">Col 12</div>
+  <div class="clearfix">
+    <div class="col colspan12">Col 12</div>
+  </div>
  
   <h3>Combinations</h3>
   <p>Colspans of different measurements can be used together in any combination that equals 12.</p>
+  
   <div class="col colspan2">Col 2</div>
   <div class="col colspan2">Col 2</div>
   <div class="col colspan2">Col 2</div>
@@ -201,161 +226,207 @@
  
   <h2>Shift</h2>
   <p>Shift will shift the column over by the number of spaces. <code>.colshift12</code> doesn't exist because it would break the column system.</p>
-  <div class="col colshift1">Shift 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
   
-  <div class="col colshift2">Shift 2</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colshift1">Shift 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colshift3">Shift 3</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colshift2">Shift 2</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colshift4">Shift 4</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colshift3">Shift 3</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colshift5">Shift 5</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colshift4">Shift 4</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colshift6">Shift 6</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colshift5">Shift 5</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colshift7">Shift 7</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colshift6">Shift 6</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colshift8">Shift 8</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colshift7">Shift 7</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colshift9">Shift 9</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colshift8">Shift 8</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colshift10">Shift 10</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colshift9">Shift 9</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colshift11">Shift 11</div>
+  <div class="clearfix">
+    <div class="col colshift10">Shift 10</div>
+    <div class="col">Col 1</div>
+  </div>
+  
+  <div class="clearfix">
+    <div class="col colshift11">Shift 11</div>
+  </div>
   
   <h2>Push</h2>
   <p>Push will push columns to the right by the number of spaces specified. <code>.colpush12</code> doesn't exist because it will break the column system.</p>
-  <div class="col colpush1">Push 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
   
-  <div class="col colpush2">Push 2</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colpush1">Push 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colpush3">Push 3</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colpush2">Push 2</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colpush4">Push 4</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colpush3">Push 3</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colpush5">Push 5</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colpush4">Push 4</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colpush6">Push 6</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colpush5">Push 5</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colpush7">Push 7</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colpush6">Push 6</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colpush8">Push 8</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colpush7">Push 7</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colpush9">Push 9</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colpush8">Push 8</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colpush10">Push 10</div>
-  <div class="col">Col 1</div>
+  <div class="clearfix">
+    <div class="col colpush9">Push 9</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
   
-  <div class="col colpush11">Push 11</div>
+  <div class="clearfix">
+    <div class="col colpush10">Push 10</div>
+    <div class="col">Col 1</div>
+  </div>
+  
+  <div class="clearfix">
+    <div class="col colpush11">Push 11</div>
+  </div>
   
   <h2>Stretch</h2>
   <div class="col colstretch1 colspan11">Stretch 1  <span style="float:right">Stretch 1</span></div>
@@ -395,7 +466,27 @@
   <div class="col colstretch-right9 colspan3"><span style="float:left">Stretch 9</span>   Stretch 9</div>
   <div class="col colstretch-right10 colspan2"><span style="float:left">Stretch 10</span> Stretch 10</div>
   <div class="col colstretch-right11 colspan1"><small>Stretch 11</small></div>
-
+  
+  
+  <h3>Nesting</h3>
+  <p>Because grids are percentage based, the nested grids need to add up to 12.</p>
+  <div class="clearfix">
+    <div class="col colspan6">
+      Span 6
+      <div class="clearfix">
+        <div class="col colspan6" style="background: #888">Span 6</div>
+        <div class="col colspan6" style="background: #888">Span 6</div>
+      </div>
+    </div>
+    <div class="col colspan6">
+      Span 6
+      <div class="clearfix">
+        <div class="col colspan6" style="background: #888">Span 6</div>
+        <div class="col colspan6" style="background: #888">Span 6</div>
+      </div>
+    </div>
+  </div>
+  
 </section>
 
 

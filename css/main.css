@@ -945,339 +945,151 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
   .grid .col {
     display: block;
     float: left;
-    width: 60px;
-    margin: 0 10px 20px; }
-    .grid .col .col:last-child {
-      margin-right: 0 !important; }
-    .grid .col .col:first-child {
-      margin-left: 0 !important; }
-    .grid .col .col.first {
-      margin-left: 0 !important; }
-    .grid .col .col.last {
-      margin-right: 0 !important; }
+    width: 6.25%;
+    margin: 0 1.04167% 20px; }
     .grid .col.colshift1 {
-      margin-left: 90px; }
+      margin-left: 9.375%; }
     .grid .col.colpush1 {
-      margin-right: 90px; }
+      margin-right: 9.375%; }
     .grid .col.colstretch1 {
-      padding-left: 40px;
-      padding-right: 40px; }
+      padding-left: 4.16667%;
+      padding-right: 4.16667%; }
     .grid .col.colstretch-left1 {
-      padding-left: 80px; }
+      padding-left: 8.33333%; }
     .grid .col.colstretch-right1 {
-      padding-right: 80px; }
+      padding-right: 8.33333%; }
     .grid .col.colspan2 {
-      width: 140px; }
+      width: 14.58333%; }
     .grid .col.colshift2 {
-      margin-left: 170px; }
+      margin-left: 17.70833%; }
     .grid .col.colpush2 {
-      margin-right: 170px; }
+      margin-right: 17.70833%; }
     .grid .col.colstretch2 {
-      padding-left: 80px;
-      padding-right: 80px; }
+      padding-left: 8.33333%;
+      padding-right: 8.33333%; }
     .grid .col.colstretch-left2 {
-      padding-left: 160px; }
+      padding-left: 16.66667%; }
     .grid .col.colstretch-right2 {
-      padding-right: 160px; }
+      padding-right: 16.66667%; }
     .grid .col.colspan3 {
-      width: 220px; }
+      width: 22.91667%; }
     .grid .col.colshift3 {
-      margin-left: 250px; }
+      margin-left: 26.04167%; }
     .grid .col.colpush3 {
-      margin-right: 250px; }
+      margin-right: 26.04167%; }
     .grid .col.colstretch3 {
-      padding-left: 120px;
-      padding-right: 120px; }
+      padding-left: 12.5%;
+      padding-right: 12.5%; }
     .grid .col.colstretch-left3 {
-      padding-left: 240px; }
+      padding-left: 25%; }
     .grid .col.colstretch-right3 {
-      padding-right: 240px; }
+      padding-right: 25%; }
     .grid .col.colspan4 {
-      width: 300px; }
+      width: 31.25%; }
     .grid .col.colshift4 {
-      margin-left: 330px; }
+      margin-left: 34.375%; }
     .grid .col.colpush4 {
-      margin-right: 330px; }
+      margin-right: 34.375%; }
     .grid .col.colstretch4 {
-      padding-left: 160px;
-      padding-right: 160px; }
+      padding-left: 16.66667%;
+      padding-right: 16.66667%; }
     .grid .col.colstretch-left4 {
-      padding-left: 320px; }
+      padding-left: 33.33333%; }
     .grid .col.colstretch-right4 {
-      padding-right: 320px; }
+      padding-right: 33.33333%; }
     .grid .col.colspan5 {
-      width: 380px; }
+      width: 39.58333%; }
     .grid .col.colshift5 {
-      margin-left: 410px; }
+      margin-left: 42.70833%; }
     .grid .col.colpush5 {
-      margin-right: 410px; }
+      margin-right: 42.70833%; }
     .grid .col.colstretch5 {
-      padding-left: 200px;
-      padding-right: 200px; }
+      padding-left: 20.83333%;
+      padding-right: 20.83333%; }
     .grid .col.colstretch-left5 {
-      padding-left: 400px; }
+      padding-left: 41.66667%; }
     .grid .col.colstretch-right5 {
-      padding-right: 400px; }
+      padding-right: 41.66667%; }
     .grid .col.colspan6 {
-      width: 460px; }
+      width: 47.91667%; }
     .grid .col.colshift6 {
-      margin-left: 490px; }
+      margin-left: 51.04167%; }
     .grid .col.colpush6 {
-      margin-right: 490px; }
+      margin-right: 51.04167%; }
     .grid .col.colstretch6 {
-      padding-left: 240px;
-      padding-right: 240px; }
+      padding-left: 25.0%;
+      padding-right: 25.0%; }
     .grid .col.colstretch-left6 {
-      padding-left: 480px; }
+      padding-left: 50%; }
     .grid .col.colstretch-right6 {
-      padding-right: 480px; }
+      padding-right: 50%; }
     .grid .col.colspan7 {
-      width: 540px; }
+      width: 56.25%; }
     .grid .col.colshift7 {
-      margin-left: 570px; }
+      margin-left: 59.375%; }
     .grid .col.colpush7 {
-      margin-right: 570px; }
+      margin-right: 59.375%; }
     .grid .col.colstretch7 {
-      padding-left: 280px;
-      padding-right: 280px; }
+      padding-left: 29.16667%;
+      padding-right: 29.16667%; }
     .grid .col.colstretch-left7 {
-      padding-left: 560px; }
+      padding-left: 58.33333%; }
     .grid .col.colstretch-right7 {
-      padding-right: 560px; }
+      padding-right: 58.33333%; }
     .grid .col.colspan8 {
-      width: 620px; }
+      width: 64.58333%; }
     .grid .col.colshift8 {
-      margin-left: 650px; }
+      margin-left: 67.70833%; }
     .grid .col.colpush8 {
-      margin-right: 650px; }
+      margin-right: 67.70833%; }
     .grid .col.colstretch8 {
-      padding-left: 320px;
-      padding-right: 320px; }
+      padding-left: 33.33333%;
+      padding-right: 33.33333%; }
     .grid .col.colstretch-left8 {
-      padding-left: 640px; }
+      padding-left: 66.66667%; }
     .grid .col.colstretch-right8 {
-      padding-right: 640px; }
+      padding-right: 66.66667%; }
     .grid .col.colspan9 {
-      width: 700px; }
+      width: 72.91667%; }
     .grid .col.colshift9 {
-      margin-left: 730px; }
+      margin-left: 76.04167%; }
     .grid .col.colpush9 {
-      margin-right: 730px; }
+      margin-right: 76.04167%; }
     .grid .col.colstretch9 {
-      padding-left: 360px;
-      padding-right: 360px; }
+      padding-left: 37.5%;
+      padding-right: 37.5%; }
     .grid .col.colstretch-left9 {
-      padding-left: 720px; }
+      padding-left: 75%; }
     .grid .col.colstretch-right9 {
-      padding-right: 720px; }
+      padding-right: 75%; }
     .grid .col.colspan10 {
-      width: 780px; }
+      width: 81.25%; }
     .grid .col.colshift10 {
-      margin-left: 810px; }
+      margin-left: 84.375%; }
     .grid .col.colpush10 {
-      margin-right: 810px; }
+      margin-right: 84.375%; }
     .grid .col.colstretch10 {
-      padding-left: 400px;
-      padding-right: 400px; }
+      padding-left: 41.66667%;
+      padding-right: 41.66667%; }
     .grid .col.colstretch-left10 {
-      padding-left: 800px; }
+      padding-left: 83.33333%; }
     .grid .col.colstretch-right10 {
-      padding-right: 800px; }
+      padding-right: 83.33333%; }
     .grid .col.colspan11 {
-      width: 860px; }
+      width: 89.58333%; }
     .grid .col.colshift11 {
-      margin-left: 890px; }
+      margin-left: 92.70833%; }
     .grid .col.colpush11 {
-      margin-right: 890px; }
+      margin-right: 92.70833%; }
     .grid .col.colstretch11 {
-      padding-left: 440px;
-      padding-right: 440px; }
+      padding-left: 45.83333%;
+      padding-right: 45.83333%; }
     .grid .col.colstretch-left11 {
-      padding-left: 880px; }
+      padding-left: 91.66667%; }
     .grid .col.colstretch-right11 {
-      padding-right: 880px; }
+      padding-right: 91.66667%; }
     .grid .col.colspan12 {
-      width: 940px; }
-    @media only screen and (min-width: 600px) and (max-width: 1000px) {
-      .grid .col {
-        width: 6.25%;
-        margin: 0 1.04167% 20px; }
-        .grid .col.colshift1 {
-          margin-left: 9.375%; }
-        .grid .col.colpush1 {
-          margin-right: 9.375%; }
-        .grid .col.colstretch1 {
-          padding-left: 4.16667%;
-          padding-right: 4.16667%; }
-        .grid .col.colstretch-left1 {
-          padding-left: 8.33333%; }
-        .grid .col.colstretch-right1 {
-          padding-right: 8.33333%; }
-        .grid .col.colspan2 {
-          width: 14.58333%; }
-          .grid .col.colspan2 .col {
-            width: 100% !important;
-            margin: 0 0 20px 0 !important; }
-        .grid .col.colshift2 {
-          margin-left: 17.70833%; }
-        .grid .col.colpush2 {
-          margin-right: 17.70833%; }
-        .grid .col.colstretch2 {
-          padding-left: 8.33333%;
-          padding-right: 8.33333%; }
-        .grid .col.colstretch-left2 {
-          padding-left: 16.66667%; }
-        .grid .col.colstretch-right2 {
-          padding-right: 16.66667%; }
-        .grid .col.colspan3 {
-          width: 22.91667%; }
-          .grid .col.colspan3 .col {
-            width: 100% !important;
-            margin: 0 0 20px 0 !important; }
-        .grid .col.colshift3 {
-          margin-left: 26.04167%; }
-        .grid .col.colpush3 {
-          margin-right: 26.04167%; }
-        .grid .col.colstretch3 {
-          padding-left: 12.5%;
-          padding-right: 12.5%; }
-        .grid .col.colstretch-left3 {
-          padding-left: 25%; }
-        .grid .col.colstretch-right3 {
-          padding-right: 25%; }
-        .grid .col.colspan4 {
-          width: 31.25%; }
-          .grid .col.colspan4 .col {
-            width: 100% !important;
-            margin: 0 0 20px 0 !important; }
-        .grid .col.colshift4 {
-          margin-left: 34.375%; }
-        .grid .col.colpush4 {
-          margin-right: 34.375%; }
-        .grid .col.colstretch4 {
-          padding-left: 16.66667%;
-          padding-right: 16.66667%; }
-        .grid .col.colstretch-left4 {
-          padding-left: 33.33333%; }
-        .grid .col.colstretch-right4 {
-          padding-right: 33.33333%; }
-        .grid .col.colspan5 {
-          width: 39.58333%; }
-          .grid .col.colspan5 .col {
-            width: 100% !important;
-            margin: 0 0 20px 0 !important; }
-        .grid .col.colshift5 {
-          margin-left: 42.70833%; }
-        .grid .col.colpush5 {
-          margin-right: 42.70833%; }
-        .grid .col.colstretch5 {
-          padding-left: 20.83333%;
-          padding-right: 20.83333%; }
-        .grid .col.colstretch-left5 {
-          padding-left: 41.66667%; }
-        .grid .col.colstretch-right5 {
-          padding-right: 41.66667%; }
-        .grid .col.colspan6 {
-          width: 47.91667%; }
-          .grid .col.colspan6 .col {
-            width: 100% !important;
-            margin: 0 0 20px 0 !important; }
-        .grid .col.colshift6 {
-          margin-left: 51.04167%; }
-        .grid .col.colpush6 {
-          margin-right: 51.04167%; }
-        .grid .col.colstretch6 {
-          padding-left: 25.0%;
-          padding-right: 25.0%; }
-        .grid .col.colstretch-left6 {
-          padding-left: 50%; }
-        .grid .col.colstretch-right6 {
-          padding-right: 50%; }
-        .grid .col.colspan7 {
-          width: 56.25%; }
-          .grid .col.colspan7 .col {
-            width: 100% !important;
-            margin: 0 0 20px 0 !important; }
-        .grid .col.colshift7 {
-          margin-left: 59.375%; }
-        .grid .col.colpush7 {
-          margin-right: 59.375%; }
-        .grid .col.colstretch7 {
-          padding-left: 29.16667%;
-          padding-right: 29.16667%; }
-        .grid .col.colstretch-left7 {
-          padding-left: 58.33333%; }
-        .grid .col.colstretch-right7 {
-          padding-right: 58.33333%; }
-        .grid .col.colspan8 {
-          width: 64.58333%; }
-          .grid .col.colspan8 .col {
-            width: 100% !important;
-            margin: 0 0 20px 0 !important; }
-        .grid .col.colshift8 {
-          margin-left: 67.70833%; }
-        .grid .col.colpush8 {
-          margin-right: 67.70833%; }
-        .grid .col.colstretch8 {
-          padding-left: 33.33333%;
-          padding-right: 33.33333%; }
-        .grid .col.colstretch-left8 {
-          padding-left: 66.66667%; }
-        .grid .col.colstretch-right8 {
-          padding-right: 66.66667%; }
-        .grid .col.colspan9 {
-          width: 72.91667%; }
-          .grid .col.colspan9 .col {
-            width: 100% !important;
-            margin: 0 0 20px 0 !important; }
-        .grid .col.colshift9 {
-          margin-left: 76.04167%; }
-        .grid .col.colpush9 {
-          margin-right: 76.04167%; }
-        .grid .col.colstretch9 {
-          padding-left: 37.5%;
-          padding-right: 37.5%; }
-        .grid .col.colstretch-left9 {
-          padding-left: 75%; }
-        .grid .col.colstretch-right9 {
-          padding-right: 75%; }
-        .grid .col.colspan10 {
-          width: 81.25%; }
-          .grid .col.colspan10 .col {
-            width: 100% !important;
-            margin: 0 0 20px 0 !important; }
-        .grid .col.colshift10 {
-          margin-left: 84.375%; }
-        .grid .col.colpush10 {
-          margin-right: 84.375%; }
-        .grid .col.colstretch10 {
-          padding-left: 41.66667%;
-          padding-right: 41.66667%; }
-        .grid .col.colstretch-left10 {
-          padding-left: 83.33333%; }
-        .grid .col.colstretch-right10 {
-          padding-right: 83.33333%; }
-        .grid .col.colspan11 {
-          width: 89.58333%; }
-          .grid .col.colspan11 .col {
-            width: 100% !important;
-            margin: 0 0 20px 0 !important; }
-        .grid .col.colshift11 {
-          margin-left: 92.70833%; }
-        .grid .col.colpush11 {
-          margin-right: 92.70833%; }
-        .grid .col.colstretch11 {
-          padding-left: 45.83333%;
-          padding-right: 45.83333%; }
-        .grid .col.colstretch-left11 {
-          padding-left: 91.66667%; }
-        .grid .col.colstretch-right11 {
-          padding-right: 91.66667%; }
-        .grid .col.colspan12 {
-          width: 97.91667%; }
-          .grid .col.colspan12 .col {
-            width: 100% !important;
-            margin: 0 0 20px 0 !important; } }
+      width: 97.91667%; }
     @media only screen and (min-width: 280px) and (max-width: 600px) {
       .grid .col {
         width: 100%;

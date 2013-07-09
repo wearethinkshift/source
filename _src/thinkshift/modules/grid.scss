@@ -59,90 +59,90 @@ $with-colstretch: true!default;
       display: block;
       float: left;
         
-      @if $column-width > 0 {
-        width: #{$column-width}px;
-      }
-        
-      $margin: (floor($grid-spacing/2)); // left and right margin.
-			@if $margin != 0 {
-				margin: 0 #{$margin}px 20px;
-			}
-      
-      // =========
-      // RECURSION
-      // =========
-      // Remove the first and last column margins
-      .col {
-        &:last-child {
-          margin-right: 0!important;
-        }
-      
-        &:first-child {
-          margin-left: 0!important;
-        }
-        
-        // Some extra classes for IE6/7/8
-        @if $supports-ie8 == true or $supports-ie7 == true or $supports-ie6 == true {  
-          &.#{$namespace}first {
-            margin-left: 0!important;
-          }
-      
-          &.#{$namespace}last {
-            margin-right: 0!important;
-          }
-        }
-      }
+//      @if $column-width > 0 {
+//        width: #{$column-width}px;
+//      }
+//        
+//      $margin: (floor($grid-spacing/2)); // left and right margin.
+//      @if $margin != 0 {
+//        margin: 0 #{$margin}px 20px;
+//      }
+//      
+//      // =========
+//      // RECURSION
+//      // =========
+//      // Remove the first and last column margins
+//      .col {
+//        &:last-child {
+//          margin-right: 0!important;
+//        }
+//      
+//        &:first-child {
+//          margin-left: 0!important;
+//        }
+//        
+//        // Some extra classes for IE6/7/8
+//        @if $supports-ie8 == true or $supports-ie7 == true or $supports-ie6 == true {  
+//          &.#{$namespace}first {
+//            margin-left: 0!important;
+//          }
+//      
+//          &.#{$namespace}last {
+//            margin-right: 0!important;
+//          }
+//        }
+//      }
 
       // =======
       // COLUMNS
       // =======
-      @for $n from 1 to $grid-columns + 1 {
+//      @for $n from 1 to $grid-columns + 1 {
         
-        $span-width: floor(($column-width * $n) + ($grid-spacing * ($n - 1)));
-        
-        // Colspan: colspan1 = col, so we're not including it.
-        @if $n > 1 {
-          &.#{$namespace}colspan#{$n} {
-            // width is the column width + spacing.
-            // |m|column|mm|column|m|
-            width: #{$span-width}px;
-
-          }
-        }
-        
-        // Colshift, Colpush or Colstretch: 12 spans will break things.
-        @if $n < 12 {
-          @if $with-colshift == true {
-            &.#{$namespace}colshift#{$n} {
-              margin-left: #{$span-width + $margin + $margin + $margin}px;
-            }
-          } // ENDIF $with-colshift
-        
-          @if $with-colpush == true {
-            &.#{$namespace}colpush#{$n} {
-              margin-right: #{$span-width + $margin + $margin + $margin}px;
-            }
-          } // ENDIF $with-colpush
-          
-          @if $with-colstretch == true {
-            &.#{$namespace}colstretch#{$n} {
-              padding-left: #{floor($span-width / 2) + $margin}px;
-              padding-right: #{floor($span-width / 2) + $margin}px;
-            }
-        
-            &.#{$namespace}colstretch-left#{$n} {
-              padding-left: #{$span-width + $margin + $margin}px;
-            }
-        
-            &.#{$namespace}colstretch-right#{$n} {
-              padding-right: #{$span-width + $margin + $margin}px;
-            }
-          } // ENDIF $with-colstretch
-        } // ENDIF $n < 12
-        
-      }
+//        $span-width: floor(($column-width * $n) + ($grid-spacing * ($n - 1)));
+//        
+//        // Colspan: colspan1 = col, so we're not including it.
+//        @if $n > 1 {
+//          &.#{$namespace}colspan#{$n} {
+//            // width is the column width + spacing.
+//            // |m|column|mm|column|m|
+//            width: #{$span-width}px;
+//
+//          }
+//        }
+//        
+//        // Colshift, Colpush or Colstretch: 12 spans will break things.
+//        @if $n < 12 {
+//          @if $with-colshift == true {
+//            &.#{$namespace}colshift#{$n} {
+//              margin-left: #{$span-width + $margin + $margin + $margin}px;
+//            }
+//          } // ENDIF $with-colshift
+//        
+//          @if $with-colpush == true {
+//            &.#{$namespace}colpush#{$n} {
+//              margin-right: #{$span-width + $margin + $margin + $margin}px;
+//            }
+//          } // ENDIF $with-colpush
+//          
+//          @if $with-colstretch == true {
+//            &.#{$namespace}colstretch#{$n} {
+//              padding-left: #{floor($span-width / 2) + $margin}px;
+//              padding-right: #{floor($span-width / 2) + $margin}px;
+//            }
+//        
+//            &.#{$namespace}colstretch-left#{$n} {
+//              padding-left: #{$span-width + $margin + $margin}px;
+//            }
+//        
+//            &.#{$namespace}colstretch-right#{$n} {
+//              padding-right: #{$span-width + $margin + $margin}px;
+//            }
+//          } // ENDIF $with-colstretch
+//        } // ENDIF $n < 12
+//        
+//      }
       
-      @include breakpoint(tablet) {
+//      @include breakpoint(tablet) {
         
         @if $column-width > 0 {
           width: percentage($column-width/$grid-container-width);
@@ -164,11 +164,11 @@ $with-colstretch: true!default;
               // |column|mm|column|
               width: $span-width;
             
-              // recursive grids, percentage recalculations only...
-              .#{$namespace}col{
-                width: 100%!important;
-                margin: 0 0 20px 0!important;
-              }
+//              // recursive grids, percentage recalculations only...
+//              .#{$namespace}col{
+//                width: 100%!important;
+//                margin: 0 0 20px 0!important;
+//              }
             }
           } // ENDIF $n > 1
           
@@ -202,7 +202,7 @@ $with-colstretch: true!default;
             } // ENDIF $with-colstretch
           } // ENDIF $n < 12
         }
-      } // breakpoint tablet
+//      } // breakpoint tablet
       
       @include breakpoint(handheld) {
         width: 100%;
