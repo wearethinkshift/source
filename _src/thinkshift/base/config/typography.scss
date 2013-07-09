@@ -1,23 +1,30 @@
 //  --------------------------------------------------------------------------
 //  Typography
 //  -------------------------------------------------------------------------- */
-
-    // Core fonts
-    $font-serif:      serif!default;
-    $font-sans-serif: sans-serif!default;
-    $font-monospace:  monospace!default;
     
-    // Base Font Style is "sans-serif" so the user agent chooses their default.
-    // Macs = "Helvetica", Windows = "Arial". Everyone's happy. Plus it's short.    
-    $font-family-base: $font-sans-serif!default;
+    $sans-serif: sans-serif;
+    $serif: serif;
+    $monospace: monospace;
     
     // Expanded Families
-    $font-family-sans-serif: 'Helvetica Neue', Arial, $font-sans-serif!default;
-    $font-family-sans-serif: 'Hoefler Text', Georgia, $font-serif!default;
-    $font-family-monospace: Consolas, Courier, $font-monospace!default;
+    $font-family-sans-serif: 'Helvetica Neue', Arial, $sans-serif!default;
+    $font-family-sans-serif: 'Hoefler Text', Georgia, $serif!default;
+    $font-family-monospace: Consolas, Courier, $monospace!default;
     
-    // Don't use black.
-    $font-color-base: $charcoal!default;
-    
-    // base line heights
-    $line-height-base: 1.4em!default;
+
+//  --------------------------------------------------------------------------
+//  Fonts Sizes
+//  --------------------------------------------------------------------------
+
+    // Relative to the base (defaults to 12px)
+    $font-size-tiny:      9px!default;
+    $font-size-xsmall:   10px!default;
+    $font-size-small:    11px!default;
+    $font-size-fine:     12px!default;
+    $font-size-normal:   14px!default;
+    $font-size-medium:   14px!default;
+    $font-size-large:    16px!default;
+    $font-size-xlarge:   18px!default;
+    $font-size-xxlarge:  24px!default;
+    $font-size-huge:     30px!default;
+    $font-size-enormous: 36px!default;

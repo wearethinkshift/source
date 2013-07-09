@@ -163,22 +163,10 @@ h4 {
   font-size: 18px; }
 
 h5 {
-  font-size: 14px; }
+  font-size: 16px; }
 
 h6 {
   font-size: 14px; }
-
-h2 {
-  font-weight: 300; }
-
-h3, h4, h5, h6 {
-  color: gray; }
-
-h5, h6 {
-  font-style: italic; }
-
-h4, h6 {
-  font-weight: normal; }
 
 ul, ol {
   padding-left: 2.15em; }
@@ -315,7 +303,6 @@ code {
 .lead {
   font-size: 24px;
   line-height: 1.4em;
-  color: gray;
   margin: 40px 0;
   font-weight: 200; }
   @media only screen and (min-width: 280px) and (max-width: 600px) {
@@ -1422,27 +1409,6 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
     position: absolute;
     top: 0;
     right: 1px; }
-
-.masthead h1 {
-  font-family: 'oswald', sans-serif;
-  font-weight: 300; }
-
-h1 {
-  font-family: 'oswald', sans-serif;
-  text-transform: uppercase;
-  font-weight: 300; }
-
-#secondary-menu {
-  position: fixed;
-  width: 220px; }
-  @media only screen and (min-width: 600px) and (max-width: 1000px) {
-    #secondary-menu {
-      position: static;
-      width: auto; } }
-  @media only screen and (min-width: 280px) and (max-width: 600px) {
-    #secondary-menu {
-      position: static;
-      width: auto; } }
 
 body:after {
   padding: 5px;

@@ -51,20 +51,20 @@ svg:not(:root) {
 // 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
 // 2. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
 html {
-  font-size: $font-size-base;
-  -webkit-text-size-adjust: $font-size-base;
-  -ms-text-size-adjust: $font-size-base;
+  font-size: $base-font-size;
+  -webkit-text-size-adjust: $base-font-size;
+  -ms-text-size-adjust: $base-font-size;
 }
 
 html, button, input, select, textarea {
-  font-family: $font-family-base;
-  color: $font-color-base;
+  font-family: $base-font-family;
+  color: $base-font-color;
 }
 
 body {
   margin: 0;
   font-size: 1em;
-  line-height: $line-height-base;
+  line-height: $base-line-height;
 }
 
 

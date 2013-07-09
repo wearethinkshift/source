@@ -6,25 +6,31 @@
     $selection-color: #b3d4fc!default;
     
     // Base Colors
-    $red:          #D01616!default;
+    $red:                        #D01616!default;
     $light-red:    lighten($red,    15%)!default;
     $dark-red:     darken( $red,    15%)!default;
-    $orange:       #ff6622!default;
+    
+    $orange:                     #ff6622!default;
     $light-orange: lighten($orange, 15%)!default;
     $dark-orange:  darken( $orange, 15%)!default;
-    $yellow:       #E4C419!default;
+    
+    $yellow:                     #E4C419!default;
     $light-yellow: lighten($yellow, 10%)!default;
     $dark-yellow:  darken( $yellow, 15%)!default;
-    $green:        #3DA20E!default;
+    
+    $green:                      #3DA20E!default;
     $light-green:  lighten($green,  15%)!default;
     $dark-green:   darken( $green,  15%)!default;
-    $blue:         #196AE4!default;
+    
+    $blue:                       #196AE4!default;
     $light-blue:   lighten($blue,   15%)!default;
     $dark-blue:    darken( $blue,   15%)!default;
-    $indigo:       #220066!default;
+    
+    $indigo:                     #220066!default;
     $light-indigo: lighten($indigo, 15%)!default;
     $dark-indigo:  darken( $indigo, 15%)!default;
-    $violet:       #330044!default;
+    
+    $violet:                     #330044!default;
     $light-violet: lighten($violet, 15%)!default;
     $dark-violet:  darken( $violet, 15%)!default;
 
