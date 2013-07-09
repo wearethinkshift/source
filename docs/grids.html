@@ -24,6 +24,11 @@
    .colstretch-right1, .colstretch-right2, .colstretch-right3, .colstretch-right4,
    .colstretch-right5, .colstretch-right6, .colstretch-right7, .colstretch-right8,
    .colstretch-right9, .colstretch-right10, .colstretch-right11, .colstretch-right12 { text-align: right; }
+   
+   .grid .nested {
+     background: #888;
+     margin-bottom: 0px;
+   }
   </style>
   
   <!-- Start Here -->
@@ -474,15 +479,15 @@
     <div class="col colspan6">
       Span 6
       <div class="clearfix">
-        <div class="col colspan6" style="background: #888">Span 6</div>
-        <div class="col colspan6" style="background: #888">Span 6</div>
+        <div class="col colspan6 nested">Span 6</div>
+        <div class="col colspan6 nested">Span 6</div>
       </div>
     </div>
     <div class="col colspan6">
       Span 6
       <div class="clearfix">
-        <div class="col colspan6" style="background: #888">Span 6</div>
-        <div class="col colspan6" style="background: #888">Span 6</div>
+        <div class="col colspan6 nested">Span 6</div>
+        <div class="col colspan6 nested">Span 6</div>
       </div>
     </div>
   </div>
