@@ -11,7 +11,7 @@
   <script src="/js/libs/modernizr/modernizr-2.6.2.dev.js"></script>
   
   <style type="text/css">
-   .col { background: #e5e5e5; text-align: center; padding: 10px 0; }
+   .col { background: #e5e5e5; text-align: center; border: 1px solid #ccc; padding: 10px; font-size: 10px; color: #888; }
    
    .colstretch1, .colstretch2, .colstretch3, .colstretch4,
    .colstretch5, .colstretch6, .colstretch7, .colstretch8,
@@ -28,6 +28,7 @@
    .grid .nested {
      background: #888;
      margin-bottom: 0px;
+     color: #fff;
    }
   </style>
   
@@ -56,18 +57,20 @@
   
   <h2>12 Columns</h2>
   <p>Grids are calculated based on 960 divided into 12 columns of 60px with 10px margin on the left and right sides, but are converted to percentage based measurements.</p>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
-  <div class="col">Col 1</div>
+  <div class="row">
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 1</div>
+  </div>
 
   <h2>Span</h2>
   <p>Spans will occupy one or more grid spaces. <code>.col</code> and <code>.col.colspan1</code> are the same.</p>
@@ -187,49 +190,50 @@
  
   <h3>Combinations</h3>
   <p>Colspans of different measurements can be used together in any combination that equals 12.</p>
+  <div class="clearfix">
+    <div class="col colspan2">Col 2</div>
+    <div class="col colspan2">Col 2</div>
+    <div class="col colspan2">Col 2</div>
+    <div class="col colspan2">Col 2</div>
+    <div class="col colspan2">Col 2</div>
+    <div class="col colspan2">Col 2</div>
   
-  <div class="col colspan2">Col 2</div>
-  <div class="col colspan2">Col 2</div>
-  <div class="col colspan2">Col 2</div>
-  <div class="col colspan2">Col 2</div>
-  <div class="col colspan2">Col 2</div>
-  <div class="col colspan2">Col 2</div>
+    <div class="col colspan3">Col 3</div>
+    <div class="col colspan3">Col 3</div>
+    <div class="col colspan3">Col 3</div>
+    <div class="col colspan3">Col 3</div>
   
-  <div class="col colspan3">Col 3</div>
-  <div class="col colspan3">Col 3</div>
-  <div class="col colspan3">Col 3</div>
-  <div class="col colspan3">Col 3</div>
+    <div class="col colspan4">Col 4</div>
+    <div class="col colspan4">Col 4</div>
+    <div class="col colspan4">Col 4</div>
   
-  <div class="col colspan4">Col 4</div>
-  <div class="col colspan4">Col 4</div>
-  <div class="col colspan4">Col 4</div>
+    <div class="col colspan6">Col 6</div>
+    <div class="col colspan6">Col 6</div>
   
-  <div class="col colspan6">Col 6</div>
-  <div class="col colspan6">Col 6</div>
+    <div class="col colspan2">Col 2</div>
+    <div class="col colspan10">Col 10</div>
   
-  <div class="col colspan2">Col 2</div>
-  <div class="col colspan10">Col 10</div>
+    <div class="col colspan2">Col 2</div>
+    <div class="col colspan8">Col 8</div>
+    <div class="col colspan2">Col 2</div>
   
-  <div class="col colspan2">Col 2</div>
-  <div class="col colspan8">Col 8</div>
-  <div class="col colspan2">Col 2</div>
+    <div class="col colspan3">Col 3</div>
+    <div class="col colspan3">Col 3</div>
+    <div class="col colspan6">Col 6</div>
   
-  <div class="col colspan3">Col 3</div>
-  <div class="col colspan3">Col 3</div>
-  <div class="col colspan6">Col 6</div>
+    <div class="col colspan3">Col 3</div>
+    <div class="col colspan9">Col 9</div>
   
-  <div class="col colspan3">Col 3</div>
-  <div class="col colspan9">Col 9</div>
+    <div class="col colspan3">Col 3</div>
+    <div class="col colspan6">Col 6</div>
+    <div class="col colspan3">Col 3</div>
   
-  <div class="col colspan3">Col 3</div>
-  <div class="col colspan6">Col 6</div>
-  <div class="col colspan3">Col 3</div>
+    <div class="col colspan4">Col 4</div>
+    <div class="col colspan8">Col 8</div>
   
-  <div class="col colspan4">Col 4</div>
-  <div class="col colspan8">Col 8</div>
+    <div class="col colspan12">Etc... You get the point.</div>
+  </div>
   
-  <div class="col colspan12">Etc... You get the point.</div>
- 
   <h2>Shift</h2>
   <p>Shift will shift the column over by the number of spaces. <code>.colshift12</code> doesn't exist because it would break the column system.</p>
   
@@ -435,58 +439,63 @@
   </div>
   
   <h2>Stretch</h2>
-  <div class="col colstretch1 colspan11">Stretch 1  <span style="float:right">Stretch 1</span></div>
-  <div class="col colstretch2 colspan10">Stretch 2  <span style="float:right">Stretch 2</span></div>
-  <div class="col colstretch3 colspan9">Stretch 3   <span style="float:right">Stretch 3</span></div>
-  <div class="col colstretch4 colspan8">Stretch 4   <span style="float:right">Stretch 4</span></div>
-  <div class="col colstretch5 colspan7">Stretch 5   <span style="float:right">Stretch 5</span></div>
-  <div class="col colstretch6 colspan6">Stretch 6   <span style="float:right">Stretch 6</span></div>
-  <div class="col colstretch7 colspan5">Stretch 7   <span style="float:right">Stretch 7</span></div>
-  <div class="col colstretch8 colspan4">Stretch 8   <span style="float:right">Stretch 8</span></div>
-  <div class="col colstretch9 colspan3">Stretch 9   <span style="float:right">Stretch 9</span></div>
-  <div class="col colstretch10 colspan2">Stretch 10 <span style="float:right">Stretch 10</span></div>
-  <div class="col colstretch11 colspan1"><small>Stretch 11</small></div>
+  <div class="clearfix">
+    <div class="col colstretch1 colspan12">Stretch 1  <span style="float:right">Stretch 1</span></div>
+    <div class="col colstretch2 colspan12">Stretch 2  <span style="float:right">Stretch 2</span></div>
+    <div class="col colstretch3 colspan12">Stretch 3   <span style="float:right">Stretch 3</span></div>
+    <div class="col colstretch4 colspan12">Stretch 4   <span style="float:right">Stretch 4</span></div>
+    <div class="col colstretch5 colspan12">Stretch 5   <span style="float:right">Stretch 5</span></div>
+    <div class="col colstretch6 colspan12">Stretch 6   <span style="float:right">Stretch 6</span></div>
+    <div class="col colstretch7 colspan12">Stretch 7   <span style="float:right">Stretch 7</span></div>
+    <div class="col colstretch8 colspan12">Stretch 8   <span style="float:right">Stretch 8</span></div>
+    <div class="col colstretch9 colspan12">Stretch 9   <span style="float:right">Stretch 9</span></div>
+    <div class="col colstretch10 colspan12">Stretch 10 <span style="float:right">Stretch 10</span></div>
+    <div class="col colstretch11 colspan12"><small>Stretch 11</small></div>
+  </div>
   
   <h3>Stretch Left</h3>
-  <div class="col colstretch-left1 colspan11">Stretch 1  <span style="float:right">Stretch 1</span></div>
-  <div class="col colstretch-left2 colspan10">Stretch 2  <span style="float:right">Stretch 2</span></div>
-  <div class="col colstretch-left3 colspan9">Stretch 3   <span style="float:right">Stretch 3</span></div>
-  <div class="col colstretch-left4 colspan8">Stretch 4   <span style="float:right">Stretch 4</span></div>
-  <div class="col colstretch-left5 colspan7">Stretch 5   <span style="float:right">Stretch 5</span></div>
-  <div class="col colstretch-left6 colspan6">Stretch 6   <span style="float:right">Stretch 6</span></div>
-  <div class="col colstretch-left7 colspan5">Stretch 7   <span style="float:right">Stretch 7</span></div>
-  <div class="col colstretch-left8 colspan4">Stretch 8   <span style="float:right">Stretch 8</span></div>
-  <div class="col colstretch-left9 colspan3">Stretch 9   <span style="float:right">Stretch 9</span></div>
-  <div class="col colstretch-left10 colspan2">Stretch 10 <span style="float:right">Stretch 10</span></div>
-  <div class="col colstretch-left11 colspan1"><small>Stretch 11</small></div>
+  <div class="clearfix">
+    <div class="col colstretch-left1 colspan12">Stretch 1  <span style="float:right">Stretch 1</span></div>
+    <div class="col colstretch-left2 colspan12">Stretch 2  <span style="float:right">Stretch 2</span></div>
+    <div class="col colstretch-left3 colspan12">Stretch 3   <span style="float:right">Stretch 3</span></div>
+    <div class="col colstretch-left4 colspan12">Stretch 4   <span style="float:right">Stretch 4</span></div>
+    <div class="col colstretch-left5 colspan12">Stretch 5   <span style="float:right">Stretch 5</span></div>
+    <div class="col colstretch-left6 colspan12">Stretch 6   <span style="float:right">Stretch 6</span></div>
+    <div class="col colstretch-left7 colspan12">Stretch 7   <span style="float:right">Stretch 7</span></div>
+    <div class="col colstretch-left8 colspan12">Stretch 8   <span style="float:right">Stretch 8</span></div>
+    <div class="col colstretch-left9 colspan12">Stretch 9   <span style="float:right">Stretch 9</span></div>
+    <div class="col colstretch-left10 colspan12">Stretch 10 <span style="float:right">Stretch 10</span></div>
+    <div class="col colstretch-left11 colspan12"><small>Stretch 11</small></div>
+  </div>
   
   <h3>Stretch Right</h3>
-  <div class="col colstretch-right1 colspan11"><span style="float:left">Stretch 1</span>  Stretch 1</div>
-  <div class="col colstretch-right2 colspan10"><span style="float:left">Stretch 2</span>  Stretch 2</div>
-  <div class="col colstretch-right3 colspan9"><span style="float:left">Stretch 3</span>   Stretch 3</div>
-  <div class="col colstretch-right4 colspan8"><span style="float:left">Stretch 4</span>   Stretch 4</div>
-  <div class="col colstretch-right5 colspan7"><span style="float:left">Stretch 5</span>   Stretch 5</div>
-  <div class="col colstretch-right6 colspan6"><span style="float:left">Stretch 6</span>   Stretch 6</div>
-  <div class="col colstretch-right7 colspan5"><span style="float:left">Stretch 7</span>   Stretch 7</div>
-  <div class="col colstretch-right8 colspan4"><span style="float:left">Stretch 8</span>   Stretch 8</div>
-  <div class="col colstretch-right9 colspan3"><span style="float:left">Stretch 9</span>   Stretch 9</div>
-  <div class="col colstretch-right10 colspan2"><span style="float:left">Stretch 10</span> Stretch 10</div>
-  <div class="col colstretch-right11 colspan1"><small>Stretch 11</small></div>
-  
+  <div class="clearfix">
+    <div class="col colstretch-right1 colspan12"><span style="float:left">Stretch 1</span>  Stretch 1</div>
+    <div class="col colstretch-right2 colspan12"><span style="float:left">Stretch 2</span>  Stretch 2</div>
+    <div class="col colstretch-right3 colspan12"><span style="float:left">Stretch 3</span>   Stretch 3</div>
+    <div class="col colstretch-right4 colspan12"><span style="float:left">Stretch 4</span>   Stretch 4</div>
+    <div class="col colstretch-right5 colspan12"><span style="float:left">Stretch 5</span>   Stretch 5</div>
+    <div class="col colstretch-right6 colspan12"><span style="float:left">Stretch 6</span>   Stretch 6</div>
+    <div class="col colstretch-right7 colspan12"><span style="float:left">Stretch 7</span>   Stretch 7</div>
+    <div class="col colstretch-right8 colspan12"><span style="float:left">Stretch 8</span>   Stretch 8</div>
+    <div class="col colstretch-right9 colspan12"><span style="float:left">Stretch 9</span>   Stretch 9</div>
+    <div class="col colstretch-right10 colspan12"><span style="float:left">Stretch 10</span> Stretch 10</div>
+    <div class="col colstretch-right11 colspan12"><small>Stretch 11</small></div>
+  </div>
   
   <h3>Nesting</h3>
   <p>Because grids are percentage based, the nested grids need to add up to 12.</p>
   <div class="clearfix">
     <div class="col colspan6">
       Span 6
-      <div class="clearfix">
+      <div class="clearfix nested-row">
         <div class="col colspan6 nested">Span 6</div>
         <div class="col colspan6 nested">Span 6</div>
       </div>
     </div>
     <div class="col colspan6">
       Span 6
-      <div class="clearfix">
+      <div class="clearfix nested-row">
         <div class="col colspan6 nested">Span 6</div>
         <div class="col colspan6 nested">Span 6</div>
       </div>
