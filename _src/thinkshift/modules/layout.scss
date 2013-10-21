@@ -4,16 +4,8 @@
   
   position: relative;
   padding: 0 20px;
-  width: 960px;
+  max-width: 960px;
   margin: 0 auto;
-  
-  @include breakpoint(handheld) {  
-    width: auto;
-  }
-  
-  @include breakpoint(tablet) {
-    width: auto;
-  }
   
 }
 
