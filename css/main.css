@@ -388,14 +388,14 @@ code {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.clearfix, .container, .btn-group, .nav-h, .nav-bar, .nav-tabs, .grid, .row {
+.clearfix, .container, .btn-group, .nav-h, .nav-bar, .nav-tabs, .grid {
   *zoom: 1; }
-  .clearfix:before, .container:before, .btn-group:before, .nav-h:before, .nav-bar:before, .nav-tabs:before, .grid:before, .row:before, .clearfix:after, .container:after, .btn-group:after, .nav-h:after, .nav-bar:after, .nav-tabs:after, .grid:after, .row:after {
+  .clearfix:before, .container:before, .btn-group:before, .nav-h:before, .nav-bar:before, .nav-tabs:before, .grid:before, .clearfix:after, .container:after, .btn-group:after, .nav-h:after, .nav-bar:after, .nav-tabs:after, .grid:after {
     content: " ";
     /* 1 */
     display: table;
     /* 2 */ }
-  .clearfix:after, .container:after, .btn-group:after, .nav-h:after, .nav-bar:after, .nav-tabs:after, .grid:after, .row:after {
+  .clearfix:after, .container:after, .btn-group:after, .nav-h:after, .nav-bar:after, .nav-tabs:after, .grid:after {
     clear: both; }
 
 /*
@@ -934,190 +934,183 @@ input:focus:-moz-input-placeholder, textarea:focus:-moz-input-placeholder {
 input:focus:input-placeholder, textarea:focus:input-placeholder {
   opacity: 0; }
 
-.grid, .row {
-  position: relative;
-  margin-bottom: 20px; }
-
-.col {
-  display: block;
-  float: left;
-  margin: 0;
-  padding: 0 10px;
-  box-sizing: border-box;
-  width: 8.33333%; }
-  .col .nested-row {
-    margin-left: -10px;
-    margin-right: -10px; }
-  .col.colshift1 {
-    margin-left: 8.33333%; }
-  .col.colpush1 {
-    margin-right: 8.33333%; }
-  .col.colstretch1 {
+.grid {
+  position: relative; }
+  .grid .col {
+    display: block;
+    float: left;
+    width: 6.25%;
+    margin: 0 1.04167% 20px; }
+  .grid .colshift1 {
+    margin-left: 9.375%; }
+  .grid .colpush1 {
+    margin-right: 9.375%; }
+  .grid .colstretch1 {
     padding-left: 4.16667%;
     padding-right: 4.16667%; }
-  .col.colstretch-left1 {
+  .grid .colstretch-left1 {
     padding-left: 8.33333%; }
-  .col.colstretch-right1 {
+  .grid .colstretch-right1 {
     padding-right: 8.33333%; }
-  .col.colspan2 {
-    width: 16.66667%; }
-  .col.colshift2 {
-    margin-left: 16.66667%; }
-  .col.colpush2 {
-    margin-right: 16.66667%; }
-  .col.colstretch2 {
+  .grid .colspan2 {
+    width: 14.58333%; }
+  .grid .colshift2 {
+    margin-left: 17.70833%; }
+  .grid .colpush2 {
+    margin-right: 17.70833%; }
+  .grid .colstretch2 {
     padding-left: 8.33333%;
     padding-right: 8.33333%; }
-  .col.colstretch-left2 {
+  .grid .colstretch-left2 {
     padding-left: 16.66667%; }
-  .col.colstretch-right2 {
+  .grid .colstretch-right2 {
     padding-right: 16.66667%; }
-  .col.colspan3 {
-    width: 25%; }
-  .col.colshift3 {
-    margin-left: 25%; }
-  .col.colpush3 {
-    margin-right: 25%; }
-  .col.colstretch3 {
+  .grid .colspan3 {
+    width: 22.91667%; }
+  .grid .colshift3 {
+    margin-left: 26.04167%; }
+  .grid .colpush3 {
+    margin-right: 26.04167%; }
+  .grid .colstretch3 {
     padding-left: 12.5%;
     padding-right: 12.5%; }
-  .col.colstretch-left3 {
+  .grid .colstretch-left3 {
     padding-left: 25%; }
-  .col.colstretch-right3 {
+  .grid .colstretch-right3 {
     padding-right: 25%; }
-  .col.colspan4 {
-    width: 33.33333%; }
-  .col.colshift4 {
-    margin-left: 33.33333%; }
-  .col.colpush4 {
-    margin-right: 33.33333%; }
-  .col.colstretch4 {
+  .grid .colspan4 {
+    width: 31.25%; }
+  .grid .colshift4 {
+    margin-left: 34.375%; }
+  .grid .colpush4 {
+    margin-right: 34.375%; }
+  .grid .colstretch4 {
     padding-left: 16.66667%;
     padding-right: 16.66667%; }
-  .col.colstretch-left4 {
+  .grid .colstretch-left4 {
     padding-left: 33.33333%; }
-  .col.colstretch-right4 {
+  .grid .colstretch-right4 {
     padding-right: 33.33333%; }
-  .col.colspan5 {
-    width: 41.66667%; }
-  .col.colshift5 {
-    margin-left: 41.66667%; }
-  .col.colpush5 {
-    margin-right: 41.66667%; }
-  .col.colstretch5 {
+  .grid .colspan5 {
+    width: 39.58333%; }
+  .grid .colshift5 {
+    margin-left: 42.70833%; }
+  .grid .colpush5 {
+    margin-right: 42.70833%; }
+  .grid .colstretch5 {
     padding-left: 20.83333%;
     padding-right: 20.83333%; }
-  .col.colstretch-left5 {
+  .grid .colstretch-left5 {
     padding-left: 41.66667%; }
-  .col.colstretch-right5 {
+  .grid .colstretch-right5 {
     padding-right: 41.66667%; }
-  .col.colspan6 {
-    width: 50%; }
-  .col.colshift6 {
-    margin-left: 50%; }
-  .col.colpush6 {
-    margin-right: 50%; }
-  .col.colstretch6 {
-    padding-left: 25%;
-    padding-right: 25%; }
-  .col.colstretch-left6 {
+  .grid .colspan6 {
+    width: 47.91667%; }
+  .grid .colshift6 {
+    margin-left: 51.04167%; }
+  .grid .colpush6 {
+    margin-right: 51.04167%; }
+  .grid .colstretch6 {
+    padding-left: 25.0%;
+    padding-right: 25.0%; }
+  .grid .colstretch-left6 {
     padding-left: 50%; }
-  .col.colstretch-right6 {
+  .grid .colstretch-right6 {
     padding-right: 50%; }
-  .col.colspan7 {
-    width: 58.33333%; }
-  .col.colshift7 {
-    margin-left: 58.33333%; }
-  .col.colpush7 {
-    margin-right: 58.33333%; }
-  .col.colstretch7 {
+  .grid .colspan7 {
+    width: 56.25%; }
+  .grid .colshift7 {
+    margin-left: 59.375%; }
+  .grid .colpush7 {
+    margin-right: 59.375%; }
+  .grid .colstretch7 {
     padding-left: 29.16667%;
     padding-right: 29.16667%; }
-  .col.colstretch-left7 {
+  .grid .colstretch-left7 {
     padding-left: 58.33333%; }
-  .col.colstretch-right7 {
+  .grid .colstretch-right7 {
     padding-right: 58.33333%; }
-  .col.colspan8 {
-    width: 66.66667%; }
-  .col.colshift8 {
-    margin-left: 66.66667%; }
-  .col.colpush8 {
-    margin-right: 66.66667%; }
-  .col.colstretch8 {
+  .grid .colspan8 {
+    width: 64.58333%; }
+  .grid .colshift8 {
+    margin-left: 67.70833%; }
+  .grid .colpush8 {
+    margin-right: 67.70833%; }
+  .grid .colstretch8 {
     padding-left: 33.33333%;
     padding-right: 33.33333%; }
-  .col.colstretch-left8 {
+  .grid .colstretch-left8 {
     padding-left: 66.66667%; }
-  .col.colstretch-right8 {
+  .grid .colstretch-right8 {
     padding-right: 66.66667%; }
-  .col.colspan9 {
-    width: 75%; }
-  .col.colshift9 {
-    margin-left: 75%; }
-  .col.colpush9 {
-    margin-right: 75%; }
-  .col.colstretch9 {
+  .grid .colspan9 {
+    width: 72.91667%; }
+  .grid .colshift9 {
+    margin-left: 76.04167%; }
+  .grid .colpush9 {
+    margin-right: 76.04167%; }
+  .grid .colstretch9 {
     padding-left: 37.5%;
     padding-right: 37.5%; }
-  .col.colstretch-left9 {
+  .grid .colstretch-left9 {
     padding-left: 75%; }
-  .col.colstretch-right9 {
+  .grid .colstretch-right9 {
     padding-right: 75%; }
-  .col.colspan10 {
-    width: 83.33333%; }
-  .col.colshift10 {
-    margin-left: 83.33333%; }
-  .col.colpush10 {
-    margin-right: 83.33333%; }
-  .col.colstretch10 {
+  .grid .colspan10 {
+    width: 81.25%; }
+  .grid .colshift10 {
+    margin-left: 84.375%; }
+  .grid .colpush10 {
+    margin-right: 84.375%; }
+  .grid .colstretch10 {
     padding-left: 41.66667%;
     padding-right: 41.66667%; }
-  .col.colstretch-left10 {
+  .grid .colstretch-left10 {
     padding-left: 83.33333%; }
-  .col.colstretch-right10 {
+  .grid .colstretch-right10 {
     padding-right: 83.33333%; }
-  .col.colspan11 {
-    width: 91.66667%; }
-  .col.colshift11 {
-    margin-left: 91.66667%; }
-  .col.colpush11 {
-    margin-right: 91.66667%; }
-  .col.colstretch11 {
+  .grid .colspan11 {
+    width: 89.58333%; }
+  .grid .colshift11 {
+    margin-left: 92.70833%; }
+  .grid .colpush11 {
+    margin-right: 92.70833%; }
+  .grid .colstretch11 {
     padding-left: 45.83333%;
     padding-right: 45.83333%; }
-  .col.colstretch-left11 {
+  .grid .colstretch-left11 {
     padding-left: 91.66667%; }
-  .col.colstretch-right11 {
+  .grid .colstretch-right11 {
     padding-right: 91.66667%; }
-  .col.colspan12 {
-    width: 100%; }
+  .grid .colspan12 {
+    width: 97.91667%; }
   @media only screen and (min-width: 280px) and (max-width: 600px) {
-    .col {
+    .grid {
       width: auto;
-      margin: 0 0 20px 0;
-      float: none; }
-      .col.colspan2 {
-        width: auto; }
-      .col.colspan3 {
-        width: auto; }
-      .col.colspan4 {
-        width: auto; }
-      .col.colspan5 {
-        width: auto; }
-      .col.colspan6 {
-        width: auto; }
-      .col.colspan7 {
-        width: auto; }
-      .col.colspan8 {
-        width: auto; }
-      .col.colspan9 {
-        width: auto; }
-      .col.colspan10 {
-        width: auto; }
-      .col.colspan11 {
-        width: auto; }
-      .col.colspan12 {
-        width: auto; } }
+      float: none;
+      margin: 0 0 20px 0; }
+      .grid .colspan2 {
+        width: 100%; }
+      .grid .colspan3 {
+        width: 100%; }
+      .grid .colspan4 {
+        width: 100%; }
+      .grid .colspan5 {
+        width: 100%; }
+      .grid .colspan6 {
+        width: 100%; }
+      .grid .colspan7 {
+        width: 100%; }
+      .grid .colspan8 {
+        width: 100%; }
+      .grid .colspan9 {
+        width: 100%; }
+      .grid .colspan10 {
+        width: 100%; }
+      .grid .colspan11 {
+        width: 100%; }
+      .grid .colspan12 {
+        width: 100%; } }
 
 .table {
   width: 100%; }

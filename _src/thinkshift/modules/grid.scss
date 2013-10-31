@@ -31,112 +31,112 @@ $with-colstretch: true!default;
 // $grid-container-width: number in pixels for the container.
 // $grid-columns: number of columns to make divisions from.
 // $namespace: optional namespace to greate new grid systems.
-@mixin grid($grid-columns, $namespace:"") {
+@mixin grid($grid-container-width, $grid-columns, $namespace:"") {
+
+  // Change the $grid-container-width variable to be unitless so we can do
+  // conversions into percentages (for tablets) later.
+  $grid-container-width: $grid-container-width / ($grid-container-width * 0 + 1);
+
+  // Column Width.
+  // Subtract the width of the margin multiplied by the number of grid columns
+  // less two (first and last have no margins), then divide the remaining value
+  // and round it down.
+  $column-width: floor(($grid-container-width - ($grid-spacing * ($grid-columns)) )/$grid-columns);
+  
+  // Margin.
+  // Take the grid spacing (amount of total space between columns)
+  // and divide it by 2, then divide by the total grid container to get a percentage.
+  $margin: percentage(floor($grid-spacing/2)/$grid-container-width);
   
   
-  $column-width: percentage(100/$grid-columns)/100;
-  $padding: 10px;
-//  $margin: percentage(floor($grid-spacing/2)/$grid-container-width);
   
   // start the grid.
-	.#{$namespace}grid, .row {
+  .#{$namespace}grid {
 
-		// add the grid container to the clearfix styles.
-		@extend .clearfix;
-		position: relative;
-    margin-bottom: 20px;
-    
-  } //.grid
-  
-	// build the classes.
-	.#{$namespace}col {
-    
-    // monitor styles by default.. override where necessary...
-    display: block;
-    float: left;
-    margin: 0;
-    padding: 0 10px;
-    
-    // not compatible with ie-7
-    box-sizing: border-box;
-    
-    @if $column-width > 0 {
-      width: $column-width;
-    }
-    
-    // nested?
-    .nested-row {
-      margin-left: -10px;
-      margin-right: -10px;
-    }
-    
-    // spacing, with IE7 fallback...
-//      @if $supports-ie7 == true {
-//        @if $margin != 0 {
-//          *margin: 0 $margin 20px;
-//          *padding: 0px;
-//        }
-//      }
-    
-    @for $n from 1 to $grid-columns + 1 {
-    
-      $span-width: $column-width * $n;
+    // add the grid container to the clearfix styles.
+    @extend .clearfix;
+
+    // opinionated default, so we can position things absolute in the grid.
+    position: relative;
+
+    // build the classes.
+    .#{$namespace}col {
+
+      // monitor styles by default.. override where necessary...
+      display: block;
+      float: left;
+
+
+      @if $column-width > 0 {
+        width: percentage($column-width/$grid-container-width);
+      }
+
       
+      @if $margin != 0 {
+        margin: 0 $margin 20px;
+      }
+      
+    } // col
+      
+    @for $n from 1 to $grid-columns + 1 {
+
+      $span-width: percentage(floor(($column-width * $n) + ($grid-spacing * ($n - 1)))/$grid-container-width);
+
       // Colspan
       @if $n > 1 {
-        &.#{$namespace}colspan#{$n} {
+        .#{$namespace}colspan#{$n} {
           // width is the column width + spacing.
           // |column|mm|column|
           width: $span-width;
         }
       } // ENDIF $n > 1
-      
+
       // Colshift, Colpush or Colstretch: 12 spans will break things.
       @if $n < 12 {
         @if $with-colshift == true {
-          &.#{$namespace}colshift#{$n} {
-            margin-left: $span-width;
+          .#{$namespace}colshift#{$n} {
+            margin-left: $span-width + $margin + $margin + $margin;
           }
         } // ENDIF $with-colshift
-      
+
         @if $with-colpush == true {
-          &.#{$namespace}colpush#{$n} {
-            margin-right: $span-width;
+          .#{$namespace}colpush#{$n} {
+            margin-right: $span-width + $margin + $margin + $margin;
           }
         } // ENDIF $with-colpush
 
         @if $with-colstretch == true {
-          &.#{$namespace}colstretch#{$n} {
-            padding-left: ($span-width / 2);
-            padding-right: ($span-width / 2);
+          .#{$namespace}colstretch#{$n} {
+            padding-left: ($span-width / 2) + $margin;
+            padding-right: ($span-width / 2) + $margin;
           }
-    
-          &.#{$namespace}colstretch-left#{$n} {
-            padding-left: $span-width;
+
+          .#{$namespace}colstretch-left#{$n} {
+            padding-left: $span-width + $margin + $margin;
           }
-    
-          &.#{$namespace}colstretch-right#{$n} {
-            padding-right: $span-width;
+
+          .#{$namespace}colstretch-right#{$n} {
+            padding-right: $span-width + $margin + $margin;
           }
         } // ENDIF $with-colstretch
       } // ENDIF $n < 12
-    }
-    
+    } // ENDFOR
+
     @include breakpoint(handheld) {
       width: auto;
-      margin: 0 0 20px 0;
       float: none;
+      margin: 0 0 20px 0;
       @for $n from 2 to $grid-columns + 1 {
-        &.#{$namespace}colspan#{$n} {
-          width: auto;
+        .#{$namespace}colspan#{$n} {
+          width: 100%;
         } 
       }
-    }
-    
-	} // col
+    } // END HANDHELD
+
+  } // grid
 } // mixin
 
 // -----------------------------------------------------------------------------
 // Grid Styles
 // -----------------------------------------------------------------------------
-@include grid($grid-columns); // grid12
+@include grid($grid-container-width, $grid-columns); // grid12
