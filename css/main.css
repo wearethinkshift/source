@@ -405,14 +405,8 @@ code {
 .container {
   position: relative;
   padding: 0 20px;
-  width: 960px;
+  max-width: 960px;
   margin: 0 auto; }
-  @media only screen and (min-width: 280px) and (max-width: 600px) {
-    .container {
-      width: auto; } }
-  @media only screen and (min-width: 600px) and (max-width: 1000px) {
-    .container {
-      width: auto; } }
 
 .intro {
   padding: 50px 0; }
@@ -1099,31 +1093,31 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
     width: 100%; }
   @media only screen and (min-width: 280px) and (max-width: 600px) {
     .col {
-      width: 100%;
-      margin: 0 0 20px 0 !important;
-      padding: 0 10px; }
+      width: auto;
+      margin: 0 0 20px 0;
+      float: none; }
       .col.colspan2 {
-        width: 100%; }
+        width: auto; }
       .col.colspan3 {
-        width: 100%; }
+        width: auto; }
       .col.colspan4 {
-        width: 100%; }
+        width: auto; }
       .col.colspan5 {
-        width: 100%; }
+        width: auto; }
       .col.colspan6 {
-        width: 100%; }
+        width: auto; }
       .col.colspan7 {
-        width: 100%; }
+        width: auto; }
       .col.colspan8 {
-        width: 100%; }
+        width: auto; }
       .col.colspan9 {
-        width: 100%; }
+        width: auto; }
       .col.colspan10 {
-        width: 100%; }
+        width: auto; }
       .col.colspan11 {
-        width: 100%; }
+        width: auto; }
       .col.colspan12 {
-        width: 100%; } }
+        width: auto; } }
 
 .table {
   width: 100%; }

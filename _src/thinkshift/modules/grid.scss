@@ -123,12 +123,12 @@ $with-colstretch: true!default;
     }
     
     @include breakpoint(handheld) {
-      width: 100%;
-      margin: 0 0 20px 0!important;
-      padding: 0 10px;
+      width: auto;
+      margin: 0 0 20px 0;
+      float: none;
       @for $n from 2 to $grid-columns + 1 {
         &.#{$namespace}colspan#{$n} {
-          width: 100%;
+          width: auto;
         } 
       }
     }
