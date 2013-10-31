@@ -42,7 +42,14 @@ $with-colstretch: true!default;
   // less two (first and last have no margins), then divide the remaining value
   // and round it down.
   $column-width: floor(($grid-container-width - ($grid-spacing * ($grid-columns)) )/$grid-columns);
-
+  
+  // Margin.
+  // Take the grid spacing (amount of total space between columns)
+  // and divide it by 2, then divide by the total grid container to get a percentage.
+  $margin: percentage(floor($grid-spacing/2)/$grid-container-width);
+  
+  
+  
   // start the grid.
   .#{$namespace}grid {
 
@@ -64,7 +71,7 @@ $with-colstretch: true!default;
         width: percentage($column-width/$grid-container-width);
       }
 
-      $margin: percentage(floor($grid-spacing/2)/$grid-container-width);
+      
       @if $margin != 0 {
         margin: 0 $margin 20px;
       }
@@ -132,4 +139,4 @@ $with-colstretch: true!default;
 // -----------------------------------------------------------------------------
 // Grid Styles
 // -----------------------------------------------------------------------------
-@include grid($grid-columns); // grid12
+@include grid($grid-container-width, $grid-columns); // grid12
