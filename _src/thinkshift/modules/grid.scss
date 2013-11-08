@@ -66,14 +66,18 @@ $with-colstretch: true!default;
       display: block;
       float: left;
 
-
       @if $column-width > 0 {
         width: percentage($column-width/$grid-container-width);
       }
 
-      
       @if $margin != 0 {
         margin: 0 $margin 20px;
+      }
+      
+      // flip the float
+      // TODO: Add to documentation.
+      &.pull-right {
+        float: right;
       }
       
     } // col

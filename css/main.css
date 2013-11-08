@@ -941,6 +941,8 @@ input:focus:input-placeholder, textarea:focus:input-placeholder {
     float: left;
     width: 6.25%;
     margin: 0 1.04167% 20px; }
+    .grid .col.pull-right {
+      float: right; }
   .grid .colshift1 {
     margin-left: 9.375%; }
   .grid .colpush1 {
