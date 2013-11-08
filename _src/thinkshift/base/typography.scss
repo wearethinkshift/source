@@ -1,14 +1,13 @@
 /* ==========================================================================
    Typography
    ========================================================================== */
-   $heading-margin-after: 0.2em;
 
 
 /* --------------------------------------------------------------------------
    Text Block Elements
    -------------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
-  margin: 0.9em 0 $heading-margin-after;
+  margin: 0.9em 0 0.2em;
   line-height: 1.1;
 }
 
@@ -27,12 +26,8 @@ h1 { font-size: $font-size-enormous; }
 h2 { font-size: $font-size-huge; }
 h3 { font-size: $font-size-xxlarge; margin-bottom: 0.25em; }
 h4 { font-size: $font-size-xlarge; } 
-h5 { font-size: $font-size-medium; }
+h5 { font-size: $font-size-large; }
 h6 { font-size: $font-size-medium; }
-
-h3, h4, h5, h6 { color: $gray; }
-h5, h6 { font-style: italic; }
-h4, h6 { font-weight: normal; }
 
 ul, ol { padding-left: 2.15em; }
 dd     { margin-left: 30px; font-style: italic; }
@@ -54,48 +49,48 @@ ul { ul { list-style: circle; ul { list-style: square; } } }
 /* Heading Combinations */
 hgroup {
   h1, h2, h3, h4, h5, h6 {
-    margin-top: $heading-margin-after;
+    margin-top: 0.2em;
   }
 }
 
 
 /* Navigation lists will not have bullets. */
 nav ul, nav ol {
-    list-style: none;
-    list-style-image: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* --------------------------------------------------------------------------
    Links
    -------------------------------------------------------------------------- */
 a {
-    color: $link-color;
-    text-decoration: none;
-    
-    &:hover {
-        color: $link-hover-color;
-        text-decoration: underline;
-    }
-
-    &:active, &:focus {
-      color: $link-active-color;
+  color: $link-color;
+  text-decoration: none;
+  
+  &:hover {
+      color: $link-hover-color;
       text-decoration: underline;
-    }
+  }
 
-//    &:visited {
-//        color: $link-visited-color;
-//    }
+  &:active, &:focus {
+    color: $link-active-color;
+    text-decoration: underline;
+  }
+
+//  &:visited {
+//    color: $link-visited-color;
+//  }
 //
-//    &:focus {
-//        outline: thin dotted;
-//    }
+//  &:focus {
+//    outline: thin dotted;
+//  }
 }
 
 // Improve readability when focused and hovered in all browsers: h5bp.com/h
 a:hover, a:active {
-    outline: 0;
+  outline: 0;
 //    text-decoration: none;
 }
 
@@ -103,11 +98,11 @@ a:hover, a:active {
    Semantic Tags
    -------------------------------------------------------------------------- */
 abbr[title] {
-    border-bottom: 1px dotted;
+  border-bottom: 1px dotted;
 }
 
 b, strong {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 blockquote {
@@ -119,77 +114,77 @@ blockquote {
 }
 
 dfn {
-    font-style: italic;
+  font-style: italic;
 }
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid $silver;
-    margin: 1em 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $silver;
+  margin: 1em 0;
+  padding: 0;
 }
 
 ins {
-    background: $light-yellow;
-    color: $black;
-    text-decoration: none;
+  background: $light-yellow;
+  color: $black;
+  text-decoration: none;
 }
 
 mark {
-    background: $yellow;
-    color: $black;
-    font-style: italic;
-    font-weight: bold;
+  background: $yellow;
+  color: $black;
+  font-style: italic;
+  font-weight: bold;
 }
 
 
 // Redeclare monospace font family: h5bp.com/j
 pre, code, kbd, samp {
-    font-family: $font-monospace;
-    font-size: 1em;
+  font-family: $monospace;
+  font-size: 1em;
 
-    @if $supports-ie6 == true {
-        _font-family: 'courier new', $font-monospace; // < ie6
-    }
+  @if $supports-ie6 == true {
+    _font-family: 'courier new', $monospace; // < ie6
+  }
 }
 
 
 // Improve readability of pre-formatted text
 pre {
-    white-space: pre;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 q {
-    quotes: none;
+  quotes: none;
 }
 
 q:before, q:after {
-    content: "";
-    content: none;
+  content: "";
+  content: none;
 }
 
 small {
-    font-size: $font-size-small;
+  font-size: $font-size-small;
 }
 
 // Position subscript and superscript content without affecting line-height: h5bp.com/k
 sub, sup {
-    font-size: $font-size-xsmall;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
+  font-size: $font-size-xsmall;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
 sup {
-    top: -0.5em;
+  top: -0.5em;
 }
 
 sub {
-    bottom: -0.25em;
+  bottom: -0.25em;
 }
 
 code {
@@ -206,7 +201,6 @@ code {
 .lead {
  font-size: $font-size-xxlarge;
  line-height: 1.4em;
- color: $gray;
  margin: 40px 0;
  font-weight: 200; // if it's supported?
   

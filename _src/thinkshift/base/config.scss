@@ -2,98 +2,23 @@
 //  Config.scss
 //  -----------
 //  =============================================================================
+@import 'config/browser-support';
+@import 'config/colors';
+@import 'config/typography';
 
 
+// ============
+// BASE CONFIGS
+// ============
 
-//  --------------------------------------------------------------------------
-//  Browser Support
-//  --------------------------------------------------------------------------
-    $supports-ie8: true;
-    $supports-ie7: false;
-    $supports-ie6: false;
-    
-    
-//  --------------------------------------------------------------------------
-//  Colors
-//  --------------------------------------------------------------------------
+// Base Font Colour: #333
+$base-font-color: $charcoal!default;
 
-    // Base Colors
-    $red:    #D01616;
-    $orange: #ff6622;
-    $yellow: #E4C419;
-    $green:  #3DA20E;
-    $blue:   #196AE4;
-    $indigo: #220066;
-    $violet: #330044;
+// Base Line Height: 1.4em
+$base-line-height: 1.4em!default;
 
-    // Shades
-    $white:      hsl(0,0,100%); // #fff
-    $silver:     hsl(0,0, 80%); // #ccc
-    $light-gray: hsl(0,0, 60%); // #999
-    $gray:       hsl(0,0, 40%); // #666
-    $dark-gray:  hsl(0,0, 20%); // #333
-    $black:      hsl(0,0,  0%); // #000
+// Base Font Family Default: sans-serif
+$base-font-family: sans-serif!default;
 
-    // Color Applications
-    $selection-color: #b3d4fc;
-    
-    // Link Colors
-    $link-color: darken($selection-color, 35%);
-    $link-active-color: darken($selection-color, 50%);
-    $link-hover-color: darken($selection-color, 25%);
-
-    $light-yellow: lighten($yellow, 10%);
-
-    // Status
-    $primary: #ef5223; // Think Shift Rorange
-    $info: $blue; // blue
-    $alert: $red; // red
-    $warning: $yellow; // amber
-    $confirm: $green; // green
-   
-//  --------------------------------------------------------------------------
-//  Fonts and Sizes
-//  --------------------------------------------------------------------------
-    
-    // Base Font Size is calculated based on the browser default: 16px.
-    // 16 x 0.75 = 12px which becomes the new base font for the entire document.
-    // Base font is set on the body element, so all percentages of font sizes
-    // are relative to 12px. So: p { font-size: 75% } = 12 * 0.75 = 9px.
-    $font-size-base:      14px;
-    
-    // Relative to the base (defaults to 12px)
-    $font-size-tiny:      9px;
-    $font-size-xsmall:   10px;
-    $font-size-small:    11px;
-    $font-size-fine:     12px;
-    $font-size-normal:   14px;
-    $font-size-medium:   14px;
-    $font-size-large:    16px;
-    $font-size-xlarge:   18px;
-    $font-size-xxlarge:  24px;
-    $font-size-huge:     30px;
-    $font-size-enormous: 36px;
-    
-    // Core fonts
-    $font-serif:      serif;
-    $font-sans-serif: sans-serif;
-    $font-monospace:  monospace;
-    
-    // Base Font Style is "sans-serif" so the user agent chooses their default.
-    // Macs = "Helvetica", Windows = "Arial". Everyone's happy. Plus it's short.    
-    $font-family-base: $font-sans-serif;
-    
-    // Expanded Families
-    $font-family-sans-serif: 'Helvetica Neue', Arial, $font-sans-serif;
-    $font-family-sans-serif: 'Hoefler Text', Georgia, $font-serif;
-    $font-family-monospace: Consolas, Courier, $font-monospace;
-    
-    $font-family-alt: 'League Gothic', $font-family-sans-serif;
-    
-    // Don't use black.
-    $font-color-base: $dark-gray;
-    
-//  --------------------------------------------------------------------------
-//  Typography
-//  -------------------------------------------------------------------------- */
-    $line-height-base: 1.4em;
+// Base Font Size Default: 14px
+$base-font-size: $font-size-normal!default;

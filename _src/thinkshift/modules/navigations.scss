@@ -2,6 +2,13 @@
 // Navigations.scss
 // ----------------
 // =============================================================================
+$with-nav-h:    true!default;
+$with-nav-v:    true!default;
+$with-nav-menu: true!default;
+$with-nav-bar:  true!default;
+$with-nav-tabs: true!default;
+
+
 %nav {
   
   font-size: $font-size-medium;
@@ -16,7 +23,7 @@
   
   li {
     a {
-      padding: 0.5em 1em;
+      padding: 7px 14px;
       color: $gray;
     
       &:hover {
@@ -52,56 +59,61 @@
   
 }
 
-// horizontal navigation
-.nav-h {
-  @extend %nav;
-  @extend .clearfix;
+@if $with-nav-h == true {
+  // horizontal navigation
+  .nav-h {
+    @extend %nav;
+    @extend .clearfix;
   
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
   
-  li {
-    border-left: 1px solid lighten($silver, 10%);
-    &:first-child {
-      border: none;
+    li {
+      border-left: 1px solid lighten($silver, 10%);
+      &:first-child {
+        border: none;
+      }
+      a {
+        margin-top: -0.5em;
+        margin-bottom: -0.5em;
+      }
     }
-    a {
-      margin-top: -0.5em;
-      margin-bottom: -0.5em;
-    }
-  }
   
-  li, a {
-    float: left;
-  }
-  
-  @include breakpoint(handheld) {
-    margin: 0;
-    
     li, a {
-      float: none;
-      border: none;
+      float: left;
     }
+  	
+		&.nav-v-switch {
+			@include breakpoint(handheld) {
+	      margin: 0;
     
-    li a {
-      margin: 0;
+	      li, a {
+	        float: none;
+	        border: none;
+	      }
+    
+	      li a {
+	        margin: 0;
+	      }
+			}
     }
-  }
   
-}
+  }
+} // ENDIF $with-nav-h
 
-// vertical navigation
-.nav-v {
-  @extend %nav;
+@if $with-nav-v == true {
+  // vertical navigation
+  .nav-v {
+    @extend %nav;
   
-  li {
-    border-top: 1px solid lighten($silver, 10%);
-    &:first-child {
-      border: none;
+    li {
+      border-top: 1px solid lighten($silver, 10%);
+      &:first-child {
+        border: none;
+      }
     }
   }
-  
-}
+} // ENDIF $with-nav-v
 
 
 %menubar {
@@ -109,100 +121,156 @@
   border-bottom-color: $silver;
   background: lighten($silver, 18%);
   margin-bottom: 20px;
-  @include box-shadow("0px 1px 3px rgba(0,0,0,0.05), 0px 1px 1px rgba(0,0,0,0.1)");
+  @include box-shadow(0px 1px 3px rgba(0,0,0,0.05), 0px 1px 1px rgba(0,0,0,0.1));
 }
 
-.nav-menu {
-  @extend .nav-v;
-  @extend %menubar;
-  @include border-radius(5px);
+@if $with-nav-v == true and $with-nav-menu == true {
+  .nav-menu {
+    @extend .nav-v;
+    @extend %menubar;
+    @include border-radius(5px);
   
-  background: white;
+    background: white;
   
-  li {
-    a {
-      &:hover {
-        background: lighten($silver, 19%);
-      }
+    li {
+      a {
+        &:hover {
+          background: lighten($silver, 19%);
+        }
   
-      &:active, &:focus {
-        background: lighten($silver, 15%);
-      }
+        &:active, &:focus {
+          background: lighten($silver, 15%);
+        }
     
+      }
     }
-  }
   
-  li:first-child a {
-    @include border-radius-utility(5px, 5px, false, false);
-  }
+    li:first-child a {
+      @include border-radius-utility(5px, 5px, false, false);
+    }
   
-  li:last-child a {
-    @include border-radius-utility(false, false, 5px, 5px);
-  }
-  
-}
-
-.nav-bar {
-  @extend .nav-h;
-  @extend %menubar;
-  
-  margin: 0;
-  padding: 4px;
-  
-  li {
-    border:none;
-    position: relative;
-    z-index: 20;
-    
-    a {
-      border: 1px solid lighten($silver, 18%);
-      margin-top: 0;
-      margin-bottom: 0;
-      @include border-radius(3px);
-    
-      &:hover, &:active, &:focus {
-        background: $white;
-        border-color: lighten($silver, 10%);
-      }
-      &:active, &:focus {
-        border-color: $silver;
-        background: lighten($silver, 10%);
-      }
+    li:last-child a {
+      @include border-radius-utility(false, false, 5px, 5px);
     } 
   }
-}
-
-.nav-tabs {
-  @extend %nav;
-  @extend .clearfix;
   
-  border-bottom: 1px solid lighten($silver, 10%);
-
-  li, a {
-    float: left;
-  }
-  li {
-    border: 1px solid transparent;
-    margin-bottom: -1px;
-    &.active {
-      border: 1px solid lighten($silver, 10%);
-      border-bottom-color: white;
+  .pane {
+    .nav-menu, .nav-v {
+      border: none;
+      @include border-radius(0 0 5px 5px);
+      @include box-shadow(none);
     }
   }
   
-  @include breakpoint(handheld) {
-    border: none;
+} // ENDIF $with-nav-v && $with-nav-menu
+
+@if $with-nav-h == true and $with-nav-bar == true {
+  .nav-bar {
+    @extend .nav-h;
+    @extend %menubar;
+  
+    margin: 0;
+    padding: 4px;
+  
+    li {
+      border:none;
+      position: relative;
+      z-index: 20;
     
+      a {
+        border: 1px solid lighten($silver, 18%);
+        margin-top: 0;
+        margin-bottom: 0;
+        @include border-radius(3px);
+    
+        &:hover, &:active, &:focus {
+          background: $white;
+          border-color: lighten($silver, 10%);
+        }
+        &:active, &:focus {
+          border-color: $silver;
+          background: lighten($silver, 10%);
+        }
+      } 
+      
+      @if $with-nav-menu == true {
+        
+        .nav-menu {
+          position: absolute;
+          z-index: 100;
+          top: 100%;
+          margin-top: -1px;
+          display: none;
+          width: auto;
+          max-width: 200px;
+          
+          li, a {
+            float: none;
+            display: block;
+          }
+          
+          li {
+            border-top: 1px solid lighten($silver, 10%);
+            &:first-child {
+              border: none;
+            }
+          }
+          
+          a {
+            border: none;
+            @include border-radius(0);
+          }
+        }
+        
+        &:hover {
+          a {
+            background: $white;
+            border-color: lighten($silver, 10%);
+          }
+          
+          .nav-menu {
+            display: block;
+          }
+        }
+        
+      } // ENDIF $with-nav-menu
+      
+    } // li
+  }
+} // ENDIF $with-nav-h && $with-nav-bar
+
+@if $with-nav-tabs == true {
+  .nav-tabs {
+    @extend %nav;
+    @extend .clearfix;
+  
+    border-bottom: 1px solid $silver;
+
     li, a {
-      float: none;
+      float: left;
     }
     li {
-      margin: none;
-      border: none;
+      border: 1px solid transparent;
+      margin-bottom: -1px;
       &.active {
+        border: 1px solid $silver;
+        border-bottom-color: white;
+      }
+    }
+  
+    @include breakpoint(handheld) {
+      border: none;
+    
+      li, a {
+        float: none;
+      }
+      li {
+        margin: none;
         border: none;
+        &.active {
+          border: none;
+        }
       }
     }
   }
-  
-}
+} // ENDIF $with-nav-tabs
